@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - AI
+  - Audio
+  - SmashDownCollider
+  - AttackCollider
+  - Trigger
+  - Breakable
+  - Checkpoint
+  - Warp
   layers:
   - Default
   - TransparentFX
@@ -13,14 +21,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - AI
+  - Platforms
+  - OneWayPlatforms
+  - MovingPlatforms
+  - OneWayMovingPlatforms
+  - Stairs
+  - PhysicsVolume
   - 
   - 
   - 
@@ -40,4 +48,46 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background 1
+    uniqueID: 3005381035
+    locked: 0
+  - name: Background 2
+    uniqueID: 3977741827
+    locked: 0
+  - name: Background 3
+    uniqueID: 2984416107
+    locked: 0
+  - name: Background 4
+    uniqueID: 570196567
+    locked: 0
+  - name: Background 5
+    uniqueID: 3271471051
+    locked: 0
+  - name: Background 6
+    uniqueID: 302192583
+    locked: 0
+  - name: Player
+    uniqueID: 3404506693
+    locked: 0
+  - name: Foreground 1
+    uniqueID: 1991650243
+    locked: 0
+  - name: Foreground 2
+    uniqueID: 3520029559
+    locked: 0
+  - name: Foreground 3
+    uniqueID: 3775474339
+    locked: 0
+  - name: Foreground 4
+    uniqueID: 2800443693
+    locked: 0
+  - name: Foreground 5
+    uniqueID: 1952489269
+    locked: 0
+  - name: Foreground 6
+    uniqueID: 2572358111
+    locked: 0
+  - name: UI
+    uniqueID: 3399117211
     locked: 0

@@ -6,8 +6,6 @@ TagManager:
   tags:
   - AI
   - Audio
-  - SmashDownCollider
-  - AttackCollider
   - Trigger
   - Breakable
   - Checkpoint
@@ -23,12 +21,12 @@ TagManager:
   - 
   - Player
   - AI
-  - Platforms
-  - OneWayPlatforms
-  - MovingPlatforms
-  - OneWayMovingPlatforms
-  - Stairs
-  - PhysicsVolume
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

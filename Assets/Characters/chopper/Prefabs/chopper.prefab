@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4375575246701598499}
   - component: {fileID: 4162842312356658526}
+  - component: {fileID: -8698269096184523768}
   - component: {fileID: 8530717654662852194}
   - component: {fileID: 5700048134774171172}
   - component: {fileID: 8957503521890854443}
@@ -22,6 +23,7 @@ GameObject:
   - component: {fileID: 3981088932619580273}
   - component: {fileID: 7020766821919992655}
   - component: {fileID: 6722808897533074225}
+  - component: {fileID: 8884055576111153889}
   m_Layer: 8
   m_Name: chopper
   m_TagString: Player
@@ -70,6 +72,21 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-8698269096184523768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325209439425228140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c20ac23474fc74fa0c925fac531b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facingOnStart: Face Right
+  SettingsPack: {fileID: 11400000, guid: e6b10576adefc8d4ebe035316f9cfe3b, type: 2}
+  rotateOnMouseCursor: 1
 --- !u!50 &8530717654662852194
 Rigidbody2D:
   serializedVersion: 4
@@ -253,13 +270,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3041052ebd742fe4794800f5dac14755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthReference: {fileID: 0}
-  MaxHealthReference: {fileID: 0}
+  HealthReference: {fileID: 11400000, guid: 0f8abc806889db9418fe47b456c0b4e9, type: 2}
+  MaxHealthReference: {fileID: 11400000, guid: 4949ddfc1d28d8049900b7611b866640, type: 2}
   Health: 100
   MaxHealth: 100
   DefaultMaxHealth: 100
-  ArmorReference: {fileID: 0}
-  MaxArmorReference: {fileID: 0}
+  ArmorReference: {fileID: 11400000, guid: 0d249c3faa8887e4c9cced68055f0dd7, type: 2}
+  MaxArmorReference: {fileID: 11400000, guid: 5b7e5bac02d239c4c9c20a0526c205b0, type: 2}
   Armor: 100
   MaxArmor: 100
   DefaultMaxArmor: 100
@@ -328,3 +345,22 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8884055576111153889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325209439425228140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6be90766877e904fa7b13a3321f0225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Top: 1
+  Bottom: 1
+  Left: 0
+  Right: 0
+  Bounds:
+    m_Center: {x: 0, y: 0.5, z: 0}
+    m_Extent: {x: 15, y: 2, z: 5}

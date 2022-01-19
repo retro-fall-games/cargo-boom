@@ -33,6 +33,9 @@ namespace RFG.ScrollingShooter
     [HideInInspector]
     public StateCharacterContext Context => _characterContext;
     private StateCharacterContext _characterContext = new StateCharacterContext();
+    public CharacterController2D Controller => _controller;
+
+    private CharacterController2D _controller;
     private PlayerInput _playerInput;
     private List<Component> _abilities;
 
@@ -79,10 +82,12 @@ namespace RFG.ScrollingShooter
     private void InitContext()
     {
       _characterContext = new StateCharacterContext();
+      _controller = GetComponent<CharacterController2D>();
       _playerInput = GetComponent<PlayerInput>();
       _characterContext.transform = transform;
       _characterContext.animator = GetComponent<Animator>();
       _characterContext.character = this;
+      _characterContext.controller = _controller;
       _characterContext.playerInput = _playerInput;
       _characterContext.DefaultSettingsPack = SettingsPack;
       _characterContext.healthBehaviour = GetComponent<HealthBehaviour>();

@@ -5,6 +5,7 @@ namespace RFG.ScrollingShooter
   public class StateCharacterContext : StateAnimatorContext
   {
     public Character character;
+    public CharacterController2D controller;
     public PlayerInput playerInput;
 
     // Packs

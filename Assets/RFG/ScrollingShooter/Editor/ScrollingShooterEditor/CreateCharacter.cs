@@ -63,6 +63,8 @@ namespace RFG.ScrollingShooter
       gameObject.layer = LayerMask.NameToLayer("Player");
       gameObject.tag = "Player";
 
+      gameObject.GetOrAddComponent<CharacterController2D>();
+
       Rigidbody2D rigidbody = gameObject.GetOrAddComponent<Rigidbody2D>();
       rigidbody.useAutoMass = false;
       rigidbody.mass = 1;
@@ -171,6 +173,10 @@ namespace RFG.ScrollingShooter
 
           GenerateCharacterStates(characterStatePack);
           GenerateMovementStates(movementStatePack);
+
+          CharacterController2D controller = activeGameObject.GetOrAddComponent<CharacterController2D>();
+          controller.SettingsPack = settingsPack;
+
         }
         EditorUtility.SetDirty(character);
       }

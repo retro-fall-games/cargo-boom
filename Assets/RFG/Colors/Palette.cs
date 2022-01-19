@@ -87,7 +87,8 @@ namespace RFG
         }
         EditorUtility.SetDirty(this);
       }
-#endif
     }
+#endif
+
   }
 }

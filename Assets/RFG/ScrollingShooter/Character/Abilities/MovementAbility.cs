@@ -11,8 +11,6 @@ namespace RFG.ScrollingShooter
     private InputAction _movement;
     private SettingsPack _settings;
     private Vector2 _input;
-    private Vector2 _velocity;
-    private Vector2 _newPosition;
 
     #region Unity Methods
     private void Awake()
@@ -33,11 +31,7 @@ namespace RFG.ScrollingShooter
       {
         return;
       }
-
-      _newPosition = _velocity * Time.deltaTime;
-
       HandleMovement();
-      MoveTransform();
     }
     #endregion
 
@@ -55,6 +49,7 @@ namespace RFG.ScrollingShooter
         return;
       }
       ReadInput();
+      HandleFacing();
       DetectMovementState();
       MoveCharacter();
     }
@@ -92,54 +87,33 @@ namespace RFG.ScrollingShooter
       }
     }
 
+    private void HandleFacing()
+    {
+      if (_input.x > 0f)
+      {
+        if (!_character.Controller.IsFacingRight && !_character.Controller.rotateOnMouseCursor)
+        {
+          _character.Controller.Flip();
+        }
+      }
+      else if (_input.x < 0f)
+      {
+        if (_character.Controller.IsFacingRight && !_character.Controller.rotateOnMouseCursor)
+        {
+          _character.Controller.Flip();
+        }
+      }
+    }
+
     private void MoveCharacter()
     {
       float speed = _settings.Speed;
       float _horizontalSpeed = _input.x * speed * _settings.SpeedFactor;
       float _verticalSpeed = _input.y * speed * _settings.SpeedFactor;
-      float horizontalMovementForce = Mathf.Lerp(_velocity.x, _horizontalSpeed, Time.deltaTime * _settings.AirSpeedFactor);
-      SetHorizontalForce(horizontalMovementForce);
-      float verticalMovementForce = Mathf.Lerp(_velocity.y, _verticalSpeed, Time.deltaTime * _settings.AirSpeedFactor);
-      SetVerticalForce(verticalMovementForce);
-    }
-
-    private void MoveTransform()
-    {
-      transform.Translate(_newPosition, Space.World);
-      _velocity.x = Mathf.Clamp(_velocity.x, -_settings.MaxVelocity.x, _settings.MaxVelocity.x);
-      _velocity.y = Mathf.Clamp(_velocity.y, -_settings.MaxVelocity.y, _settings.MaxVelocity.y);
-    }
-    #endregion
-
-    #region Set Force
-    public void AddForce(Vector2 force)
-    {
-      _velocity += force;
-    }
-
-    public void AddHorizontalForce(float x)
-    {
-      _velocity.x += x;
-    }
-
-    public void AddVerticalForce(float y)
-    {
-      _velocity.y += y;
-    }
-
-    public void SetForce(Vector2 force)
-    {
-      _velocity = force;
-    }
-
-    public void SetHorizontalForce(float x)
-    {
-      _velocity.x = x;
-    }
-
-    public void SetVerticalForce(float y)
-    {
-      _velocity.y = y;
+      float horizontalMovementForce = Mathf.Lerp(_character.Controller.Speed.x, _horizontalSpeed, Time.deltaTime * _settings.AirSpeedFactor);
+      _character.Controller.SetHorizontalForce(horizontalMovementForce);
+      float verticalMovementForce = Mathf.Lerp(_character.Controller.Speed.y, _verticalSpeed, Time.deltaTime * _settings.AirSpeedFactor);
+      _character.Controller.SetVerticalForce(verticalMovementForce);
     }
     #endregion
   }

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7702343424421911401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d4d228601c72f4d843f7ab5ae479b1, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  guid: 520d47e3c74789843b215b05bc78697d
+  position: {x: 60.241398, y: -167.42624}
+  scenePath: Assets/Scenes/MainMenu.unity
+  sceneTransitions:
+  - {fileID: 6962819123499750127}
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 5, y: 5, z: 5}
+--- !u!114 &-2247906642898277767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7c390447be9544ca26db168521ec6b, type: 3}
+  m_Name: SceneTransition
+  m_EditorClassIdentifier: 
+  guid: 5bcde60500639fe4eb4f5640b4d033ab
+  position: {x: 405.99994, y: -106.17238}
+  parent: {fileID: 3794412838678357255}
+  from: {fileID: 6962819123499750127}
+  to: {fileID: 0}
+  autoLoadWaitTime: 0
+  anyInput: 0
+  waitTime: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbd867bb9ccf3144ada0eb566d6aa27, type: 3}
+  m_Name: SceneGraph
+  m_EditorClassIdentifier: 
+  scenes:
+  - {fileID: -7702343424421911401}
+  - {fileID: 3794412838678357255}
+--- !u!114 &3794412838678357255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d4d228601c72f4d843f7ab5ae479b1, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  guid: 242f9bb9d3aea914cb9fadc2d990ca41
+  position: {x: 380.99997, y: -165.17241}
+  scenePath: Assets/Scenes/GreenCity.unity
+  sceneTransitions:
+  - {fileID: -2247906642898277767}
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 5, y: 5, z: 5}
+--- !u!114 &6962819123499750127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7c390447be9544ca26db168521ec6b, type: 3}
+  m_Name: SceneTransition
+  m_EditorClassIdentifier: 
+  guid: f7d9c5633e5e7bd4d9036943849bacc0
+  position: {x: 85.241394, y: -108.42621}
+  parent: {fileID: -7702343424421911401}
+  from: {fileID: 0}
+  to: {fileID: -2247906642898277767}
+  autoLoadWaitTime: 0
+  anyInput: 0
+  waitTime: 0

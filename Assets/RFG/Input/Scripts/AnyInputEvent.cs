@@ -7,6 +7,7 @@ namespace RFG
   public class AnyInputEvent : MonoBehaviour
   {
     [field: SerializeField] private bool Once { get; set; }
+    [field: SerializeField] private bool DisableEscape { get; set; } = false;
     [field: SerializeField] private UnityEvent OnInput;
 
     private bool _hasInvoked;
@@ -23,6 +24,10 @@ namespace RFG
 
       if (InputEx.HasAnyInput())
       {
+        if (DisableEscape && InputEx.WasEscapePressedThisFrame())
+        {
+          return;
+        }
         _hasInvoked = true;
         OnInput?.Invoke();
       }

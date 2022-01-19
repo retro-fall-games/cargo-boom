@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: -4649667236291257555
     second: chopper-Sheet_3
+  - first:
+      213: 4020935272384338822
+    second: chopper-Sheet_4
+  - first:
+      213: 5303764084885431176
+    second: chopper-Sheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -194,6 +200,48 @@ TextureImporter:
       bones: []
       spriteID: d2b56199840197fb0800000000000000
       internalID: -4649667236291257555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chopper-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b9e4f835b3dc730800000000000000
+      internalID: 4020935272384338822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chopper-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883221ca551ca9940800000000000000
+      internalID: 5303764084885431176
       vertices: []
       indices: 
       edges: []

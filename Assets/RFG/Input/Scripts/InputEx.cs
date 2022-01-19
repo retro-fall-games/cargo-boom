@@ -30,5 +30,15 @@ namespace RFG
       }
       return anyInput;
     }
+
+    public static bool WasEscapePressedThisFrame()
+    {
+      var keyboard = Keyboard.current;
+      if (keyboard != null)
+      {
+        return keyboard.escapeKey.wasPressedThisFrame;
+      }
+      return false;
+    }
   }
 }

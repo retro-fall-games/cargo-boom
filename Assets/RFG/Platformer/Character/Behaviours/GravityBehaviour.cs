@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Behaviours/Gravity")]
   public class GravityBehaviour : MonoBehaviour

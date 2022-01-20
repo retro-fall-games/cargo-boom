@@ -1,6 +1,6 @@
 
 
-namespace RFG
+namespace RFG.Platformer
 {
   using BehaviourTree;
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Interactions/Physics/Gravity Point")]
   public class GravityPoint : MonoBehaviour

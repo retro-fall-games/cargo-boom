@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   public class AIAjent
   {

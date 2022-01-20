@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [CreateAssetMenu(fileName = "New Crouch Walking State", menuName = "RFG/Platformer/Character/States/Movement State/Crouch Walking")]
   public class CrouchWalkingState : State

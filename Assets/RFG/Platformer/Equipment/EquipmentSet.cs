@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [Serializable]
   public class EquipmentSetSave

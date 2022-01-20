@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Interactions/Physics/PhysicsVolume2D")]
   public class PhysicsVolume2D : MonoBehaviour

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using RFG.Character;
 
 namespace RFG.ScrollingShooter
 {
   public enum CharacterType { Player, AI }
 
   [AddComponentMenu("RFG/Scrolling Shooter/Character/Character")]
-  public class Character : MonoBehaviour, IPooledObject
+  public class Character : RFG.Character.Character
   {
     [Header("Type")]
     public CharacterType CharacterType = CharacterType.Player;
@@ -100,7 +101,7 @@ namespace RFG.ScrollingShooter
       MovementState.Bind(_characterContext);
     }
 
-    public void OnObjectSpawn(params object[] objects)
+    public override void OnObjectSpawn(params object[] objects)
     {
       CharacterState.ResetToDefaultState();
       MovementState.ResetToDefaultState();
@@ -108,7 +109,7 @@ namespace RFG.ScrollingShooter
     #endregion
 
     #region Kill
-    public void Kill()
+    public override void Kill()
     {
       CharacterState.ChangeState(typeof(DeathState));
     }

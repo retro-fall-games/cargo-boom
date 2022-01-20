@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   using BehaviourTree;
   public class JumpActionNode : ActionNode

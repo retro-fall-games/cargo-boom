@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [CreateAssetMenu(fileName = "New Character Controller Parameters 2D", menuName = "RFG/Platformer/Character/Character Controller Parameters 2D")]
   public class CharacterControllerParameters2D : ScriptableObject

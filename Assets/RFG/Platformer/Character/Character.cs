@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using RFG.Character;
 
-namespace RFG
+namespace RFG.Platformer
 {
   using SceneGraph;
 
   public enum CharacterType { Player, AI }
   [AddComponentMenu("RFG/Platformer/Character/Character")]
-  public class Character : MonoBehaviour, IPooledObject
+  public class Character : RFG.Character.Character
   {
     [Header("Type")]
     public CharacterType CharacterType = CharacterType.Player;
@@ -101,7 +102,7 @@ namespace RFG
       MovementState.Bind(_characterContext);
     }
 
-    public void OnObjectSpawn(params object[] objects)
+    public override void OnObjectSpawn(params object[] objects)
     {
       CharacterState.ResetToDefaultState();
       MovementState.ResetToDefaultState();
@@ -109,7 +110,7 @@ namespace RFG
     #endregion
 
     #region Kill
-    public void Kill()
+    public override void Kill()
     {
       CharacterState.ChangeState(typeof(DeathState));
     }

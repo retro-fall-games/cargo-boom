@@ -88,7 +88,7 @@ namespace RFG.ScrollingShooter
       gameObject.GetOrAddComponent<PlayerInput>();
       gameObject.GetOrAddComponent<PauseAbility>();
       gameObject.GetOrAddComponent<MovementAbility>();
-      gameObject.GetOrAddComponent<HealthBehaviour>();
+      gameObject.GetOrAddComponent<RFG.Character.HealthBehaviour>();
 
       CreatePacks(gameObject, newFolderPath + "/Settings");
       CreateGameEventListeners(gameObject);
@@ -132,7 +132,7 @@ namespace RFG.ScrollingShooter
       UnityEditor.Animations.AnimatorController animatorController = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath($"{newFolderPath}/Sprites/Animations/{name}.controller");
       animator.runtimeAnimatorController = animatorController;
 
-      gameObject.GetOrAddComponent<HealthBehaviour>();
+      gameObject.GetOrAddComponent<RFG.Character.HealthBehaviour>();
 
       CreatePacks(gameObject, newFolderPath + "/Settings");
 

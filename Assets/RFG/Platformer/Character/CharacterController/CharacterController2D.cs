@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using MyBox;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Character Controller 2D")]
   public class CharacterController2D : MonoBehaviour, IPhysics2D

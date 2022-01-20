@@ -1,6 +1,7 @@
 using UnityEngine;
+using RFG.Character;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Behaviours/Knockback")]
   public class KnockbackBehaviour : MonoBehaviour

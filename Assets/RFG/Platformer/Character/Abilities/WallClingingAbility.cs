@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Ability/Wall Clinging")]
   public class WallClingingAbility : MonoBehaviour, IAbility

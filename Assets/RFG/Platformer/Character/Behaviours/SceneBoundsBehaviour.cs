@@ -4,7 +4,7 @@ using MyBox;
 using UnityEditor;
 #endif
 
-namespace RFG
+namespace RFG.Platformer
 {
   using SceneGraph;
 

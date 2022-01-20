@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Ability/Ledge Grab")]
   public class LedgeGrabAbility : MonoBehaviour, IAbility

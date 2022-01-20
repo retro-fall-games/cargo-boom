@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [CreateAssetMenu(fileName = "New Spawn State", menuName = "RFG/Platformer/Character/States/Character State/Spawn")]
   public class SpawnState : State

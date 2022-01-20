@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 
-namespace RFG
+namespace RFG.Platformer
 {
   public class PlatformerEditorWindow : EditorWindow
   {

@@ -1,6 +1,7 @@
 using UnityEngine.InputSystem;
+using RFG.Character;
 
-namespace RFG
+namespace RFG.Platformer
 {
   public class StateCharacterContext : StateAnimatorContext
   {

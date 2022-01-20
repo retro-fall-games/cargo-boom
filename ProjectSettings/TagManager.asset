@@ -8,8 +8,8 @@ TagManager:
   - Audio
   - Trigger
   - Breakable
-  - Checkpoint
-  - Warp
+  - PickUp
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - 
   - Player
   - AI
-  - 
+  - Enemy
   - 
   - 
   - 

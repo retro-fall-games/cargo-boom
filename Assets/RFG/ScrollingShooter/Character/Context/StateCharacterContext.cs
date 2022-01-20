@@ -25,7 +25,7 @@ namespace RFG.ScrollingShooter
     public SettingsPack DefaultSettingsPack = null;
 
     // Behaviours
-    public HealthBehaviour healthBehaviour;
+    public RFG.Character.HealthBehaviour healthBehaviour;
 
     public StateCharacterContext()
     {

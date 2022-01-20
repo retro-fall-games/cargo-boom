@@ -22,6 +22,7 @@ namespace RFG
     [field: SerializeField] private TweenPathType TweenPathType { get; set; } = TweenPathType.Point;
     [field: SerializeField] public List<Vector3> Path { get; set; }
     [field: SerializeField] public bool Local { get; set; }
+    [field: SerializeField] public GameObject TweenGameObject { get; set; }
 
     public bool IsPlaying { get; private set; }
     public bool IsCompleted { get; private set; }
@@ -35,9 +36,15 @@ namespace RFG
     private LTDescr _desc;
     private int _id;
     private bool _isPaused = false;
+    private GameObject _gameObject;
 
     private void Awake()
     {
+      _gameObject = TweenGameObject;
+      if (_gameObject == null)
+      {
+        _gameObject = gameObject;
+      }
       if (PlayOnAwake)
       {
         Play();
@@ -46,7 +53,7 @@ namespace RFG
 
     public void Play(bool reversePath = false)
     {
-      LeanTween.cancel(gameObject);
+      LeanTween.cancel(_gameObject);
 
       IsCompleted = false;
       IsPlaying = true;
@@ -64,11 +71,11 @@ namespace RFG
         LTBezierPath ltPath = new LTBezierPath(paths.ToArray());
         if (Local)
         {
-          _desc = LeanTween.moveLocal(gameObject, ltPath.pts, Time);
+          _desc = LeanTween.moveLocal(_gameObject, ltPath.pts, Time);
         }
         else
         {
-          _desc = LeanTween.move(gameObject, ltPath.pts, Time);
+          _desc = LeanTween.move(_gameObject, ltPath.pts, Time);
         }
       }
       else if (TweenPathType == TweenPathType.Spline)
@@ -76,11 +83,11 @@ namespace RFG
         LTSpline ltSpline = new LTSpline(paths.ToArray());
         if (Local)
         {
-          _desc = LeanTween.moveSplineLocal(gameObject, ltSpline.pts, Time);
+          _desc = LeanTween.moveSplineLocal(_gameObject, ltSpline.pts, Time);
         }
         else
         {
-          _desc = LeanTween.moveSpline(gameObject, ltSpline.pts, Time);
+          _desc = LeanTween.moveSpline(_gameObject, ltSpline.pts, Time);
         }
       }
       else if (TweenPathType == TweenPathType.Point)
@@ -89,22 +96,22 @@ namespace RFG
         {
           if (Local)
           {
-            _desc = LeanTween.moveLocal(gameObject, paths[0], Time);
+            _desc = LeanTween.moveLocal(_gameObject, paths[0], Time);
           }
           else
           {
-            _desc = LeanTween.move(gameObject, paths[0], Time);
+            _desc = LeanTween.move(_gameObject, paths[0], Time);
           }
         }
         else
         {
           if (Local)
           {
-            _desc = LeanTween.moveLocal(gameObject, paths.ToArray(), Time);
+            _desc = LeanTween.moveLocal(_gameObject, paths.ToArray(), Time);
           }
           else
           {
-            _desc = LeanTween.move(gameObject, paths.ToArray(), Time);
+            _desc = LeanTween.move(_gameObject, paths.ToArray(), Time);
           }
         }
       }
@@ -124,7 +131,7 @@ namespace RFG
 
     public void Cancel()
     {
-      LeanTween.cancel(gameObject);
+      LeanTween.cancel(_gameObject);
     }
 
     public void SetLoopType(TweenLoopType loopType)

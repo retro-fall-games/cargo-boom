@@ -1,4 +1,4 @@
-namespace RFG
+namespace RFG.Platformer
 {
   using BehaviourTree;
   public class ChangeDirectionActionNode : ActionNode

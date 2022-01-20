@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [CreateAssetMenu(fileName = "New Dead State", menuName = "RFG/Platformer/Character/States/Character State/Dead")]
   public class DeadState : State

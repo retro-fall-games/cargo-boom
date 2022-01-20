@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using System;
 
-namespace RFG
+namespace RFG.Platformer
 {
   public static class CreateCharacter
   {
@@ -204,8 +204,8 @@ namespace RFG
           }
           character.MovementState.StatePack = movementStatePack;
 
-          characterStatePack.GenerateCharacterStates();
-          movementStatePack.GenerateMovementStates();
+          GenerateCharacterStates(characterStatePack);
+          GenerateMovementStates(movementStatePack);
         }
         EditorUtility.SetDirty(character);
       }
@@ -252,6 +252,25 @@ namespace RFG
       animationWaitEvent.Event = character.SettingsPack.AnimationWaitEvent;
       GameEventListener animationDone = gameObject.AddComponent<GameEventListener>();
       animationDone.Event = character.SettingsPack.AnimationDoneEvent;
+    }
+
+    public static void GenerateCharacterStates(StatePack statePack)
+    {
+      statePack.AddToPack<SpawnState>(true);
+      statePack.AddToPack<AliveState>();
+      statePack.AddToPack<DeadState>();
+      statePack.AddToPack<DeathState>("Death", true, 1f);
+    }
+
+    public static void GenerateMovementStates(StatePack statePack)
+    {
+      statePack.AddToPack<IdleState>("Idle", false, 0, true);
+      statePack.AddToPack<WalkingState>("Walk");
+      statePack.AddToPack<WalkingUpSlopeState>("Walk Up Slope");
+      statePack.AddToPack<WalkingDownSlopeState>("Walk");
+      statePack.AddToPack<RunningState>("Run");
+      statePack.AddToPack<RunningUpSlopeState>("Run Up Slope");
+      statePack.AddToPack<RunningDownSlopeState>("Run");
     }
 
   }

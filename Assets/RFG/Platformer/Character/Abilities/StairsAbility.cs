@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using MyBox;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Ability/Stairs")]
   public class StairsAbility : MonoBehaviour, IAbility

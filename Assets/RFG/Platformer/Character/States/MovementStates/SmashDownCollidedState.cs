@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [CreateAssetMenu(fileName = "New Smash Down Collided State", menuName = "RFG/Platformer/Character/States/Movement State/Smash Down Collided")]
   public class SmashDownCollidedState : State

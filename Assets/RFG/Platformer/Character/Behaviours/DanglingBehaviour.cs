@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   [AddComponentMenu("RFG/Platformer/Character/Behaviours/Dangling")]
   public class DanglingBehaviour : MonoBehaviour

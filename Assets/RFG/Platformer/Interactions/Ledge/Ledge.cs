@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Platformer
 {
   public enum LedgeGrabDirection { Left, Right }
 

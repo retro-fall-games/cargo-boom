@@ -1,4 +1,4 @@
-namespace RFG
+namespace RFG.Platformer
 {
   public class CharacterControllerState2D
   {

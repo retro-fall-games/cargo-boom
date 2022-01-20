@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.InputSystem;
 
-namespace RFG
+namespace RFG.Items
 {
   public class ItemUI : MonoBehaviour, IPointerClickHandler
   {

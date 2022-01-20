@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using RFG.Items;
 
 namespace RFG.Platformer
 {
-  [CreateAssetMenu(fileName = "New Ability Item", menuName = "RFG/Platformer/Items/Consumable/Ability")]
-  public class AbilityItem : Consumable
+  [CreateAssetMenu(fileName = "New Add Movement State Consumable", menuName = "RFG/Platformer/Items/Consumable/Add Movement State")]
+  public class AddMovementStateConsumable : Consumable
   {
     public List<State> AbilityStates;
 

@@ -175,14 +175,14 @@ namespace RFG.Platformer
         return;
       }
       int decisionIndex = UnityEngine.Random.Range(0, 100);
-      if (decisionIndex < 900)
-      {
-        ctx.equipmentSet.PrimaryWeapon?.Perform();
-      }
-      else
-      {
-        ctx.equipmentSet.SecondaryWeapon?.Perform();
-      }
+      // if (decisionIndex < 900)
+      // {
+      //   ctx.equipmentSet.PrimaryWeapon?.Perform();
+      // }
+      // else
+      // {
+      //   ctx.equipmentSet.SecondaryWeapon?.Perform();
+      // }
     }
 
     public static void PrimaryAttack(this AIAjent ctx)

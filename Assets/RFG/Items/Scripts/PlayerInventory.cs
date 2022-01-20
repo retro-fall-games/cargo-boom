@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Items
 {
   [AddComponentMenu("RFG/Items/Player Inventory")]
   public class PlayerInventory : MonoBehaviour

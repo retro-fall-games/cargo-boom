@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Items
 {
   public enum EquipmentSlot
   {

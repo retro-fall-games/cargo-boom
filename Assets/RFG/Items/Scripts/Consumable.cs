@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Items
 {
   public abstract class Consumable : Item, IConsumable
   {

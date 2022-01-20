@@ -1,12 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
 using System.Linq;
 using System;
 using System.Collections.Generic;
 
-namespace RFG
+namespace RFG.Items
 {
   public class ItemEditorWindow : EditorWindow
   {
@@ -68,8 +67,6 @@ namespace RFG
 
       return inventoryGenerateItems;
     }
-
-
 
     private VisualElement CreatePickUpManager()
     {

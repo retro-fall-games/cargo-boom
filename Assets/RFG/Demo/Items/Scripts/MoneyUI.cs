@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace RFG
+namespace RFG.Items
 {
   public class MoneyUI : MonoBehaviour
   {

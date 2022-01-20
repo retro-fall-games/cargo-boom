@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using MyBox;
 
-namespace RFG
+namespace RFG.Items
 {
   [AddComponentMenu("RFG/Items/Pick Up")]
   public class PickUp : MonoBehaviour, IPointerClickHandler

@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Weapons
 {
-  public abstract class WeaponState : ScriptableObject
+  public abstract class ProjectileWeaponState : ScriptableObject
   {
     public string[] EnterEffects;
     public string[] ExitEffects;
 
-    public virtual void Enter(Weapon weapon)
+    public virtual void Enter(ProjectileWeapon weapon)
     {
       if (EnterEffects.Length > 0)
       {
@@ -19,12 +19,12 @@ namespace RFG
       }
     }
 
-    public virtual Type Execute(Weapon weapon)
+    public virtual Type Execute(ProjectileWeapon weapon)
     {
       return null;
     }
 
-    public virtual void Exit(Weapon weapon)
+    public virtual void Exit(ProjectileWeapon weapon)
     {
       if (ExitEffects.Length > 0)
       {

@@ -5,7 +5,7 @@ using MyBox;
 using UnityEditor;
 #endif
 
-namespace RFG
+namespace RFG.Items
 {
   [Serializable]
   public class ItemSave

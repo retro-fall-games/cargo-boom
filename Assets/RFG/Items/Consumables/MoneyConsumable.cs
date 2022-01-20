@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Items
 {
   [CreateAssetMenu(fileName = "New Money Item", menuName = "RFG/Items/Consumable/Money Item")]
   public class MoneyConsumable : Consumable

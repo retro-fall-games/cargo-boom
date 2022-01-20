@@ -14,9 +14,9 @@ namespace RFG.Platformer
     [Tooltip("The stun cooldown time to start making decisions again")]
     public float StunCooldownTime = 5f;
 
-    [Header("Weapons To Equip")]
-    public WeaponItem PrimaryWeapon;
-    public WeaponItem SecondaryWeapon;
+    // [Header("Weapons To Equip")]
+    // public WeaponItem PrimaryWeapon;
+    // public WeaponItem SecondaryWeapon;
     public bool HasAggro { get; set; }
 
     [HideInInspector]
@@ -41,14 +41,14 @@ namespace RFG.Platformer
       _aggro = GetComponent<Aggro>();
 
       // Equip Weapons
-      if (PrimaryWeapon != null)
-      {
-        _equipmentSet.EquipPrimaryWeapon(PrimaryWeapon);
-      }
-      if (SecondaryWeapon != null)
-      {
-        _equipmentSet.EquipSecondaryWeapon(SecondaryWeapon);
-      }
+      // if (PrimaryWeapon != null)
+      // {
+      //   _equipmentSet.EquipPrimaryWeapon(PrimaryWeapon);
+      // }
+      // if (SecondaryWeapon != null)
+      // {
+      //   _equipmentSet.EquipSecondaryWeapon(SecondaryWeapon);
+      // }
     }
 
     private void Start()

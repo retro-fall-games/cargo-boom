@@ -8,7 +8,7 @@ namespace RFG.Platformer
   {
     private Character _character;
     private PlayerInput _playerInput;
-    private PlayerInventory _playerInventory;
+    // private PlayerInventory _playerInventory;
     private InputAction _primaryAttackInput;
     private InputAction _secondaryAttackInput;
     private bool _pointerOverUi = false;
@@ -18,7 +18,7 @@ namespace RFG.Platformer
     {
       _character = GetComponent<Character>();
       _playerInput = GetComponent<PlayerInput>();
-      _playerInventory = GetComponent<PlayerInventory>();
+      // _playerInventory = GetComponent<PlayerInventory>();
       _primaryAttackInput = _playerInput.actions["PrimaryAttack"];
       _secondaryAttackInput = _playerInput.actions["SecondaryAttack"];
     }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace RFG
+namespace RFG.Items
 {
   [AddComponentMenu("RFG/Items/TMP Text Money Observer")]
   public class TMP_Text_MoneyObserver : MonoBehaviour

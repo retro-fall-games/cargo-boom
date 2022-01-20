@@ -1,4 +1,4 @@
-namespace RFG
+namespace RFG.Items
 {
   public interface IItem
   {

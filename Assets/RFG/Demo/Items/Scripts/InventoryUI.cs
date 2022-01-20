@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Items
 {
   public class InventoryUI : Singleton<InventoryUI>
   {

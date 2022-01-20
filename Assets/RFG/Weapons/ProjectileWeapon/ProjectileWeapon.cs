@@ -2,20 +2,20 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RFG
+namespace RFG.Weapons
 {
-  [AddComponentMenu("RFG/Platformer/Items/Equipables/Weapon/Weapon")]
-  public class Weapon : MonoBehaviour
+  [AddComponentMenu("RFG/Items/Equipables/Weapon/Weapon")]
+  public class ProjectileWeapon : MonoBehaviour
   {
     [Header("Settings")]
-    public WeaponItem WeaponItem;
+    public ProjectileWeaponEquipable ProjectileWeaponEquipable;
     public Transform FirePoint;
     // public EquipmentSet EquipmentSet;
 
     [Header("States")]
-    public WeaponState[] States;
-    public WeaponState DefaultState;
-    public WeaponState CurrentState;
+    public ProjectileWeaponState[] States;
+    public ProjectileWeaponState DefaultState;
+    public ProjectileWeaponState CurrentState;
     public Type PreviousStateType { get; private set; }
     public Type CurrentStateType { get; private set; }
 
@@ -24,13 +24,13 @@ namespace RFG
     private float _fireRateElapsed;
     private float _cooldownElapsed;
     private float _gainAmmoOverTimeElapsed;
-    private Dictionary<Type, WeaponState> _states;
+    private Dictionary<Type, ProjectileWeaponState> _states;
 
     private void Awake()
     {
-      WeaponItem.Ammo = WeaponItem.StartingAmmo;
-      _states = new Dictionary<Type, WeaponState>();
-      foreach (WeaponState state in States)
+      ProjectileWeaponEquipable.Ammo = ProjectileWeaponEquipable.StartingAmmo;
+      _states = new Dictionary<Type, ProjectileWeaponState>();
+      foreach (ProjectileWeaponState state in States)
       {
         _states.Add(state.GetType(), state);
       }
@@ -43,7 +43,7 @@ namespace RFG
 
     private void Update()
     {
-      if (!WeaponItem.IsEquipped)
+      if (!ProjectileWeaponEquipable.IsEquipped)
       {
         return;
       }
@@ -86,43 +86,43 @@ namespace RFG
 
     private void LateUpdate()
     {
-      if (!WeaponItem.IsEquipped)
+      if (!ProjectileWeaponEquipable.IsEquipped)
       {
         return;
       }
       _fireRateElapsed += Time.deltaTime;
-      if (_fireRateElapsed >= WeaponItem.FireRate)
+      if (_fireRateElapsed >= ProjectileWeaponEquipable.FireRate)
       {
         _fireRateElapsed = 0;
-        WeaponItem.CanUse = true;
+        ProjectileWeaponEquipable.CanUse = true;
       }
 
-      if (WeaponItem.IsInCooldown)
+      if (ProjectileWeaponEquipable.IsInCooldown)
       {
         _cooldownElapsed += Time.deltaTime;
-        if (_cooldownElapsed >= WeaponItem.Cooldown)
+        if (_cooldownElapsed >= ProjectileWeaponEquipable.Cooldown)
         {
           _cooldownElapsed = 0;
-          WeaponItem.IsInCooldown = false;
+          ProjectileWeaponEquipable.IsInCooldown = false;
         }
       }
 
-      if (CurrentStateType == typeof(WeaponIdleState) && !WeaponItem.IsInCooldown && !WeaponItem.UnlimitedAmmo)
+      if (CurrentStateType == typeof(WeaponIdleState) && !ProjectileWeaponEquipable.IsInCooldown && !ProjectileWeaponEquipable.UnlimitedAmmo)
       {
         _gainAmmoOverTimeElapsed += Time.deltaTime;
-        if (_gainAmmoOverTimeElapsed >= WeaponItem.GainAmmoOverTime)
+        if (_gainAmmoOverTimeElapsed >= ProjectileWeaponEquipable.GainAmmoOverTime)
         {
           _gainAmmoOverTimeElapsed = 0;
-          WeaponItem.AddAmmo(WeaponItem.AmmoGain);
+          ProjectileWeaponEquipable.AddAmmo(ProjectileWeaponEquipable.AmmoGain);
         }
       }
     }
 
     // private void OnPickUp(InventoryManager InventoryManager)
     // {
-    //   // if (InventoryManager.InInventory(WeaponItem.Guid))
+    //   // if (InventoryManager.InInventory(ProjectileWeaponEquipable.Guid))
     //   // {
-    //   //   WeaponItem.Refill();
+    //   //   ProjectileWeaponEquipable.Refill();
     //   // }
     // }
 
@@ -130,19 +130,19 @@ namespace RFG
     // {
     //   if (EquipmentSet.PrimaryWeapon == null)
     //   {
-    //     EquipmentSet.EquipPrimaryWeapon(WeaponItem);
-    //     WeaponItem.IsEquipped = true;
+    //     EquipmentSet.EquipPrimaryWeapon(ProjectileWeaponEquipable);
+    //     ProjectileWeaponEquipable.IsEquipped = true;
     //   }
-    //   else if (!EquipmentSet.PrimaryWeapon.Equals(WeaponItem) && EquipmentSet.SecondaryWeapon == null)
+    //   else if (!EquipmentSet.PrimaryWeapon.Equals(ProjectileWeaponEquipable) && EquipmentSet.SecondaryWeapon == null)
     //   {
-    //     EquipmentSet.EquipSecondaryWeapon(WeaponItem);
-    //     WeaponItem.IsEquipped = true;
+    //     EquipmentSet.EquipSecondaryWeapon(ProjectileWeaponEquipable);
+    //     ProjectileWeaponEquipable.IsEquipped = true;
     //   }
     // }
 
     // private void OnUnequip(InventoryManager InventoryManager)
     // {
-    //   WeaponItem.IsEquipped = false;
+    //   ProjectileWeaponEquipable.IsEquipped = false;
     // }
 
     private void OnStateChange(Type state)
@@ -152,18 +152,18 @@ namespace RFG
 
     private void OnEnable()
     {
-      // WeaponItem.OnPickUp += OnPickUp;
-      // WeaponItem.OnEquip += OnEquip;
-      // WeaponItem.OnUnequip += OnUnequip;
-      WeaponItem.OnStateChange += OnStateChange;
+      // ProjectileWeaponEquipable.OnPickUp += OnPickUp;
+      // ProjectileWeaponEquipable.OnEquip += OnEquip;
+      // ProjectileWeaponEquipable.OnUnequip += OnUnequip;
+      ProjectileWeaponEquipable.OnStateChange += OnStateChange;
     }
 
     private void OnDisable()
     {
-      // WeaponItem.OnPickUp -= OnPickUp;
-      // WeaponItem.OnEquip -= OnEquip;
-      // WeaponItem.OnUnequip -= OnUnequip;
-      WeaponItem.OnStateChange -= OnStateChange;
+      // ProjectileWeaponEquipable.OnPickUp -= OnPickUp;
+      // ProjectileWeaponEquipable.OnEquip -= OnEquip;
+      // ProjectileWeaponEquipable.OnUnequip -= OnUnequip;
+      ProjectileWeaponEquipable.OnStateChange -= OnStateChange;
     }
 
   }

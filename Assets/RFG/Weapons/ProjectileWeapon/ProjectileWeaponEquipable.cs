@@ -1,18 +1,19 @@
 using System;
 using UnityEngine;
+using RFG.Items;
 
-namespace RFG
+namespace RFG.Weapons
 {
   [Serializable]
-  public class WeaponItemSave
+  public class ProjectileWeaponEquipableSave
   {
     public string Guid;
     public int Ammo;
     public bool IsEquipped;
   }
 
-  [CreateAssetMenu(fileName = "New Weapon Item", menuName = "RFG/Platformer/Items/Equipable/Weapon")]
-  public class WeaponItem : Equipable
+  [CreateAssetMenu(fileName = "New Projectile Weapon IteEquipablem", menuName = "RFG/Weapons/Projectile Weapon Equipable")]
+  public class ProjectileWeaponEquipable : WeaponEquipable
   {
     public enum WeaponType { InstaFire, Chargable }
 
@@ -60,7 +61,7 @@ namespace RFG
       {
         return;
       }
-      if (weaponType == WeaponItem.WeaponType.Chargable)
+      if (weaponType == ProjectileWeaponEquipable.WeaponType.Chargable)
       {
         IsFiring = true;
         OnStateChange?.Invoke(typeof(WeaponChargingState));
@@ -73,7 +74,7 @@ namespace RFG
       {
         return;
       }
-      if (weaponType == WeaponItem.WeaponType.Chargable)
+      if (weaponType == ProjectileWeaponEquipable.WeaponType.Chargable)
       {
         OnStateChange?.Invoke(typeof(WeaponIdleState));
       }
@@ -81,7 +82,7 @@ namespace RFG
 
     public void Perform()
     {
-      if (!IsEquipped || !CanUse || IsInCooldown || (Ammo <= 0 && !UnlimitedAmmo) || (weaponType == WeaponItem.WeaponType.Chargable && !IsFiring))
+      if (!IsEquipped || !CanUse || IsInCooldown || (Ammo <= 0 && !UnlimitedAmmo) || (weaponType == ProjectileWeaponEquipable.WeaponType.Chargable && !IsFiring))
       {
         return;
       }
@@ -116,9 +117,9 @@ namespace RFG
       AddAmmo(RefillAmmo);
     }
 
-    public WeaponItemSave GetWeaponSave()
+    public ProjectileWeaponEquipableSave GetWeaponSave()
     {
-      WeaponItemSave save = new WeaponItemSave();
+      ProjectileWeaponEquipableSave save = new ProjectileWeaponEquipableSave();
       save.Guid = Guid;
       save.Ammo = Ammo;
       save.IsEquipped = IsEquipped;

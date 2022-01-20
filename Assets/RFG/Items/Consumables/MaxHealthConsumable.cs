@@ -1,6 +1,7 @@
 using UnityEngine;
+using RFG.Character;
 
-namespace RFG.Character
+namespace RFG.Items
 {
   [CreateAssetMenu(fileName = "New Max Health Item", menuName = "RFG/Platformer/Items/Consumable/Max Health")]
   public class MaxHealthItem : Consumable

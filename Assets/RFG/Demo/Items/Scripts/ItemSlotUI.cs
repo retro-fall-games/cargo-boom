@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace RFG
+namespace RFG.Items
 {
   public class ItemSlotUI : MonoBehaviour, IPointerClickHandler
   {

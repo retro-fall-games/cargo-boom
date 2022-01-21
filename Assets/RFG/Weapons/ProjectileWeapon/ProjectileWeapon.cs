@@ -1,44 +1,31 @@
 using System;
-using System.Collections.Generic;
+// using System.Collections.Generic;
 using UnityEngine;
 
 namespace RFG.Weapons
 {
-  [AddComponentMenu("RFG/Items/Equipables/Weapon/Weapon")]
+  [AddComponentMenu("RFG/Weapons/Projectile Weapon/Projectile Weapon")]
   public class ProjectileWeapon : MonoBehaviour
   {
     [Header("Settings")]
     public ProjectileWeaponEquipable ProjectileWeaponEquipable;
     public Transform FirePoint;
-    // public EquipmentSet EquipmentSet;
+
 
     [Header("States")]
-    public ProjectileWeaponState[] States;
-    public ProjectileWeaponState DefaultState;
-    public ProjectileWeaponState CurrentState;
-    public Type PreviousStateType { get; private set; }
-    public Type CurrentStateType { get; private set; }
-
-    [HideInInspector]
+    public RFG.StateMachine WeaponState;
 
     private float _fireRateElapsed;
     private float _cooldownElapsed;
     private float _gainAmmoOverTimeElapsed;
-    private Dictionary<Type, ProjectileWeaponState> _states;
+
+    [HideInInspector] public StateProjectileWeaponContext Context => _projectileWeaponContext;
+    private StateProjectileWeaponContext _projectileWeaponContext = new StateProjectileWeaponContext();
 
     private void Awake()
     {
       ProjectileWeaponEquipable.Ammo = ProjectileWeaponEquipable.StartingAmmo;
-      _states = new Dictionary<Type, ProjectileWeaponState>();
-      foreach (ProjectileWeaponState state in States)
-      {
-        _states.Add(state.GetType(), state);
-      }
-    }
-
-    private void Start()
-    {
-      Reset();
+      InitContext();
     }
 
     private void Update()
@@ -47,41 +34,7 @@ namespace RFG.Weapons
       {
         return;
       }
-      Type newStateType = CurrentState.Execute(this);
-      if (newStateType != null)
-      {
-        ChangeState(newStateType);
-      }
-    }
-
-    public void ChangeState(Type newStateType)
-    {
-      if (_states[newStateType].Equals(CurrentState))
-      {
-        return;
-      }
-      if (CurrentState != null)
-      {
-        PreviousStateType = CurrentState.GetType();
-        CurrentState.Exit(this);
-      }
-      CurrentState = _states[newStateType];
-      CurrentStateType = newStateType;
-      CurrentState.Enter(this);
-    }
-
-    public void Reset()
-    {
-      CurrentState = null;
-      if (DefaultState != null)
-      {
-        ChangeState(DefaultState.GetType());
-      }
-    }
-
-    public void RestorePreviousState()
-    {
-      ChangeState(PreviousStateType);
+      WeaponState.Update();
     }
 
     private void LateUpdate()
@@ -90,13 +43,33 @@ namespace RFG.Weapons
       {
         return;
       }
+      FireRate();
+      Cooldown();
+      GainAmmoOverTime();
+    }
+
+    private void InitContext()
+    {
+      _projectileWeaponContext = new StateProjectileWeaponContext();
+      _projectileWeaponContext.transform = transform;
+      _projectileWeaponContext.ProjectileWeapon = this;
+
+      WeaponState.Init();
+      WeaponState.Bind(_projectileWeaponContext);
+    }
+
+    private void FireRate()
+    {
       _fireRateElapsed += Time.deltaTime;
       if (_fireRateElapsed >= ProjectileWeaponEquipable.FireRate)
       {
         _fireRateElapsed = 0;
         ProjectileWeaponEquipable.CanUse = true;
       }
+    }
 
+    private void Cooldown()
+    {
       if (ProjectileWeaponEquipable.IsInCooldown)
       {
         _cooldownElapsed += Time.deltaTime;
@@ -106,8 +79,11 @@ namespace RFG.Weapons
           ProjectileWeaponEquipable.IsInCooldown = false;
         }
       }
+    }
 
-      if (CurrentStateType == typeof(WeaponIdleState) && !ProjectileWeaponEquipable.IsInCooldown && !ProjectileWeaponEquipable.UnlimitedAmmo)
+    private void GainAmmoOverTime()
+    {
+      if (WeaponState.CurrentStateType == typeof(ProjectileWeaponIdleState) && !ProjectileWeaponEquipable.IsInCooldown && !ProjectileWeaponEquipable.UnlimitedAmmo)
       {
         _gainAmmoOverTimeElapsed += Time.deltaTime;
         if (_gainAmmoOverTimeElapsed >= ProjectileWeaponEquipable.GainAmmoOverTime)
@@ -145,9 +121,9 @@ namespace RFG.Weapons
     //   ProjectileWeaponEquipable.IsEquipped = false;
     // }
 
-    private void OnStateChange(Type state)
+    private void OnStateChange(Type newStateType)
     {
-      ChangeState(state);
+      WeaponState.ChangeState(newStateType);
     }
 
     private void OnEnable()

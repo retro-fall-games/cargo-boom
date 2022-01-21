@@ -10,6 +10,11 @@ TagManager:
   - Breakable
   - PickUp
   - Projectile
+  - SmashDownCollider
+  - AttackCollider
+  - Checkpoint
+  - Warp
+  - Enemy
   layers:
   - Default
   - TransparentFX

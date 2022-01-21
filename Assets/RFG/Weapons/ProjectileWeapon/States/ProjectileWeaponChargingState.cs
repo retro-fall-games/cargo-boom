@@ -4,11 +4,11 @@ using UnityEngine;
 namespace RFG.Weapons
 {
   [CreateAssetMenu(fileName = "New Projectile Weapon Charging State", menuName = "RFG/Weapons/Projectile Weapon/States/Charging")]
-  public class WeaponChargingState : ProjectileWeaponState
+  public class ProjectileWeaponChargingState : State
   {
-    public override Type Execute(ProjectileWeapon weapon)
+    public override Type Execute(IStateContext context)
     {
-      return typeof(WeaponChargedState);
+      return typeof(ProjectileWeaponChargedState);
     }
   }
 }

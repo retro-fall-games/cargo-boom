@@ -50,3 +50,6 @@ MonoBehaviour:
   - tag: Bullet
     prefab: {fileID: 5109261471553399367, guid: f2e5656a092f0b14881d3fc656224a86, type: 3}
     size: 10
+  - tag: Missle
+    prefab: {fileID: 5793802038532824141, guid: 2b00c9bc84710cc41b8f04120b0829f9, type: 3}
+    size: 10

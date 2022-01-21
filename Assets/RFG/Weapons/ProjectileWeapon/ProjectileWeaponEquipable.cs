@@ -12,13 +12,10 @@ namespace RFG.Weapons
     public bool IsEquipped;
   }
 
-  [CreateAssetMenu(fileName = "New Projectile Weapon IteEquipablem", menuName = "RFG/Weapons/Projectile Weapon Equipable")]
+  [CreateAssetMenu(fileName = "New Projectile Weapon Equipable", menuName = "RFG/Weapons/Projectile Weapon/Projectile Weapon Equipable")]
   public class ProjectileWeaponEquipable : WeaponEquipable
   {
-    public enum WeaponType { InstaFire, Chargable }
-
     [Header("Weapon Settings")]
-    public WeaponType weaponType = WeaponType.InstaFire;
     public float FireRate = 1f;
     public float Cooldown = 0f;
     public bool IsInCooldown = false;
@@ -55,38 +52,38 @@ namespace RFG.Weapons
       base.Equip(transform, inventory);
     }
 
-    public void Started()
+    public override void Started()
     {
       if (!IsEquipped || !CanUse || IsInCooldown || Ammo <= 0)
       {
         return;
       }
-      if (weaponType == ProjectileWeaponEquipable.WeaponType.Chargable)
+      if (WeaponEquipableType == WeaponEquipableType.Chargable)
       {
         IsFiring = true;
-        OnStateChange?.Invoke(typeof(WeaponChargingState));
+        OnStateChange?.Invoke(typeof(ProjectileWeaponChargingState));
       }
     }
 
-    public void Cancel()
+    public override void Cancel()
     {
       if (!IsEquipped || !IsFiring)
       {
         return;
       }
-      if (weaponType == ProjectileWeaponEquipable.WeaponType.Chargable)
+      if (WeaponEquipableType == WeaponEquipableType.Chargable)
       {
-        OnStateChange?.Invoke(typeof(WeaponIdleState));
+        OnStateChange?.Invoke(typeof(ProjectileWeaponIdleState));
       }
     }
 
-    public void Perform()
+    public override void Perform()
     {
-      if (!IsEquipped || !CanUse || IsInCooldown || (Ammo <= 0 && !UnlimitedAmmo) || (weaponType == ProjectileWeaponEquipable.WeaponType.Chargable && !IsFiring))
+      if (!IsEquipped || !CanUse || IsInCooldown || (Ammo <= 0 && !UnlimitedAmmo) || (WeaponEquipableType == WeaponEquipableType.Chargable && !IsFiring))
       {
         return;
       }
-      OnStateChange?.Invoke(typeof(WeaponFiringState));
+      OnStateChange?.Invoke(typeof(ProjectileWeaponFiringState));
       if (!UnlimitedAmmo)
       {
         AddAmmo(-1);

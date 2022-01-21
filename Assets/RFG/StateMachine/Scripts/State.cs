@@ -58,12 +58,11 @@ namespace RFG
     protected void PlayAnimations(IStateContext context, string clip)
     {
       StateAnimatorContext animatorContext = context as StateAnimatorContext;
-      int hash = Animator.StringToHash(clip);
-      int layerIndex = animatorContext.animator.GetLayerIndex(Layer);
-      if (animatorContext.animator.HasState(layerIndex, hash))
+      if (animatorContext.animator == null)
       {
-        animatorContext.animator.Play(clip);
+        return;
       }
+      animatorContext.animator.PlayClip(clip, Layer);
     }
 
     protected void PlayEffects(IStateContext context, string[] effects)

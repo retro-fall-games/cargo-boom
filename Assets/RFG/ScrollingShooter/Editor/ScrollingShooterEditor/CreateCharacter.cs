@@ -133,6 +133,8 @@ namespace RFG.ScrollingShooter
       animator.runtimeAnimatorController = animatorController;
 
       gameObject.GetOrAddComponent<RFG.Character.HealthBehaviour>();
+      gameObject.GetOrAddComponent<AttackAbility>();
+      gameObject.GetOrAddComponent<RFG.Items.PlayerInventory>();
 
       CreatePacks(gameObject, newFolderPath + "/Settings");
 

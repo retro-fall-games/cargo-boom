@@ -50,18 +50,22 @@ namespace RFG.ScrollingShooter
       return container;
     }
 
-    private static void CreatePlayer(string name)
+    private static string CreateFolder(string name)
     {
       string newFolderPath = EditorUtils.CreateFolderStructure(name, "Prefabs", "Sprites", "Settings");
       AssetDatabase.CreateFolder(newFolderPath + "/Sprites", "Animations");
+      return newFolderPath;
+    }
 
+    private static GameObject CreateDefaultCharacter(string name, CharacterType type, int layer, string tag, string newFolderPath)
+    {
       GameObject gameObject = new GameObject();
       gameObject.name = name;
 
       Character character = gameObject.GetOrAddComponent<Character>();
-      character.CharacterType = CharacterType.Player;
-      gameObject.layer = LayerMask.NameToLayer("Player");
-      gameObject.tag = "Player";
+      character.CharacterType = type;
+      gameObject.layer = layer;
+      gameObject.tag = tag;
 
       gameObject.GetOrAddComponent<CharacterController2D>();
 
@@ -85,15 +89,25 @@ namespace RFG.ScrollingShooter
       UnityEditor.Animations.AnimatorController animatorController = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath($"{newFolderPath}/Sprites/Animations/{name}.controller");
       animator.runtimeAnimatorController = animatorController;
 
-      gameObject.GetOrAddComponent<PlayerInput>();
-      gameObject.GetOrAddComponent<PauseAbility>();
+      gameObject.GetOrAddComponent<AttackAbility>();
       gameObject.GetOrAddComponent<MovementAbility>();
       gameObject.GetOrAddComponent<RFG.Character.HealthBehaviour>();
+      gameObject.GetOrAddComponent<RFG.Items.PlayerInventory>();
 
       CreatePacks(gameObject, newFolderPath + "/Settings");
+
+      return gameObject;
+    }
+
+    private static void CreatePlayer(string name)
+    {
+      string newFolderPath = CreateFolder(name);
+      GameObject gameObject = CreateDefaultCharacter(name, CharacterType.Player, LayerMask.NameToLayer("Player"), "Player", newFolderPath);
+
+      gameObject.GetOrAddComponent<PlayerInput>();
+      gameObject.GetOrAddComponent<PauseAbility>();
       CreateGameEventListeners(gameObject);
 
-      // Create Prefab
       EditorUtils.SaveAsPrefabAsset(gameObject, newFolderPath, name);
 
       GameObject.DestroyImmediate(gameObject);
@@ -101,44 +115,14 @@ namespace RFG.ScrollingShooter
 
     private static void CreateAI(string name)
     {
-      string newFolderPath = EditorUtils.CreateFolderStructure(name, "Prefabs", "Sprites", "Settings");
-      AssetDatabase.CreateFolder(newFolderPath + "/Sprites", "Animations");
+      string newFolderPath = CreateFolder(name);
+      GameObject gameObject = CreateDefaultCharacter(name, CharacterType.AI, LayerMask.NameToLayer("AI"), "AI", newFolderPath);
 
-      GameObject gameObject = new GameObject();
-      gameObject.name = name;
+      gameObject.GetOrAddComponent<RFG.BehaviourTree.BehaviourTreeRunner>();
+      gameObject.GetOrAddComponent<AIBrainBehaviour>();
+      gameObject.GetOrAddComponent<Tween>();
+      gameObject.GetOrAddComponent<Aggro>();
 
-      Character character = gameObject.GetOrAddComponent<Character>();
-      character.CharacterType = CharacterType.AI;
-      gameObject.layer = LayerMask.NameToLayer("AI");
-      gameObject.tag = "AI";
-
-      Rigidbody2D _rigidbody = gameObject.GetOrAddComponent<Rigidbody2D>();
-      _rigidbody.useAutoMass = false;
-      _rigidbody.mass = 1;
-      _rigidbody.drag = 0;
-      _rigidbody.angularDrag = 0.05f;
-      _rigidbody.gravityScale = 1;
-      _rigidbody.interpolation = RigidbodyInterpolation2D.None;
-      _rigidbody.sleepMode = RigidbodySleepMode2D.NeverSleep;
-      _rigidbody.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
-      _rigidbody.isKinematic = true;
-      _rigidbody.simulated = true;
-
-      BoxCollider2D _collider = gameObject.GetOrAddComponent<BoxCollider2D>();
-      _collider.isTrigger = true;
-
-      gameObject.GetOrAddComponent<SpriteRenderer>();
-      Animator animator = gameObject.GetOrAddComponent<Animator>();
-      UnityEditor.Animations.AnimatorController animatorController = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath($"{newFolderPath}/Sprites/Animations/{name}.controller");
-      animator.runtimeAnimatorController = animatorController;
-
-      gameObject.GetOrAddComponent<RFG.Character.HealthBehaviour>();
-      gameObject.GetOrAddComponent<AttackAbility>();
-      gameObject.GetOrAddComponent<RFG.Items.PlayerInventory>();
-
-      CreatePacks(gameObject, newFolderPath + "/Settings");
-
-      // Create Prefab
       EditorUtils.SaveAsPrefabAsset(gameObject, newFolderPath, name);
 
       GameObject.DestroyImmediate(gameObject);

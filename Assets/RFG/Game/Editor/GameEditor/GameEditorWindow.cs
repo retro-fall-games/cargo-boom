@@ -16,12 +16,11 @@ namespace RFG
     public virtual void CreateGUI()
     {
       VisualElement root = rootVisualElement;
+      root.CloneRootTree();
+      root.LoadRootStyles();
 
-      VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/RFG/Game/Editor/GameEditor/GameEditorWindow.uxml");
-      visualTree.CloneTree(root);
-
-      StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/RFG/Game/Editor/GameEditor/GameEditorWindow.uss");
-      root.styleSheets.Add(styleSheet);
+      Label title = root.Q<Label>("title");
+      title.text = "Game Editor";
 
       VisualElement mainContainer = root.Q<VisualElement>("container");
 
@@ -32,53 +31,10 @@ namespace RFG
     }
     #endregion
 
-    #region Containers
-    protected VisualElement CreateButtonContainer(string name)
-    {
-      VisualElement container = new VisualElement();
-      container.name = name;
-      container.AddToClassList("container");
-
-      Label label = new Label();
-      label.name = $"{name}-label";
-      label.AddToClassList("container-label");
-
-      VisualElement buttons = new VisualElement();
-      buttons.name = $"{name}-buttons";
-      buttons.AddToClassList("buttons");
-
-      container.Add(label);
-      container.Add(buttons);
-
-      return container;
-    }
-
-    protected VisualElement CreateControlsContainer(string name, string labelText)
-    {
-      VisualElement container = new VisualElement();
-      container.name = name;
-      container.AddToClassList("container");
-
-      Label label = new Label();
-      label.name = $"{name}-label";
-      label.AddToClassList("container-label");
-      label.text = labelText;
-
-      VisualElement controls = new VisualElement();
-      controls.name = $"{name}-controls";
-      controls.AddToClassList("cotrols");
-
-      container.Add(label);
-      container.Add(controls);
-
-      return container;
-    }
-    #endregion
-
     #region Game Manager
     private VisualElement CreateGameManager()
     {
-      VisualElement gameManager = CreateButtonContainer("game-manager");
+      VisualElement gameManager = VisualElementUtils.CreateButtonContainer("game-manager");
 
       VisualElement gameManagerButtons = gameManager.Q<VisualElement>("game-manager-buttons");
 
@@ -99,7 +55,7 @@ namespace RFG
     #region Create Environment Sprite
     private VisualElement CreateEnvironmentSpriteContainer()
     {
-      VisualElement container = CreateControlsContainer("environment-sprite-create", "Environment Sprite");
+      VisualElement container = VisualElementUtils.CreateControlsContainer("environment-sprite-create", "Environment Sprite");
 
       VisualElement controls = container.Q<VisualElement>("environment-sprite-create-controls");
 
@@ -148,7 +104,7 @@ namespace RFG
     #region Create Effect
     private VisualElement CreateEffectContainer()
     {
-      VisualElement container = CreateControlsContainer("effect-create", "Effects");
+      VisualElement container = VisualElementUtils.CreateControlsContainer("effect-create", "Effects");
 
       VisualElement controls = container.Q<VisualElement>("effect-create-controls");
 
@@ -175,7 +131,8 @@ namespace RFG
     private void CreateEffect(string name)
     {
       // Create Folders
-      string newFolderPath = EditorUtils.CreateFolderStructure(name, "Animation", "Data", "Prefabs", "Sprites");
+      string newFolderPath = EditorUtils.CreateFolderStructure(name, "Data", "Prefabs", "Sprites");
+      AssetDatabase.CreateFolder(newFolderPath + "/Sprites", "Animations");
 
       // Create GameObject
       GameObject activeGameObject = new GameObject();
@@ -193,7 +150,7 @@ namespace RFG
       // Create Animator Controller
       activeGameObject.GetOrAddComponent<SpriteRenderer>();
       Animator animator = activeGameObject.GetOrAddComponent<Animator>();
-      UnityEditor.Animations.AnimatorController controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath($"{newFolderPath}/Animation/{name}.controller");
+      UnityEditor.Animations.AnimatorController controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath($"{newFolderPath}/Sprites/Animations/{name}.controller");
       animator.runtimeAnimatorController = controller;
 
       // Create Prefab
@@ -206,7 +163,7 @@ namespace RFG
     #region Create Projectile
     private VisualElement CreateProjectileContainer()
     {
-      VisualElement container = CreateControlsContainer("projectile-create", "Projectile");
+      VisualElement container = VisualElementUtils.CreateControlsContainer("projectile-create", "Projectile");
 
       VisualElement controls = container.Q<VisualElement>("projectile-create-controls");
 

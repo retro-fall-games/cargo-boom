@@ -47,9 +47,18 @@ MonoBehaviour:
   - tag: Cargo
     prefab: {fileID: 6615231204990347348, guid: 193b7c9cb39ae7143874b17c5fb87403, type: 3}
     size: 1
-  - tag: Bullet
+  - tag: PlayerBullet
     prefab: {fileID: 5109261471553399367, guid: f2e5656a092f0b14881d3fc656224a86, type: 3}
-    size: 10
+    size: 30
   - tag: Missle
     prefab: {fileID: 5793802038532824141, guid: 2b00c9bc84710cc41b8f04120b0829f9, type: 3}
+    size: 10
+  - tag: EnemyBullet
+    prefab: {fileID: 5109261471553399367, guid: 0968867f977c65d4680f99662196032b, type: 3}
+    size: 10
+  - tag: BulletDamage
+    prefab: {fileID: 112454039787923339, guid: eff7ccdb5d2c83a4a9c9688262cda6fd, type: 3}
+    size: 10
+  - tag: SmokeDamage
+    prefab: {fileID: 2872592366594951014, guid: 5dad659f43305004f9ae58d0cd6416cb, type: 3}
     size: 10

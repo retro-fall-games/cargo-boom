@@ -48,7 +48,7 @@ namespace RFG
       return container;
     }
 
-    public static VisualElement CreateControlsContainer(string name)
+    public static VisualElement CreateControlsContainer(string name, string labelText = "")
     {
       VisualElement container = new VisualElement();
       container.name = name;
@@ -57,6 +57,7 @@ namespace RFG
       Label label = new Label();
       label.name = $"{name}-label";
       label.AddToClassList("container-label");
+      label.text = labelText;
 
       VisualElement controls = new VisualElement();
       controls.name = $"{name}-controls";

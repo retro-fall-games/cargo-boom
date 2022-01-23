@@ -7,7 +7,7 @@ namespace RFG.ScrollingShooter
 {
   public class ScrollingShooterEditorWindow : EditorWindow
   {
-    [MenuItem("RFG/ScrollingShooter Editor Window")]
+    [MenuItem("RFG/Scrolling Shooter Editor Window")]
     public static void ShowWindow()
     {
       GetWindow<ScrollingShooterEditorWindow>("ScrollingShooterEditorWindow");
@@ -20,7 +20,7 @@ namespace RFG.ScrollingShooter
       root.LoadRootStyles();
 
       Label title = root.Q<Label>("title");
-      title.text = "ScrollingShooter Editor";
+      title.text = "Scrolling Shooter Editor";
 
       VisualElement mainContainer = root.Q<VisualElement>("container");
 

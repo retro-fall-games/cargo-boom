@@ -14,6 +14,8 @@ namespace RFG.ScrollingShooter
     private InputAction _primaryAttackInput;
     private InputAction _secondaryAttackInput;
     private bool _pointerOverUi = false;
+    private bool _primaryAttackPressed = false;
+    private bool _secondaryAttackPressed = false;
     private WeaponEquipable _primaryWeaponEquipable;
     private WeaponEquipable _secondaryWeaponEquipable;
 
@@ -23,8 +25,12 @@ namespace RFG.ScrollingShooter
       _character = GetComponent<Character>();
       _playerInput = GetComponent<PlayerInput>();
       _playerInventory = GetComponent<PlayerInventory>();
-      _primaryAttackInput = _playerInput.actions["PrimaryAttack"];
-      _secondaryAttackInput = _playerInput.actions["SecondaryAttack"];
+
+      if (_playerInput != null)
+      {
+        _primaryAttackInput = _playerInput.actions["PrimaryAttack"];
+        _secondaryAttackInput = _playerInput.actions["SecondaryAttack"];
+      }
 
       _primaryWeaponEquipable = _playerInventory.Inventory.LeftHand as WeaponEquipable;
       _secondaryWeaponEquipable = _playerInventory.Inventory.RightHand as WeaponEquipable;
@@ -66,9 +72,25 @@ namespace RFG.ScrollingShooter
 
     private void Update()
     {
+      HandlePlayerInput();
+      HandleMachineGun();
+    }
+    #endregion
+
+    private void HandlePlayerInput()
+    {
+      if (_character.CharacterType == CharacterType.Player)
+      {
+        _primaryAttackPressed = _primaryAttackInput.IsPressed();
+        _secondaryAttackPressed = _secondaryAttackInput.IsPressed();
+      }
+    }
+
+    private void HandleMachineGun()
+    {
       if (
         _primaryWeaponEquipable != null &&
-        _primaryAttackInput.IsPressed() &&
+        _primaryAttackPressed &&
         _primaryWeaponEquipable.WeaponEquipableType == WeaponEquipableType.MachineGun
       )
       {
@@ -76,14 +98,23 @@ namespace RFG.ScrollingShooter
       }
       if (
         _secondaryWeaponEquipable != null &&
-        _secondaryAttackInput.IsPressed() &&
+        _secondaryAttackPressed &&
         _secondaryWeaponEquipable.WeaponEquipableType == WeaponEquipableType.MachineGun
       )
       {
         _secondaryWeaponEquipable.Perform();
       }
     }
-    #endregion
+
+    public void PressPrimary(bool pressed)
+    {
+      _primaryAttackPressed = pressed;
+    }
+
+    public void PressSecondary(bool pressed)
+    {
+      _secondaryAttackPressed = pressed;
+    }
 
     #region Events
     public void OnPrimaryAttackStarted(InputAction.CallbackContext ctx)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,7 @@ namespace RFG.ScrollingShooter
     private CharacterController2D _controller;
     private PlayerInput _playerInput;
     private List<Component> _abilities;
+    private Dictionary<Type, IAbility> _abilityMap;
 
     #region Unity Methods
     private void Awake()
@@ -151,6 +153,11 @@ namespace RFG.ScrollingShooter
       {
         _abilities = new List<Component>(abilities);
       }
+      _abilityMap = new Dictionary<Type, IAbility>();
+      foreach (IAbility ability in _abilities)
+      {
+        _abilityMap.Add(ability.GetType(), ability);
+      }
     }
 
     public void EnableAllAbilities(bool enabled, Behaviour except = null)
@@ -166,6 +173,11 @@ namespace RFG.ScrollingShooter
           ability.enabled = enabled;
         }
       }
+    }
+    public T FindAbility<T>() where T : IAbility
+    {
+      Type t = typeof(T);
+      return (T)_abilityMap[t];
     }
     #endregion
 

@@ -17,21 +17,26 @@ namespace RFG.ScrollingShooter
     {
       _character = GetComponent<Character>();
       _playerInput = GetComponent<PlayerInput>();
-      _movement = _playerInput.actions["Movement"];
+      if (_playerInput != null)
+      {
+        _movement = _playerInput.actions["Movement"];
+      }
       _settings = _character.SettingsPack;
-    }
-
-    private void Start()
-    {
     }
 
     private void Update()
     {
-      if (Time.timeScale == 0f)
+      if (Time.timeScale == 0f || !_character.IsAlive)
       {
         return;
       }
-      HandleMovement();
+      if (_character.CharacterType == CharacterType.Player)
+      {
+        ReadInput();
+      }
+      HandleFacing();
+      DetectMovementState();
+      MoveCharacter();
     }
     #endregion
 
@@ -42,25 +47,9 @@ namespace RFG.ScrollingShooter
       return _input;
     }
 
-    public void HandleMovement()
+    public void SetInput(Vector2 input)
     {
-      if (!CanMove())
-      {
-        return;
-      }
-      ReadInput();
-      HandleFacing();
-      DetectMovementState();
-      MoveCharacter();
-    }
-
-    private bool CanMove()
-    {
-      if (!_character.IsAlive)
-      {
-        return false;
-      }
-      return true;
+      _input = input;
     }
 
     private void DetectMovementState()

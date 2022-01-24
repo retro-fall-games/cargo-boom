@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b1a4ad4a7b851f4583b8b876a7905ae, type: 3}
-  m_Name: Cargo
+  m_Name: PowerUpCargo
   m_EditorClassIdentifier: 
-  Guid: cb1cb7ba-44a1-4c97-a86b-ab6ea3ada8c6
+  Guid: 
   Description: 
   OnlyOne: 0
   IsStackable: 0
@@ -20,9 +20,8 @@ MonoBehaviour:
   PickUpSprite: {fileID: 21300000, guid: 919afea6de5a5e54ca157d77054e980d, type: 3}
   PickUpText: 
   PickUpEffects: []
-  ConsumeOnPickUp: 0
+  ConsumeOnPickUp: 1
   ConsumeText: 
   ConsumeEffects: []
-  healthToAdd: 1
-  armorToAdd: 1
-  ammoToAdd: 1
+  CargoType: 3
+  Amount: 5

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlowMaterial
+  m_Name: BulletMaterial
   m_Shader: {fileID: -6465566751694194690, guid: a6e7898b5efbab443b26a0f06d310dc0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -107,7 +107,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_d46dc2c3eaf442a1a2c5e56db59bbf36: {r: 52.722847, g: 1.3449706, b: 0.80698234, a: 0}
+    - Color_d46dc2c3eaf442a1a2c5e56db59bbf36: {r: 9.938316, g: 8.29672, b: 0.70987976, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -62,3 +62,9 @@ MonoBehaviour:
   - tag: SmokeDamage
     prefab: {fileID: 2872592366594951014, guid: 5dad659f43305004f9ae58d0cd6416cb, type: 3}
     size: 10
+  - tag: ExplosionSoundEffect
+    prefab: {fileID: 2086119697118272607, guid: 9a78e78c1075a5d44931b456d16348fe, type: 3}
+    size: 3
+  - tag: mediumheli
+    prefab: {fileID: 0}
+    size: 1

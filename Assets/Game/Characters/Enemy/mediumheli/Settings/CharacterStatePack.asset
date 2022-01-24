@@ -108,6 +108,7 @@ MonoBehaviour:
   EnterEffects:
   - SmokeDamage
   - BulletDamage
+  - ExplosionSoundEffect
   ExitEffects: []
   StopEnterEffectsOnExit: 0
   FreezeState: 1

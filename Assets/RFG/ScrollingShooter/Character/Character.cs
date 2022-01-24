@@ -28,9 +28,10 @@ namespace RFG.ScrollingShooter
     [Header("Movement State")]
     public RFG.StateMachine MovementState;
 
-    [field: SerializeField] public bool IsReady { get; set; } = false;
-
-    public UnityEvent OnStart;
+    [Header("Events")]
+    public UnityEvent OnStartEvent;
+    public UnityEvent OnObjectSpawnEvent;
+    public List<StateChangeUnityEvent> StateChangeUnityEvents;
 
     [HideInInspector]
     public StateCharacterContext Context => _characterContext;
@@ -47,12 +48,13 @@ namespace RFG.ScrollingShooter
     {
       InitContext();
       InitAbilities();
-      IsReady = true;
     }
 
     private void Start()
     {
-      OnStart?.Invoke();
+      OnStartEvent?.Invoke();
+      CharacterState.ResetToDefaultState();
+      MovementState.ResetToDefaultState();
     }
 
     private void Update()
@@ -72,12 +74,23 @@ namespace RFG.ScrollingShooter
     {
       EnableAllInput(true);
       EnablePauseInput(true);
+      CharacterState.OnStateChange += OnCharacterStateChange;
+      MovementState.OnStateChange += OnMovementStateChange;
     }
 
     private void OnDisable()
     {
       EnableAllInput(false);
       EnablePauseInput(false);
+    }
+    #endregion
+
+    #region Object Pool
+    public override void OnObjectSpawn(params object[] objects)
+    {
+      OnObjectSpawnEvent?.Invoke();
+      CharacterState.ResetToDefaultState();
+      MovementState.ResetToDefaultState();
     }
     #endregion
 
@@ -101,12 +114,6 @@ namespace RFG.ScrollingShooter
 
       MovementState.Init();
       MovementState.Bind(_characterContext);
-    }
-
-    public override void OnObjectSpawn(params object[] objects)
-    {
-      CharacterState.ResetToDefaultState();
-      MovementState.ResetToDefaultState();
     }
     #endregion
 
@@ -252,6 +259,35 @@ namespace RFG.ScrollingShooter
     {
       MovementState.Frozen = false;
     }
+
+    private void CallStateChangeUnityEvents(State prevState, State currentState)
+    {
+      foreach (StateChangeUnityEvent stateChangeUnityEvent in StateChangeUnityEvents)
+      {
+        if (
+          stateChangeUnityEvent.StateChangeType == StateChangeType.To &&
+          stateChangeUnityEvent.CurrentState == currentState
+        )
+        {
+          stateChangeUnityEvent.OnChange?.Invoke();
+        }
+        else if (
+          stateChangeUnityEvent.StateChangeType == StateChangeType.From &&
+          stateChangeUnityEvent.PreviousState == prevState
+        )
+        {
+          stateChangeUnityEvent.OnChange?.Invoke();
+        }
+        else if (
+          stateChangeUnityEvent.StateChangeType == StateChangeType.FromTo &&
+          stateChangeUnityEvent.PreviousState == prevState &&
+          stateChangeUnityEvent.CurrentState == currentState
+        )
+        {
+          stateChangeUnityEvent.OnChange?.Invoke();
+        }
+      }
+    }
     #endregion
 
     #region Character State Helpers
@@ -260,6 +296,11 @@ namespace RFG.ScrollingShooter
     public void GoToNextCharacterState()
     {
       CharacterState.GoToNextState();
+    }
+
+    private void OnCharacterStateChange(State prevState, State currentState)
+    {
+      CallStateChangeUnityEvents(prevState, currentState);
     }
     #endregion
 
@@ -277,6 +318,11 @@ namespace RFG.ScrollingShooter
     public void RestoreDefaultMovementStatePack()
     {
       MovementState.RestoreDefaultStatePack();
+    }
+
+    private void OnMovementStateChange(State prevState, State currentState)
+    {
+      CallStateChangeUnityEvents(prevState, currentState);
     }
 
     public bool IsAnyPrimaryAttack => MovementState.IsInState(typeof(PrimaryAttackStartedState), typeof(PrimaryAttackCanceledState), typeof(PrimaryAttackPerformedState));

@@ -17,7 +17,7 @@ namespace RFG.ScrollingShooter
 
     public override State Run()
     {
-      if (character.IsReady)
+      if (character.isActiveAndEnabled)
       {
         character.EnableAllInput(enable);
         return RFG.Actions.State.Success;

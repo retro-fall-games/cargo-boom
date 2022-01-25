@@ -16,8 +16,8 @@ namespace RFG.ScrollingShooter
     private bool _pointerOverUi = false;
     private bool _primaryAttackPressed = false;
     private bool _secondaryAttackPressed = false;
-    private WeaponEquipable _primaryWeaponEquipable;
-    private WeaponEquipable _secondaryWeaponEquipable;
+    private ProjectileWeaponEquipable _primaryWeaponEquipable;
+    private ProjectileWeaponEquipable _secondaryWeaponEquipable;
 
     #region Unity Methods
     private void Awake()
@@ -32,8 +32,11 @@ namespace RFG.ScrollingShooter
         _secondaryAttackInput = _playerInput.actions["SecondaryAttack"];
       }
 
-      _primaryWeaponEquipable = _playerInventory.Inventory.LeftHand as WeaponEquipable;
-      _secondaryWeaponEquipable = _playerInventory.Inventory.RightHand as WeaponEquipable;
+      if (_playerInventory != null && _playerInventory.Inventory != null)
+      {
+        _primaryWeaponEquipable = _playerInventory.Inventory.LeftHand as ProjectileWeaponEquipable;
+        _secondaryWeaponEquipable = _playerInventory.Inventory.RightHand as ProjectileWeaponEquipable;
+      }
     }
 
     private void OnEnable()
@@ -77,6 +80,7 @@ namespace RFG.ScrollingShooter
     }
     #endregion
 
+    #region Handlers
     private void HandlePlayerInput()
     {
       if (_character.CharacterType == CharacterType.Player)
@@ -94,6 +98,7 @@ namespace RFG.ScrollingShooter
         _primaryWeaponEquipable.WeaponEquipableType == WeaponEquipableType.MachineGun
       )
       {
+        Debug.Log(_primaryWeaponEquipable.ToString());
         _primaryWeaponEquipable.Perform();
       }
       if (
@@ -115,6 +120,7 @@ namespace RFG.ScrollingShooter
     {
       _secondaryAttackPressed = pressed;
     }
+    #endregion
 
     #region Events
     public void OnPrimaryAttackStarted(InputAction.CallbackContext ctx)

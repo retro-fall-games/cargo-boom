@@ -336,4 +336,61 @@ namespace RFG.Items
     }
     #endregion
   }
+
+  public static class InventoryEx
+  {
+    public static Inventory Clone(this Inventory inventory)
+    {
+      // Create the new inventory
+      Inventory newInventory = inventory.CloneInstance<Inventory>();
+
+      // Clone each item in the inventory
+      if (newInventory.Helmet != null)
+      {
+        newInventory.Helmet = ScriptableObject.Instantiate(newInventory.Helmet);
+      }
+      if (newInventory.Amulet != null)
+      {
+        newInventory.Amulet = ScriptableObject.Instantiate(newInventory.Amulet);
+      }
+      if (newInventory.Armor != null)
+      {
+        newInventory.Armor = ScriptableObject.Instantiate(newInventory.Armor);
+      }
+      if (newInventory.Belt != null)
+      {
+        newInventory.Belt = ScriptableObject.Instantiate(newInventory.Belt);
+      }
+      if (newInventory.Legs != null)
+      {
+        newInventory.Legs = ScriptableObject.Instantiate(newInventory.Legs);
+      }
+      if (newInventory.Boots != null)
+      {
+        newInventory.Boots = ScriptableObject.Instantiate(newInventory.Boots);
+      }
+      if (newInventory.Gloves != null)
+      {
+        newInventory.Gloves = ScriptableObject.Instantiate(newInventory.Gloves);
+      }
+      if (newInventory.LeftHand != null)
+      {
+        newInventory.LeftHand = ScriptableObject.Instantiate(newInventory.LeftHand);
+      }
+      if (newInventory.RightHand != null)
+      {
+        newInventory.RightHand = ScriptableObject.Instantiate(newInventory.RightHand);
+      }
+      if (newInventory.LeftRing != null)
+      {
+        newInventory.LeftRing = ScriptableObject.Instantiate(newInventory.LeftRing);
+      }
+      if (newInventory.RightRing != null)
+      {
+        newInventory.RightRing = ScriptableObject.Instantiate(newInventory.RightRing);
+      }
+
+      return newInventory;
+    }
+  }
 }

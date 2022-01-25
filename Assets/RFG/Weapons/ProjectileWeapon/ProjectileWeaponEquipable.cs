@@ -114,6 +114,11 @@ namespace RFG.Weapons
       AddAmmo(RefillAmmo);
     }
 
+    public override string ToString()
+    {
+      return $"IsEquipped: {IsEquipped} CanUse: {CanUse} IsInCooldown: {IsInCooldown} Ammo: {Ammo} UnlimitedAmmo: {UnlimitedAmmo}";
+    }
+
     public ProjectileWeaponEquipableSave GetWeaponSave()
     {
       ProjectileWeaponEquipableSave save = new ProjectileWeaponEquipableSave();

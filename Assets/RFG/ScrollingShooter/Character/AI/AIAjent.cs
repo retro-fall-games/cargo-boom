@@ -12,8 +12,5 @@ namespace RFG.ScrollingShooter
     public Animator animator;
     public Tween movementPath;
     public AIBrainBehaviour aiState;
-    public bool JustRotated = false;
-    public float LastTimeRotated = 0f;
-    public float RotateSpeed = 0f;
   }
 }

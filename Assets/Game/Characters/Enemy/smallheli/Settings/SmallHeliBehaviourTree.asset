@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8151526760132430370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d70d6e16c6940a4dad95159b8d6b498, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9dc074c8c6ba1154fbeca42a9b8a49b8
+  position: {x: -106, y: 418}
+  description: 
+  drawGizmos: 0
+  Duration: 1
+--- !u!114 &-2792140128732852952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bab52de805da047935d54b071d4a79, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4c2292cc81a96144baba9925c1feaedb
+  position: {x: 0, y: 129}
+  description: 
+  drawGizmos: 0
+  child: {fileID: 4236844142128456338}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cae963d1f21f1e4e86d44f3a7e9b7f8, type: 3}
+  m_Name: SmallHeliBehaviourTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 2443809262614166688}
+  treeState: 0
+  nodes:
+  - {fileID: 2443809262614166688}
+  - {fileID: -2792140128732852952}
+  - {fileID: 4236844142128456338}
+  - {fileID: -8151526760132430370}
+  - {fileID: 8010186339312417475}
+  - {fileID: 6463537575460994660}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+--- !u!114 &2443809262614166688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c147d123e4a945b688eddc64e3ea5, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: c19a2375d1e182e49897ed9aec3df794
+  position: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  child: {fileID: -2792140128732852952}
+--- !u!114 &4236844142128456338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8d5100862dea842a57b959d34ef167, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0937d3c3f5137524db8d278980a9b9e0
+  position: {x: 0, y: 264.24}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -8151526760132430370}
+  - {fileID: 8010186339312417475}
+  - {fileID: 6463537575460994660}
+--- !u!114 &6463537575460994660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d8e8f87d1a76b4d9f8ab88a140f3ac, type: 3}
+  m_Name: PrimaryAttackPressNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f694f81085f5103408e3a6025805b166
+  position: {x: 275, y: 418}
+  description: 
+  drawGizmos: 0
+  PressTime: 0.5
+--- !u!114 &8010186339312417475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbafbad51bac6249a785cfd982e62f5, type: 3}
+  m_Name: FaceAggroTargetNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 348404474b15e7c4fb758118851fbe5b
+  position: {x: 85, y: 418}
+  description: 
+  drawGizmos: 0

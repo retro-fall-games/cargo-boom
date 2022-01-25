@@ -90,7 +90,6 @@ namespace RFG.ScrollingShooter
       animator.runtimeAnimatorController = animatorController;
 
       gameObject.GetOrAddComponent<AttackAbility>();
-      gameObject.GetOrAddComponent<MovementAbility>();
       gameObject.GetOrAddComponent<RFG.Character.HealthBehaviour>();
       gameObject.GetOrAddComponent<RFG.Items.PlayerInventory>();
 
@@ -106,6 +105,7 @@ namespace RFG.ScrollingShooter
 
       gameObject.GetOrAddComponent<PlayerInput>();
       gameObject.GetOrAddComponent<PauseAbility>();
+      gameObject.GetOrAddComponent<MovementAbility>();
       CreateGameEventListeners(gameObject);
 
       EditorUtils.SaveAsPrefabAsset(gameObject, newFolderPath, name);
@@ -120,6 +120,7 @@ namespace RFG.ScrollingShooter
 
       gameObject.GetOrAddComponent<RFG.BehaviourTree.BehaviourTreeRunner>();
       gameObject.GetOrAddComponent<AIBrainBehaviour>();
+      gameObject.GetOrAddComponent<AIMovementBehaviour>();
       gameObject.GetOrAddComponent<Tween>();
       gameObject.GetOrAddComponent<Aggro>();
 

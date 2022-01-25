@@ -174,6 +174,30 @@ namespace RFG
       }
     }
 
+    public void Resume()
+    {
+      LTDescr d = LeanTween.descr(_id);
+      if (d == null)
+      {
+        return;
+      }
+      _isPaused = false;
+      d.resume();
+      onResume?.Invoke();
+    }
+
+    public void Pause()
+    {
+      LTDescr d = LeanTween.descr(_id);
+      if (d == null)
+      {
+        return;
+      }
+      _isPaused = true;
+      d.pause();
+      onPause?.Invoke();
+    }
+
     private void OnComplete()
     {
       IsCompleted = true;

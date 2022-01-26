@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEditor;
 
 namespace RFG.Actions
@@ -11,6 +12,8 @@ namespace RFG.Actions
   {
     [field: SerializeReference] public List<Action> Actions { get; set; }
     [field: SerializeReference] private bool PlayOnAwake { get; set; } = false;
+    public UnityEvent OnStart;
+    public UnityEvent OnFinish;
 
     private Action _currentAction;
     private IEnumerator _currentActionCoroutine;
@@ -26,6 +29,7 @@ namespace RFG.Actions
     #region Play Methods
     public void Play()
     {
+      OnStart?.Invoke();
       ProcessNextAction();
     }
 
@@ -59,6 +63,10 @@ namespace RFG.Actions
         _currentAction = nextAction;
         ProcessNextAction();
         yield return null;
+      }
+      else
+      {
+        OnFinish?.Invoke();
       }
     }
     #endregion

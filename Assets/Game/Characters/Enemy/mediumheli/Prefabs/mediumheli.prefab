@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileWeaponEquipable: {fileID: 11400000, guid: 8b6cea5d37c50f549a43f9f37a156437, type: 2}
+  ProjectileWeaponEquipable: {fileID: 0}
+  <PlayerInventory>k__BackingField: {fileID: 4057788272158931477}
+  <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 7969663591620846663}
   WeaponState:
     StatePack: {fileID: 11400000, guid: 153e8633b1fe32a48ba4469c6248266b, type: 2}
@@ -353,7 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f448c1f734ecebb428d195cb0f358628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CloneWeapons>k__BackingField: 1
 --- !u!114 &4135545709208951957
 MonoBehaviour:
   m_ObjectHideFlags: 0

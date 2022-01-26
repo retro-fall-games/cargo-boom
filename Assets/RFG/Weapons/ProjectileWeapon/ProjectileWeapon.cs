@@ -1,18 +1,18 @@
 using System;
-// using System.Collections.Generic;
 using UnityEngine;
+using RFG.Items;
 
 namespace RFG.Weapons
 {
+  public enum ProjectileWeaponPosition { LeftHand, RightHand };
+
   [AddComponentMenu("RFG/Weapons/Projectile Weapon/Projectile Weapon")]
   public class ProjectileWeapon : MonoBehaviour
   {
-    [Header("Settings")]
     public ProjectileWeaponEquipable ProjectileWeaponEquipable;
+    [field: SerializeField] private PlayerInventory PlayerInventory { get; set; }
+    [field: SerializeField] private ProjectileWeaponPosition ProjectileWeaponPosition { get; set; } = ProjectileWeaponPosition.LeftHand;
     public Transform FirePoint;
-
-
-    [Header("States")]
     public RFG.StateMachine WeaponState;
 
     private float _fireRateElapsed;
@@ -24,6 +24,17 @@ namespace RFG.Weapons
 
     private void Awake()
     {
+      if (ProjectileWeaponEquipable == null && PlayerInventory != null && PlayerInventory.Inventory != null)
+      {
+        if (ProjectileWeaponPosition == ProjectileWeaponPosition.LeftHand)
+        {
+          ProjectileWeaponEquipable = PlayerInventory.Inventory.LeftHand as ProjectileWeaponEquipable;
+        }
+        else if (ProjectileWeaponPosition == ProjectileWeaponPosition.RightHand)
+        {
+          ProjectileWeaponEquipable = PlayerInventory.Inventory.RightHand as ProjectileWeaponEquipable;
+        }
+      }
       ProjectileWeaponEquipable.Ammo = ProjectileWeaponEquipable.StartingAmmo;
       InitContext();
     }
@@ -94,33 +105,6 @@ namespace RFG.Weapons
       }
     }
 
-    // private void OnPickUp(InventoryManager InventoryManager)
-    // {
-    //   // if (InventoryManager.InInventory(ProjectileWeaponEquipable.Guid))
-    //   // {
-    //   //   ProjectileWeaponEquipable.Refill();
-    //   // }
-    // }
-
-    // private void OnEquip(InventoryManager InventoryManager)
-    // {
-    //   if (EquipmentSet.PrimaryWeapon == null)
-    //   {
-    //     EquipmentSet.EquipPrimaryWeapon(ProjectileWeaponEquipable);
-    //     ProjectileWeaponEquipable.IsEquipped = true;
-    //   }
-    //   else if (!EquipmentSet.PrimaryWeapon.Equals(ProjectileWeaponEquipable) && EquipmentSet.SecondaryWeapon == null)
-    //   {
-    //     EquipmentSet.EquipSecondaryWeapon(ProjectileWeaponEquipable);
-    //     ProjectileWeaponEquipable.IsEquipped = true;
-    //   }
-    // }
-
-    // private void OnUnequip(InventoryManager InventoryManager)
-    // {
-    //   ProjectileWeaponEquipable.IsEquipped = false;
-    // }
-
     private void OnStateChange(Type newStateType)
     {
       WeaponState.ChangeState(newStateType);
@@ -128,17 +112,11 @@ namespace RFG.Weapons
 
     private void OnEnable()
     {
-      // ProjectileWeaponEquipable.OnPickUp += OnPickUp;
-      // ProjectileWeaponEquipable.OnEquip += OnEquip;
-      // ProjectileWeaponEquipable.OnUnequip += OnUnequip;
       ProjectileWeaponEquipable.OnStateChange += OnStateChange;
     }
 
     private void OnDisable()
     {
-      // ProjectileWeaponEquipable.OnPickUp -= OnPickUp;
-      // ProjectileWeaponEquipable.OnEquip -= OnEquip;
-      // ProjectileWeaponEquipable.OnUnequip -= OnUnequip;
       ProjectileWeaponEquipable.OnStateChange -= OnStateChange;
     }
 

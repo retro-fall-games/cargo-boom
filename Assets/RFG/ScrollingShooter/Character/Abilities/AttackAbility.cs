@@ -98,7 +98,6 @@ namespace RFG.ScrollingShooter
         _primaryWeaponEquipable.WeaponEquipableType == WeaponEquipableType.MachineGun
       )
       {
-        Debug.Log(_primaryWeaponEquipable.ToString());
         _primaryWeaponEquipable.Perform();
       }
       if (

@@ -25,7 +25,7 @@ namespace RFG
     {
       if (StatePack == null || StatePack.States == null || StatePack.States.Count == 0)
       {
-        Debug.LogWarning("Init: There are no states");
+        LogExt.Warn<StateMachine>("Init: There are no states");
         return;
       }
       _defaultStatePack = StatePack;
@@ -47,7 +47,10 @@ namespace RFG
         return;
 
       if (CurrentState == null)
+      {
         ResetToDefaultState();
+        return;
+      }
 
       Type newStateType = CurrentState.Execute(_context);
 
@@ -129,11 +132,12 @@ namespace RFG
       CurrentState = null;
       if (StatePack.DefaultState != null)
       {
+        // Debug.Log("Reset to: " + StatePack.DefaultState.GetType().ToString());
         ChangeState(StatePack.DefaultState.GetType());
       }
       else
       {
-        Debug.LogWarning("No default state defined");
+        LogExt.Warn<StateMachine>("No default state defined");
       }
     }
 
@@ -164,7 +168,12 @@ namespace RFG
 
     public State Find(Type type)
     {
-      return StatePack.Find(type);
+      State foundState = StatePack.Find(type);
+      if (!foundState)
+      {
+        LogExt.Warn<StateMachine>($"{type.ToString()} Not Found");
+      }
+      return foundState;
     }
 
     private bool CanStateUnfreeze(Type stateType)

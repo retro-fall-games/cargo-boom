@@ -53,8 +53,6 @@ namespace RFG.ScrollingShooter
     private void Start()
     {
       OnStartEvent?.Invoke();
-      CharacterState.ResetToDefaultState();
-      MovementState.ResetToDefaultState();
     }
 
     private void Update()
@@ -89,8 +87,6 @@ namespace RFG.ScrollingShooter
     public override void OnObjectSpawn(params object[] objects)
     {
       OnObjectSpawnEvent?.Invoke();
-      CharacterState.ResetToDefaultState();
-      MovementState.ResetToDefaultState();
     }
     #endregion
 

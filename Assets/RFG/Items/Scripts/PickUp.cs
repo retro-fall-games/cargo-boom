@@ -7,7 +7,7 @@ using MyBox;
 namespace RFG.Items
 {
   [AddComponentMenu("RFG/Items/Pick Up")]
-  public class PickUp : MonoBehaviour, IPointerClickHandler
+  public class PickUp : MonoBehaviour, IPooledObject, IPointerClickHandler
   {
     public static PickUp LastPickUp;
     [field: SerializeField] private Inventory Inventory { get; set; }
@@ -17,6 +17,7 @@ namespace RFG.Items
     [field: SerializeField] private bool OnlyOne { get; set; } = false;
     [field: SerializeField] public List<Item> RandomItems { get; set; }
 
+    [field: SerializeField] private UnityEvent OnConsume;
     [field: SerializeField] private UnityEvent OnPickUp;
 
     [HideInInspector]
@@ -45,6 +46,12 @@ namespace RFG.Items
       {
         gameObject.SetActive(false);
       }
+    }
+
+    public void OnObjectSpawn(params object[] objects)
+    {
+      _boxCollider.enabled = true;
+      _spriteRenderer.enabled = true;
     }
 
     private void LateUpdate()
@@ -117,6 +124,7 @@ namespace RFG.Items
         if (consumable.ConsumeOnPickUp)
         {
           consumable.Consume(transform, Inventory);
+          OnConsume?.Invoke();
           Hide();
           return;
         }
@@ -173,6 +181,5 @@ namespace RFG.Items
       tag = "PickUp";
       LayerMask = LayerMask.GetMask("Player");
     }
-
   }
 }

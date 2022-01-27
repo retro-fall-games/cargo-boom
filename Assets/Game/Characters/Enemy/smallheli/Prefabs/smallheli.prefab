@@ -101,19 +101,7 @@ MonoBehaviour:
     CurrentState: {fileID: 0}
   OnStartEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6313622541156219784}
-        m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnObjectSpawnEvent:
     m_PersistentCalls:
       m_Calls:

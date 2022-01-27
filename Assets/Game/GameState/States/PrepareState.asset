@@ -21,6 +21,7 @@ MonoBehaviour:
   FreezeState: 0
   WaitToUnfreezeTime: 0
   StatesCanUnfreeze: []
-  NextState: {fileID: 0}
-  NextStateAfterTime: 0
+  NextState: {fileID: 11400000, guid: 3a737196e4bdc04418a452669f5bbb21, type: 2}
+  NextStateAfterTime: 10
   GoToNextStateAfterCompletion: 0
+  <PrepareTime>k__BackingField: 10

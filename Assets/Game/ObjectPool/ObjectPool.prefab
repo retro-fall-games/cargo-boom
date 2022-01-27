@@ -44,9 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - tag: Cargo
-    prefab: {fileID: 6615231204990347348, guid: 193b7c9cb39ae7143874b17c5fb87403, type: 3}
-    size: 1
   - tag: PlayerBullet
     prefab: {fileID: 5109261471553399367, guid: f2e5656a092f0b14881d3fc656224a86, type: 3}
     size: 30
@@ -65,6 +62,21 @@ MonoBehaviour:
   - tag: ExplosionSoundEffect
     prefab: {fileID: 2086119697118272607, guid: 9a78e78c1075a5d44931b456d16348fe, type: 3}
     size: 3
+  - tag: HealthCargo
+    prefab: {fileID: 1492853037883674452, guid: 09ef280ef8292054894c9140d4cb6711, type: 3}
+    size: 1
+  - tag: AmmoCargo
+    prefab: {fileID: 6319599333059316211, guid: f051dafaff2b94647b6667ab93f5951f, type: 3}
+    size: 1
+  - tag: ArmorCargo
+    prefab: {fileID: 4678500562228612603, guid: 85475a9c4c103b648a2c6127881e7d44, type: 3}
+    size: 1
+  - tag: PowerUpCargo
+    prefab: {fileID: 3779561410878688453, guid: 1097ae653c0cfd749bb69067cecd64b6, type: 3}
+    size: 1
   - tag: mediumheli
-    prefab: {fileID: 0}
+    prefab: {fileID: 2555374009427921504, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+    size: 1
+  - tag: smallheli
+    prefab: {fileID: 5303186719066698441, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
     size: 1

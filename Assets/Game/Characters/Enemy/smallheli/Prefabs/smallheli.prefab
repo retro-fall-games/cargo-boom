@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 6313622541156219784}
   - component: {fileID: 2670599818607401374}
   - component: {fileID: 4355897678197754421}
+  - component: {fileID: -298414266745242196}
   m_Layer: 10
   m_Name: smallheli
   m_TagString: Enemy
@@ -336,14 +337,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthReference: {fileID: 0}
   MaxHealthReference: {fileID: 0}
-  Health: 100
-  MaxHealth: 100
-  DefaultMaxHealth: 100
+  Health: 5
+  MaxHealth: 5
+  DefaultMaxHealth: 5
   ArmorReference: {fileID: 0}
   MaxArmorReference: {fileID: 0}
-  Armor: 100
-  MaxArmor: 100
-  DefaultMaxArmor: 100
+  Armor: 1
+  MaxArmor: 1
+  DefaultMaxArmor: 1
   KillEvent: {fileID: 0}
 --- !u!114 &4061264601900696290
 MonoBehaviour:
@@ -405,10 +406,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: 4.5619154, y: 1.8810043, z: 10}
-  - {x: -3.6517544, y: 1.1387081, z: 10}
-  - {x: 4.013262, y: 0.28345364, z: 10}
-  - {x: -3.4903855, y: -0.4265688, z: 10}
+  - {x: 5.59141, y: 1.4083002, z: 10}
+  - {x: -4.366699, y: 1.5304856, z: 10}
+  - {x: 4.3206825, y: -0.11901715, z: 10}
+  - {x: -4.256732, y: -1.1942487, z: 10}
   <Local>k__BackingField: 1
   <TweenGameObject>k__BackingField: {fileID: 0}
   onPlay:
@@ -455,6 +456,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21ae1075ddb710a44976d5a8d14fcc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-298414266745242196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303186719066698441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6454203eaeb9488ca631ea4822cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6177854095141853452

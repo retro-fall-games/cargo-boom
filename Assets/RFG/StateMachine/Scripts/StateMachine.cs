@@ -110,6 +110,8 @@ namespace RFG
 
       // Enter the new state
       CurrentState = Find(newStateType);
+      _nextStateWaitTimeElapsed = 0f;
+      _frozenTimeElapsed = 0f;
 
       // Debug.Log("Current State is null: " + CurrentState == null);
 

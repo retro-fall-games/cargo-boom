@@ -21,7 +21,8 @@ MonoBehaviour:
   PickUpText: 
   PickUpEffects: []
   ConsumeOnPickUp: 1
-  ConsumeText: 
-  ConsumeEffects: []
+  ConsumeText: +1 Health
+  ConsumeEffects:
+  - FloatingText
   CargoType: 0
   Amount: 50

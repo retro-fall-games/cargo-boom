@@ -76,7 +76,10 @@ MonoBehaviour:
     size: 1
   - tag: mediumheli
     prefab: {fileID: 2555374009427921504, guid: e93637c542ce8744999306dd3c342e66, type: 3}
-    size: 1
+    size: 10
   - tag: smallheli
     prefab: {fileID: 5303186719066698441, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
+    size: 10
+  - tag: FloatingText
+    prefab: {fileID: 3080913505683421689, guid: d6f9efa33498a7f4dab8bdac402a3b95, type: 3}
     size: 1

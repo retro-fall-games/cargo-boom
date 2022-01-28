@@ -6,13 +6,22 @@ using UnityEngine.Events;
 
 namespace RFG
 {
+  [Serializable]
+  public class ObjectPoolTagGroup
+  {
+    public string Tag;
+    public int Count = 1;
+    public float Interval = 1f;
+    public float SecondsUntilBegin;
+  }
+
 
   [Serializable]
   public class ObjectPoolWave
   {
     public float SecondsUntilBegin;
     public int Loop;
-    public List<string> Tags;
+    public List<ObjectPoolTagGroup> TagGroups;
     public bool Parent = false;
   }
 
@@ -31,6 +40,7 @@ namespace RFG
     private int _waveCount = 0;
     private int _waveLoopCount = 0;
     private bool _waveInProgress = false;
+    private bool _spawnedAllTagGroups = false;
     private Coroutine _co;
 
     private void Awake()
@@ -80,10 +90,10 @@ namespace RFG
     private IEnumerator StartWave()
     {
       yield return new WaitForSeconds(_currentWave.SecondsUntilBegin);
-      SpawnWave();
       _waveCount++;
       OnWaveStart?.Invoke();
       _waveInProgress = true;
+      yield return SpawnWave();
     }
 
     private void NextWave()
@@ -95,9 +105,10 @@ namespace RFG
       else
       {
         _currentWaveIndex++;
-        if (_currentWaveIndex > Waves.Count)
+        if (_currentWaveIndex >= Waves.Count)
         {
           OnFinish?.Invoke();
+          Stop();
           return;
         }
         else
@@ -108,21 +119,33 @@ namespace RFG
       _co = StartCoroutine(StartWave());
     }
 
-    private void SpawnWave()
+    private IEnumerator SpawnWave()
     {
-      foreach (string Tag in _currentWave.Tags)
+      _spawnedAllTagGroups = false;
+      foreach (ObjectPoolTagGroup TagGroup in _currentWave.TagGroups)
       {
-        GameObject spawn = ObjectPool.Instance.SpawnFromPool(Tag, transform.position, Quaternion.identity);
-        if (_currentWave.Parent)
+        yield return new WaitForSeconds(TagGroup.SecondsUntilBegin);
+        for (int i = 0; i < TagGroup.Count; i++)
         {
-          spawn.transform.SetParent(transform);
+          yield return new WaitForSeconds(TagGroup.Interval);
+          SpawnObject(TagGroup.Tag);
         }
-        if (!_currentSpawnedObjects.ContainsKey(Tag))
-        {
-          _currentSpawnedObjects.Add(Tag, new List<GameObject>());
-        }
-        _currentSpawnedObjects[Tag].Add(spawn);
       }
+      _spawnedAllTagGroups = true;
+    }
+
+    private void SpawnObject(string tag)
+    {
+      GameObject spawn = ObjectPool.Instance.SpawnFromPool(tag, transform.position, Quaternion.identity);
+      if (_currentWave.Parent)
+      {
+        spawn.transform.SetParent(transform);
+      }
+      if (!_currentSpawnedObjects.ContainsKey(tag))
+      {
+        _currentSpawnedObjects.Add(tag, new List<GameObject>());
+      }
+      _currentSpawnedObjects[tag].Add(spawn);
     }
 
     private void HandleCurrentWave()
@@ -161,12 +184,23 @@ namespace RFG
         }
       }
 
-      if (_currentSpawnedObjects.Count == 0)
+      if (_spawnedAllTagGroups && _currentSpawnedObjects.Count == 0)
       {
         OnWaveEnd?.Invoke();
         _waveInProgress = false;
         NextWave();
       }
+    }
+
+    public void DebugText(string text)
+    {
+      Debug.Log(text);
+      ToString();
+    }
+
+    public override string ToString()
+    {
+      return $"Wave Count: {_waveCount} Current Wave Index: {_currentWaveIndex} Wave Loop Count: {_waveLoopCount} Wave In Progress: {_waveInProgress}";
     }
   }
 }

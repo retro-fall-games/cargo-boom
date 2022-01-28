@@ -606,7 +606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &395243946
 GameObject:
@@ -1322,6 +1322,10 @@ MonoBehaviour:
   <Actions>k__BackingField:
   - id: 0
   - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
   <PlayOnAwake>k__BackingField: 0
   OnStart:
     m_PersistentCalls:
@@ -1332,30 +1336,82 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: b7a19a7ff4c23c14db1be3d1301017a1
+        title: RFG.Actions.SetActiveAction
+        position: {x: 302, y: -309.32}
+        state: 3
+        type: RFG.Actions.SetActiveAction
+        waitTimeToComplete: 0
+        children:
+        - id: 1
+        gameObject: {fileID: 1720954288}
+        active: 1
+    00000001:
+      type: {class: TMP_TextSetTextAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 921ed31d2ab4a464abc9cce93baf95b2
+        title: RFG.Actions.TMP_TextSetTextAction
+        position: {x: 289, y: -47}
+        state: 3
+        type: RFG.Actions.TMP_TextSetTextAction
+        waitTimeToComplete: 3
+        children:
+        - id: 2
+        tmpText: {fileID: 829252940}
+        text: Enemies Detected
+    00000002:
+      type: {class: TMP_TextSetTextAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 472a45bbd6b0e8a4fa4bc7b4116058b7
+        title: RFG.Actions.TMP_TextSetTextAction
+        position: {x: 288.99997, y: 208.37576}
+        state: 3
+        type: RFG.Actions.TMP_TextSetTextAction
+        waitTimeToComplete: 3
+        children:
+        - id: 3
+        tmpText: {fileID: 829252940}
+        text: Get Ready For Skirmish
+    00000003:
       type: {class: UnityEventTimerAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
         guid: abf1d6bb7a77cce41b886811e017f147
         title: RFG.Actions.UnityEventTimerAction
-        position: {x: 283.48572, y: -233.14287}
+        position: {x: 289, y: 457.95627}
         state: 3
         type: RFG.Actions.UnityEventTimerAction
         waitTimeToComplete: 0
         children:
-        - id: 1
+        - id: 4
         timer: {fileID: 1024946653}
         actionType: 1
-    00000001:
-      type: {class: UnityEventTimerAction, ns: RFG.Actions, asm: Assembly-CSharp}
+    00000004:
+      type: {class: ObjectPoolWaveSpawnerAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
-        guid: 60d4e1eaf9841714cbd9e2d21c35b0e8
-        title: RFG.Actions.UnityEventTimerAction
-        position: {x: 283.00003, y: 36.428585}
+        guid: 2f0390327f5f2374abeefe470eee44de
+        title: RFG.Actions.ObjectPoolWaveSpawnerAction
+        position: {x: 289, y: 710.9563}
         state: 3
-        type: RFG.Actions.UnityEventTimerAction
+        type: RFG.Actions.ObjectPoolWaveSpawnerAction
+        waitTimeToComplete: 0
+        children:
+        - id: 5
+        ObjectPoolWaveSpawner: {fileID: 2038705321}
+        actionType: 0
+    00000005:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: b5688c41ca4f66d499bfdca9eaf3fbbd
+        title: RFG.Actions.SetActiveAction
+        position: {x: 289, y: 988.845}
+        state: 3
+        type: RFG.Actions.SetActiveAction
         waitTimeToComplete: 0
         children: []
-        timer: {fileID: 0}
-        actionType: 0
+        gameObject: {fileID: 1720954288}
+        active: 0
 --- !u!4 &989201903
 Transform:
   m_ObjectHideFlags: 0
@@ -2056,7 +2112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1479561468
 GameObject:
@@ -2363,7 +2419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518625718
 GameObject:
@@ -2593,6 +2649,100 @@ MonoBehaviour:
   <InfiniteVertical>k__BackingField: 0
   <XDivisions>k__BackingField: 1
   <YDivisions>k__BackingField: 1
+--- !u!1 &1609682020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609682022}
+  - component: {fileID: 1609682021}
+  m_Layer: 0
+  m_Name: EnemiesDefeatedActionList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1609682021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609682020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea0199597af3024c91d8a83d5ed6456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Actions>k__BackingField:
+  - id: 0
+  - id: 1
+  - id: 2
+  <PlayOnAwake>k__BackingField: 0
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 1
+    00000000:
+      type: {class: TMP_TextSetTextAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 189e79ad91b465b48b3ce7c5dad9ca36
+        title: RFG.Actions.TMP_TextSetTextAction
+        position: {x: 246.82861, y: -287.08572}
+        state: 3
+        type: RFG.Actions.TMP_TextSetTextAction
+        waitTimeToComplete: 0
+        children:
+        - id: 1
+        tmpText: {fileID: 829252940}
+        text: Enemies Defeated
+    00000001:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: b9804b29a151c9e4f9254a6e340931c7
+        title: RFG.Actions.SetActiveAction
+        position: {x: 247.00003, y: -48.028576}
+        state: 3
+        type: RFG.Actions.SetActiveAction
+        waitTimeToComplete: 3
+        children:
+        - id: 2
+        gameObject: {fileID: 1720954288}
+        active: 1
+    00000002:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 1d317ee6a8612c64f9cc1d59e51b5232
+        title: RFG.Actions.SetActiveAction
+        position: {x: 247, y: 202.80006}
+        state: 3
+        type: RFG.Actions.SetActiveAction
+        waitTimeToComplete: 0
+        children: []
+        gameObject: {fileID: 1720954288}
+        active: 0
+--- !u!4 &1609682022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609682020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1635297654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,6 +3090,72 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1970731930022139869, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
   m_PrefabInstance: {fileID: 1970731930532903533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794096267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794096269}
+  - component: {fileID: 1794096268}
+  m_Layer: 0
+  m_Name: GameOverActionList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794096268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794096267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea0199597af3024c91d8a83d5ed6456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Actions>k__BackingField:
+  - id: 0
+  <PlayOnAwake>k__BackingField: 0
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 1
+    00000000:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 890d7aa1cf9cb8a4bb455b1d4a3a099a
+        title: RFG.Actions.SetActiveAction
+        position: {x: 314, y: 19}
+        state: 3
+        type: RFG.Actions.SetActiveAction
+        waitTimeToComplete: 0
+        children: []
+        gameObject: {fileID: 2068731367979954961}
+        active: 1
+--- !u!4 &1794096269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794096267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832797647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,6 +3188,8 @@ MonoBehaviour:
   <Actions>k__BackingField:
   - id: 0
   - id: 1
+  - id: 2
+  - id: 3
   <PlayOnAwake>k__BackingField: 0
   OnStart:
     m_PersistentCalls:
@@ -2982,30 +3200,56 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
+      type: {class: TMP_TextSetTextAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 55d040e2d35c0484cadbbd45c3ad3b40
+        title: RFG.Actions.TMP_TextSetTextAction
+        position: {x: 266.99997, y: -253.39}
+        state: 3
+        type: RFG.Actions.TMP_TextSetTextAction
+        waitTimeToComplete: 0
+        children:
+        - id: 1
+        tmpText: {fileID: 829252940}
+        text: Prepare for battle
+    00000001:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: 0c5158e19291609478ec4ffe8ad7f1ae
+        title: RFG.Actions.SetActiveAction
+        position: {x: 266.99997, y: 11.5625}
+        state: 3
+        type: RFG.Actions.SetActiveAction
+        waitTimeToComplete: 3
+        children:
+        - id: 2
+        gameObject: {fileID: 1720954288}
+        active: 1
+    00000002:
       type: {class: UnityEventTimerAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
         guid: dd6645e16de8d0d4db634594bc5248f8
         title: RFG.Actions.UnityEventTimerAction
-        position: {x: 289.08572, y: -215.82861}
+        position: {x: 267, y: 278.24002}
         state: 3
         type: RFG.Actions.UnityEventTimerAction
         waitTimeToComplete: 0
         children:
-        - id: 1
+        - id: 3
         timer: {fileID: 1024946653}
         actionType: 0
-    00000001:
-      type: {class: UnityEventTimerAction, ns: RFG.Actions, asm: Assembly-CSharp}
+    00000003:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
-        guid: c081b0a589c1a454aa491803e7b9b6d7
-        title: RFG.Actions.UnityEventTimerAction
-        position: {x: 289, y: 38}
+        guid: 122137cfda619874a8d39a75c7272d62
+        title: RFG.Actions.SetActiveAction
+        position: {x: 267, y: 556.76}
         state: 3
-        type: RFG.Actions.UnityEventTimerAction
+        type: RFG.Actions.SetActiveAction
         waitTimeToComplete: 0
         children: []
-        timer: {fileID: 0}
-        actionType: 1
+        gameObject: {fileID: 1720954288}
+        active: 0
 --- !u!4 &1832797649
 Transform:
   m_ObjectHideFlags: 0
@@ -3283,10 +3527,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 0
-    Loop: 0
-    Tags:
-    - smallheli
+  - SecondsUntilBegin: 3
+    Loop: 1
+    TagGroups:
+    - Tag: smallheli
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: mediumheli
+      Count: 1
+      Interval: 1
+      SecondsUntilBegin: 5
     Parent: 1
   <OnWaveStart>k__BackingField:
     m_PersistentCalls:
@@ -3296,7 +3547,19 @@ MonoBehaviour:
       m_Calls: []
   <OnFinish>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2038705323
 Transform:
   m_ObjectHideFlags: 0
@@ -3389,7 +3652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970731930022139865, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1970731930022139865, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3465,7 +3728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970731930022139869, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
       propertyPath: m_Name
-      value: ReadyUI
+      value: MessageUI
       objectReference: {fileID: 0}
     - target: {fileID: 1970731930022139869, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
       propertyPath: m_IsActive
@@ -3475,6 +3738,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1970731930811080487, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
+      propertyPath: m_Name
+      value: MessageText
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1970731930022139864, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ac09541a7a2c264e9c61efa12b3eeec, type: 3}
@@ -3495,7 +3762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4589282324510863890, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4589282324510863890, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3702,11 +3969,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8390145764224058209, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.6000366
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390145764224058209, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -3.600006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0331d005f163945af3a117317d4dab, type: 3}
+--- !u!1 &2068731367979954961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5588190764896506071, guid: de0331d005f163945af3a117317d4dab, type: 3}
+  m_PrefabInstance: {fileID: 2068731367979954960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2193451123325343745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3728,7 +4004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 209626913576100269, guid: 79364595d61133f46a97df949a46f5f5, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 209626913576100269, guid: 79364595d61133f46a97df949a46f5f5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3873,7 +4149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469351127519347214, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6469351127519347214, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4006,7 +4282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7123798071755595856, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595856, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4053,6 +4329,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1479561469}
@@ -4069,7 +4349,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 989201902}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[3].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1609682021}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[4].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1794096268}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
@@ -4077,11 +4373,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: RFG.Actions.ActionList, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RFG.Actions.ActionList, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595870, guid: e9444944c137b9445967233918efe273, type: 3}

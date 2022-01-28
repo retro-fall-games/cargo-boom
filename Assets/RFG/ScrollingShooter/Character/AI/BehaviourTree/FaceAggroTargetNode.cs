@@ -15,7 +15,10 @@ namespace RFG.ScrollingShooter
     protected override State OnUpdate()
     {
       AIBrainBehaviour brain = context as AIBrainBehaviour;
-      brain.Context.controller.RotateTowards(brain.Context.aggro.target2);
+      if (brain.Context.aggro.target2 != null)
+      {
+        brain.Context.controller.RotateTowards(brain.Context.aggro.target2);
+      }
       return State.Success;
     }
   }

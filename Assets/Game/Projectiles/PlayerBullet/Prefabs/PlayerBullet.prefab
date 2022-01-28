@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 25
-  <Damage>k__BackingField: 10
+  <Damage>k__BackingField: 1
   <SpawnAtName>k__BackingField: 
   <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <Target>k__BackingField: {fileID: 0}

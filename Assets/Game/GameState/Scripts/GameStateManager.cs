@@ -41,6 +41,11 @@ public class GameStateManager : MonoBehaviour
     GameState.ChangeState(typeof(SkirmishState));
   }
 
+  public void EnemiesDefeated()
+  {
+    GameState.ChangeState(typeof(EnemiesDefeatedState));
+  }
+
   public void GameOver()
   {
     GameState.ChangeState(typeof(GameOverState));

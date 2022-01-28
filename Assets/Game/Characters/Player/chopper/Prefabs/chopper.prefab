@@ -73,10 +73,43 @@ MonoBehaviour:
     StatePack: {fileID: 11400000, guid: ad040a7d9818a31479616e51fa71dc7a, type: 2}
     PreviousState: {fileID: 0}
     CurrentState: {fileID: 0}
-  <IsReady>k__BackingField: 0
-  OnStart:
+  OnStartEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnObjectSpawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  StateChangeUnityEvents:
+  - StateChangeType: 1
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: -1835263919659939343, guid: 3f5a29df26a3c474eacece8bae23e9ef, type: 2}
+    OnChange:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4162842312356658526}
+          m_TargetAssemblyTypeName: RFG.ScrollingShooter.Character, Assembly-CSharp
+          m_MethodName: EnableAllInput
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1325209439425228140}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &-8698269096184523768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +318,7 @@ MonoBehaviour:
   Armor: 100
   MaxArmor: 100
   DefaultMaxArmor: 100
-  KillEvent: {fileID: 0}
+  KillEvent: {fileID: 11400000, guid: e824c76173ed1cc4f802d4b36fc6cce3, type: 2}
 --- !u!114 &5864277437091220034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Inventory>k__BackingField: {fileID: 11400000, guid: 31b027c3f4273284a9cb17c6e06fba1d, type: 2}
+  <Clone>k__BackingField: 0
 --- !u!114 &2330936963177849511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileWeaponEquipable: {fileID: 11400000, guid: 8debc7df38ce37e48ad82751fbd8bc81, type: 2}
+  <PlayerInventory>k__BackingField: {fileID: 0}
+  <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 1920359906747164598}
   WeaponState:
     StatePack: {fileID: 11400000, guid: 0f6ec9ca578c7694ca04fa791316fcbb, type: 2}
@@ -517,6 +553,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileWeaponEquipable: {fileID: 11400000, guid: ea57abb229b4e0b43a779d510e9dd298, type: 2}
+  <PlayerInventory>k__BackingField: {fileID: 0}
+  <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 1920359906747164598}
   WeaponState:
     StatePack: {fileID: 11400000, guid: d9ce4eda44ead27418d40a5e71ad4cef, type: 2}

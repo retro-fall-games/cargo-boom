@@ -18,7 +18,7 @@ MonoBehaviour:
   position: {x: -106, y: 418}
   description: 
   drawGizmos: 0
-  Duration: 1
+  Duration: 3
 --- !u!114 &-2792140128732852952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +57,6 @@ MonoBehaviour:
   - {fileID: -2792140128732852952}
   - {fileID: 4236844142128456338}
   - {fileID: -8151526760132430370}
-  - {fileID: 8010186339312417475}
   - {fileID: 6463537575460994660}
   blackboard:
     moveToPosition: {x: 0, y: 0}
@@ -100,7 +99,6 @@ MonoBehaviour:
   drawGizmos: 0
   children:
   - {fileID: -8151526760132430370}
-  - {fileID: 8010186339312417475}
   - {fileID: 6463537575460994660}
 --- !u!114 &6463537575460994660
 MonoBehaviour:
@@ -117,25 +115,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f694f81085f5103408e3a6025805b166
-  position: {x: 275, y: 418}
+  position: {x: 113, y: 418}
   description: 
   drawGizmos: 0
-  PressTime: 0.5
---- !u!114 &8010186339312417475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbafbad51bac6249a785cfd982e62f5, type: 3}
-  m_Name: FaceAggroTargetNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 348404474b15e7c4fb758118851fbe5b
-  position: {x: 85, y: 418}
-  description: 
-  drawGizmos: 0
+  PressTime: 0.25

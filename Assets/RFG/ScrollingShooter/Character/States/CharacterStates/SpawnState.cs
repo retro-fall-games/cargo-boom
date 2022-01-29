@@ -24,6 +24,7 @@ namespace RFG.ScrollingShooter
       // Reenable all the components
       characterContext.transform.gameObject.SetActive(true);
       characterContext.character.EnableAllAbilities(true);
+      characterContext.character.EnableAllInput(true);
       characterContext.character.MovementState.Enabled = true;
 
     }

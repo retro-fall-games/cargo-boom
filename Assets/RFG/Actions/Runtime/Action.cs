@@ -39,13 +39,14 @@ namespace RFG.Actions
     public string guid;
     public string title;
     public Vector2 position;
-    public State state = State.Success;
+    public State state = State.Init;
     public string type;
     public float waitTimeToComplete = 0f;
     [field: SerializeReference] public List<Action> children = new List<Action>();
 
     public virtual void Init()
     {
+      state = State.Init;
     }
 
     public virtual State Run()

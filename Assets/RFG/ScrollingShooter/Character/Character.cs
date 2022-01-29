@@ -177,6 +177,12 @@ namespace RFG.ScrollingShooter
         }
       }
     }
+
+    public void DisableAllAbilities()
+    {
+      EnableAllAbilities(false);
+    }
+
     public T FindAbility<T>() where T : IAbility
     {
       Type t = typeof(T);

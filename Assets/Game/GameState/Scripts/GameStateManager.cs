@@ -1,11 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RFG;
+using RFG.Character;
+using RFG.ScrollingShooter;
 
 public class GameStateManager : MonoBehaviour
 {
   [field: SerializeField] private RFG.StateMachine GameState { get; set; }
   [field: SerializeField] private List<StateChangeUnityEvent> StateChangeUnityEvents { get; set; }
+
+  [field: SerializeField] private RFG.ScrollingShooter.Character Player { get; set; }
+  [field: SerializeField] private HealthBehaviour HealthBehaviour { get; set; }
+  [field: SerializeField] private ObjectPoolWaveSpawner WaveSpawner { get; set; }
 
   private GameStateContext _gameStateContext;
 
@@ -28,6 +34,14 @@ public class GameStateManager : MonoBehaviour
 
   public void Liftoff()
   {
+    if (Player.CharacterState.CurrentStateType == typeof(DeadState))
+    {
+      Player.Respawn();
+      HealthBehaviour.ResetHealth();
+      HealthBehaviour.ResetArmor();
+    }
+    WaveSpawner.Stop();
+
     GameState.ChangeState(typeof(LiftoffState));
   }
 

@@ -29,6 +29,14 @@ namespace RFG.Actions
     #region Play Methods
     public void Play()
     {
+      if (_currentActionCoroutine != null)
+      {
+        StopCoroutine(_currentActionCoroutine);
+      }
+      if (_currentAction != null)
+      {
+        _currentAction = null;
+      }
       OnStart?.Invoke();
       ProcessNextAction();
     }

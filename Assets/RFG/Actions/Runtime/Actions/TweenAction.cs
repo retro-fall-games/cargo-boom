@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using UnityEngine.UIElements;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -23,6 +24,12 @@ namespace RFG.Actions
     public bool waitToComplete = true;
 
     private State _currentState = State.Init;
+
+    public override void Init()
+    {
+      base.Init();
+      _currentState = State.Init;
+    }
 
     public override State Run()
     {
@@ -86,12 +93,15 @@ namespace RFG.Actions
     private void onPlay()
     {
     }
+
     private void onPause()
     {
     }
+
     private void onResume()
     {
     }
+
     private void onComplete()
     {
       _currentState = State.Success;

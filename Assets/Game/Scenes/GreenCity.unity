@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38692848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4323508755033745542, guid: de0331d005f163945af3a117317d4dab, type: 3}
+  m_PrefabInstance: {fileID: 2068731367979954960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66975066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1197,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &976036224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1132323385793738067, guid: 086dc5d2790dc8a4b95688bf9c4f1af3, type: 3}
+  m_PrefabInstance: {fileID: 1132323385331541601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3dbb1fc6b63b74498ed2cec0ee8873d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981425717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,37 +1368,37 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
-      data:
-        guid: b7a19a7ff4c23c14db1be3d1301017a1
-        title: RFG.Actions.SetActiveAction
-        position: {x: 302, y: -309.32}
-        state: 3
-        type: RFG.Actions.SetActiveAction
-        waitTimeToComplete: 0
-        children:
-        - id: 1
-        gameObject: {fileID: 1720954288}
-        active: 1
-    00000001:
       type: {class: TMP_TextSetTextAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
         guid: 921ed31d2ab4a464abc9cce93baf95b2
         title: RFG.Actions.TMP_TextSetTextAction
-        position: {x: 289, y: -47}
+        position: {x: 288.99997, y: -397.19193}
         state: 3
         type: RFG.Actions.TMP_TextSetTextAction
+        waitTimeToComplete: 0
+        children:
+        - id: 1
+        tmpText: {fileID: 829252940}
+        text: Enemies Detected
+    00000001:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: b7a19a7ff4c23c14db1be3d1301017a1
+        title: RFG.Actions.SetActiveAction
+        position: {x: 289, y: -128.38512}
+        state: 3
+        type: RFG.Actions.SetActiveAction
         waitTimeToComplete: 3
         children:
         - id: 2
-        tmpText: {fileID: 829252940}
-        text: Enemies Detected
+        gameObject: {fileID: 1720954288}
+        active: 1
     00000002:
       type: {class: TMP_TextSetTextAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
         guid: 472a45bbd6b0e8a4fa4bc7b4116058b7
         title: RFG.Actions.TMP_TextSetTextAction
-        position: {x: 288.99997, y: 208.37576}
+        position: {x: 289, y: 178.90498}
         state: 3
         type: RFG.Actions.TMP_TextSetTextAction
         waitTimeToComplete: 3
@@ -2339,7 +2355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1498349476
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2350,9 +2366,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8f08a474525bc1746b83991ba70bd4eb, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f7463022eff04394b87b1fc5974d9ba8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 408ec1ff847fc7e45811232ac7b2dcdd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4162,7 +4178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 37919077412913188, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.7
+      value: -0.6999998
       objectReference: {fileID: 0}
     - target: {fileID: 37919077412913188, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4179,6 +4195,10 @@ PrefabInstance:
     - target: {fileID: 1679850108551978582, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144786938964218230, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_text
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6469351127519347209, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_Camera
@@ -4386,21 +4406,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1363934093}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1479561469}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 38692848}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1363934100}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4412,7 +4428,19 @@ PrefabInstance:
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1024946653}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 976036224}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 976036224}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 976036224}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[3].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4422,37 +4450,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1794096268}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[4].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 38692848}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[4].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: RFG.Actions.ActionList, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: RFG.Actions.ActionList, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
-      propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[2].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1363934100}
     - target: {fileID: 7123798071755595870, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: m_Name
       value: GameStateManager

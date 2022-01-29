@@ -34,10 +34,10 @@ MonoBehaviour:
   IsInCooldown: 0
   IsFiring: 0
   CanUse: 1
-  Ammo: 10
-  MaxAmmo: 100
-  StartingAmmo: 10
-  RefillAmmo: 10
-  GainAmmoOverTime: 1
-  AmmoGain: 1
-  UnlimitedAmmo: 1
+  Ammo: 1
+  MaxAmmo: 3
+  StartingAmmo: 1
+  RefillAmmo: 1
+  GainAmmoOverTime: 0
+  AmmoGain: 0
+  UnlimitedAmmo: 0

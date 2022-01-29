@@ -21,8 +21,9 @@ MonoBehaviour:
   PickUpText: 
   PickUpEffects: []
   ConsumeOnPickUp: 1
-  ConsumeText: +1 Ammo
+  ConsumeText: +1 Missle
   ConsumeEffects:
   - FloatingText
+  - PickUpEffect
   CargoType: 2
-  Amount: 5
+  Amount: 1

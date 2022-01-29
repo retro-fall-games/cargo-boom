@@ -22,5 +22,5 @@ MonoBehaviour:
   WaitToUnfreezeTime: 0
   StatesCanUnfreeze: []
   NextState: {fileID: 11400000, guid: 6e5a7efbe3f0d3a4a891bee4251f8090, type: 2}
-  NextStateAfterTime: 3
+  NextStateAfterTime: 5
   GoToNextStateAfterCompletion: 0

@@ -15,7 +15,8 @@ MonoBehaviour:
   Layer: Base Layer
   EnterClip: 
   ExitClip: 
-  EnterEffects: []
+  EnterEffects:
+  - Siren
   ExitEffects: []
   StopEnterEffectsOnExit: 0
   FreezeState: 0

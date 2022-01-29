@@ -24,5 +24,6 @@ MonoBehaviour:
   ConsumeText: +1 Power Up
   ConsumeEffects:
   - FloatingText
+  - PickUpEffect
   CargoType: 3
   Amount: 5

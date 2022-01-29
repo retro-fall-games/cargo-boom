@@ -89,7 +89,7 @@ namespace RFG.Character
 
     public void AddHealth(float amount)
     {
-      SetHealth(Health += amount);
+      SetHealth(Health + amount);
     }
 
     public void ResetHealth()
@@ -132,7 +132,7 @@ namespace RFG.Character
 
     public void AddArmor(float amount)
     {
-      SetArmor(Armor += amount);
+      SetArmor(Armor + amount);
     }
 
     public void ResetArmor()

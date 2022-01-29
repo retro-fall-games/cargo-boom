@@ -14,6 +14,7 @@ namespace RFG.Timers
 
     private Coroutine _co;
     private int _timesCalled = 0;
+    private bool _running = false;
 
     private void Start()
     {
@@ -26,11 +27,13 @@ namespace RFG.Timers
     public void Play()
     {
       _timesCalled = 0;
+      _running = true;
       _co = StartCoroutine(HandleTimer());
     }
 
     public void Stop()
     {
+      _running = false;
       if (_co != null)
       {
         StopCoroutine(_co);
@@ -45,6 +48,12 @@ namespace RFG.Timers
     private IEnumerator HandleTimer()
     {
       yield return new WaitForSeconds(Seconds);
+
+      if (!_running)
+      {
+        yield break;
+      }
+
       CallEvent?.Invoke();
 
       if (++_timesCalled < Loop || Loop == -1)

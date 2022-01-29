@@ -83,3 +83,18 @@ MonoBehaviour:
   - tag: FloatingText
     prefab: {fileID: 3080913505683421689, guid: d6f9efa33498a7f4dab8bdac402a3b95, type: 3}
     size: 1
+  - tag: PickUpEffect
+    prefab: {fileID: 2255779203440002469, guid: 98ecce2988c1a474a9adcb7216ac831f, type: 3}
+    size: 1
+  - tag: MachineGunSoundEffect
+    prefab: {fileID: 66646637076485600, guid: cd2003677411c2749b19e0e4613aab2b, type: 3}
+    size: 10
+  - tag: Siren
+    prefab: {fileID: 1191256624347183549, guid: a6fdf8a6a2af712469985dc2d087e619, type: 3}
+    size: 1
+  - tag: Missle Shot
+    prefab: {fileID: 1247860802447759144, guid: fc11e2235af24b34a89b0deccb66f3c4, type: 3}
+    size: 1
+  - tag: Missle Shot Sustained
+    prefab: {fileID: 4859887867585099934, guid: dfcd6ad25dd74774fad0e471a6bd13ba, type: 3}
+    size: 1

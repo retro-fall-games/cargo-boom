@@ -14,14 +14,12 @@ public class CargoConsumable : Consumable
   public override void Consume(Transform transform, Inventory inventory)
   {
     base.Consume(transform, inventory);
-    Debug.Log("Object: " + transform.gameObject.name);
     switch (CargoType)
     {
       case CargoType.Health:
         HealthBehaviour health = transform.gameObject.GetComponent<HealthBehaviour>();
         if (health != null)
         {
-          Debug.Log("Add Health: " + Amount);
           health.AddHealth(Amount);
         }
         break;

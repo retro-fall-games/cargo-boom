@@ -115,7 +115,7 @@ namespace RFG.Items
       }
     }
 
-    private void HandlePickUp()
+    private void HandlePickUp(GameObject other)
     {
       LastPickUp = this;
 
@@ -123,7 +123,7 @@ namespace RFG.Items
       {
         if (consumable.ConsumeOnPickUp)
         {
-          consumable.Consume(transform, Inventory);
+          consumable.Consume(other.transform, Inventory);
           OnConsume?.Invoke();
           Hide();
           return;
@@ -131,7 +131,7 @@ namespace RFG.Items
       }
 
       Inventory.Add(Item);
-      transform.SpawnFromPool(Item.PickUpEffects, Quaternion.identity, new object[] { Item.PickUpText });
+      other.transform.SpawnFromPool(Item.PickUpEffects, Quaternion.identity, new object[] { Item.PickUpText });
       OnPickUp?.Invoke();
       Hide();
 
@@ -139,7 +139,7 @@ namespace RFG.Items
       {
         if (equipable.EquipOnPickUp)
         {
-          equipable.Equip(transform, Inventory);
+          equipable.Equip(other.transform, Inventory);
         }
       }
     }
@@ -148,13 +148,13 @@ namespace RFG.Items
     {
       if (LayerMask.Contains(col.gameObject.layer))
       {
-        HandlePickUp();
+        HandlePickUp(col.gameObject);
       }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-      HandlePickUp();
+      HandlePickUp(gameObject);
     }
 
     private void PickRandomItem()

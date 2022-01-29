@@ -103,7 +103,8 @@ MonoBehaviour:
   <LayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 1024
-  <SpawnEffects>k__BackingField: []
+  <SpawnEffects>k__BackingField:
+  - MachineGunSoundEffect
   <KillEffects>k__BackingField:
   - BulletDamage
 --- !u!212 &6483345500112256149

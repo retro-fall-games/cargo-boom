@@ -4908,7 +4908,9 @@ MonoBehaviour:
   <LayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 1024
-  <SpawnEffects>k__BackingField: []
+  <SpawnEffects>k__BackingField:
+  - Missle Shot
+  - Missle Shot Sustained
   <KillEffects>k__BackingField: []
 --- !u!212 &86894087404135518
 SpriteRenderer:

@@ -12,8 +12,10 @@ public class GameStateManager : MonoBehaviour
   [field: SerializeField] private RFG.ScrollingShooter.Character Player { get; set; }
   [field: SerializeField] private HealthBehaviour HealthBehaviour { get; set; }
   [field: SerializeField] private ObjectPoolWaveSpawner WaveSpawner { get; set; }
+  [field: SerializeField] private List<GameObject> PowerUps { get; set; }
 
   private GameStateContext _gameStateContext;
+  private int _level = 0;
 
   private void Awake()
   {
@@ -58,6 +60,10 @@ public class GameStateManager : MonoBehaviour
   public void EnemiesDefeated()
   {
     GameState.ChangeState(typeof(EnemiesDefeatedState));
+    if (_level < PowerUps.Count)
+    {
+      GameObject powerUp = Instantiate(PowerUps[_level++], WaveSpawner.LastKillPosition, Quaternion.identity);
+    }
   }
 
   public void GameOver()

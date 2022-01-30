@@ -22,6 +22,7 @@ namespace RFG
     [field: SerializeField] private TweenPathType TweenPathType { get; set; } = TweenPathType.Point;
     [field: SerializeField] public List<Vector3> Path { get; set; }
     [field: SerializeField] public bool Local { get; set; }
+    [field: SerializeField] public bool ReversePath { get; set; }
     [field: SerializeField] public GameObject TweenGameObject { get; set; }
 
     public bool IsPlaying { get; private set; }
@@ -61,7 +62,7 @@ namespace RFG
 
       List<Vector3> paths = new List<Vector3>(Path);
 
-      if (reversePath)
+      if (reversePath || ReversePath)
       {
         paths.Reverse();
       }

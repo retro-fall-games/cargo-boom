@@ -113,3 +113,6 @@ MonoBehaviour:
   - tag: Missle Shot Sustained
     prefab: {fileID: 4859887867585099934, guid: dfcd6ad25dd74774fad0e471a6bd13ba, type: 3}
     size: 1
+  - tag: smallhelireversed
+    prefab: {fileID: 7101132019968963305, guid: 2d5fa910471645e478a88cf1b2d4eec8, type: 3}
+    size: 10

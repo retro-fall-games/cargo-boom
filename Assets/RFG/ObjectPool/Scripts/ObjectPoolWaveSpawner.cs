@@ -28,12 +28,15 @@ namespace RFG
   public class ObjectPoolWaveSpawner : MonoBehaviour
   {
     [field: SerializeField] private List<ObjectPoolWave> Waves { get; set; }
+    [field: SerializeField] private Transform SpawnPoint { get; set; }
     [field: SerializeField] private UnityEvent OnWaveStart { get; set; }
     [field: SerializeField] private UnityEvent OnWaveEnd { get; set; }
     [field: SerializeField] private UnityEvent OnFinish { get; set; }
 
     private Dictionary<string, List<GameObject>> _currentSpawnedObjects;
     private Dictionary<string, List<GameObject>> _objectsCanRemove;
+
+    public Vector3 LastKillPosition { get; private set; }
 
     private int _currentWaveIndex = 0;
     private ObjectPoolWave _currentWave;
@@ -98,7 +101,7 @@ namespace RFG
 
     private void NextWave()
     {
-      if (_currentWave.Loop > 1 && _waveLoopCount < _currentWave.Loop)
+      if (_currentWave.Loop > 0 && _waveLoopCount < _currentWave.Loop)
       {
         _waveLoopCount++;
       }
@@ -136,7 +139,7 @@ namespace RFG
 
     private void SpawnObject(string tag)
     {
-      GameObject spawn = ObjectPool.Instance.SpawnFromPool(tag, transform.position, Quaternion.identity);
+      GameObject spawn = ObjectPool.Instance.SpawnFromPool(tag, SpawnPoint.position, Quaternion.identity);
       if (_currentWave.Parent)
       {
         spawn.transform.SetParent(transform);
@@ -174,6 +177,7 @@ namespace RFG
           {
             if (_currentSpawnedObjects.ContainsKey(kvp.Key))
             {
+              LastKillPosition = spawn.transform.position;
               _currentSpawnedObjects[kvp.Key].Remove(spawn);
             }
             if (_currentSpawnedObjects[kvp.Key].Count == 0)

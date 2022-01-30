@@ -47,6 +47,7 @@ MonoBehaviour:
   <PlayerInventory>k__BackingField: {fileID: 4057788272158931477}
   <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 7969663591620846663}
+  <UseStatePackFromEquipable>k__BackingField: 0
   WeaponState:
     StatePack: {fileID: 11400000, guid: 153e8633b1fe32a48ba4469c6248266b, type: 2}
     PreviousState: {fileID: 0}
@@ -375,9 +376,9 @@ MonoBehaviour:
   DefaultMaxHealth: 20
   ArmorReference: {fileID: 0}
   MaxArmorReference: {fileID: 0}
-  Armor: 5
-  MaxArmor: 5
-  DefaultMaxArmor: 5
+  Armor: 10
+  MaxArmor: 10
+  DefaultMaxArmor: 10
   KillEvent: {fileID: 0}
 --- !u!114 &4057788272158931477
 MonoBehaviour:

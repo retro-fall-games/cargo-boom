@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 6469351127519347209}
   - component: {fileID: 6469351127519347208}
   - component: {fileID: 6469351127519347211}
+  - component: {fileID: 5897813052020290762}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -390,6 +391,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5897813052020290762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469351127519347210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a49d6d8d5fdf234caffe076f17122d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <HealthSlider>k__BackingField: {fileID: 6469351128024667679}
+  <ArmorSlider>k__BackingField: {fileID: 6469351129217033241}
+  <MissleCount>k__BackingField: {fileID: 4144786938964218230}
+  <Character>k__BackingField: {fileID: 0}
 --- !u!1 &6469351127649271276
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <HealthSlider>k__BackingField: {fileID: 6469351128024667679}
   <ArmorSlider>k__BackingField: {fileID: 6469351129217033241}
-  <MissleWeapon>k__BackingField: {fileID: 11400000, guid: ea57abb229b4e0b43a779d510e9dd298, type: 2}
   <MissleCount>k__BackingField: {fileID: 4144786938964218230}
   <Character>k__BackingField: {fileID: 0}
 --- !u!1 &6469351128024667673

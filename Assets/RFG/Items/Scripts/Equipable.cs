@@ -21,6 +21,7 @@ namespace RFG.Items
     public EquipmentType EquipmentType;
     public bool IsEquipped = false;
     public bool EquipOnPickUp = false;
+    public EquipmentSlot EquipmentSlot;
     public Sprite EquipSprite;
     public string EquipText;
     public string UnequipText;

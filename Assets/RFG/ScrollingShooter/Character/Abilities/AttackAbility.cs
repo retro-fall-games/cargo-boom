@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using RFG.Items;
@@ -54,6 +55,11 @@ namespace RFG.ScrollingShooter
         _secondaryAttackInput.canceled += OnSecondaryAttackCanceled;
         _secondaryAttackInput.performed += OnSecondaryAttackPerformed;
       }
+
+      if (_playerInventory != null && _playerInventory.Inventory != null)
+      {
+        _playerInventory.Inventory.OnEquip += OnEquip;
+      }
     }
 
     private void OnDisable()
@@ -71,6 +77,11 @@ namespace RFG.ScrollingShooter
         _secondaryAttackInput.canceled -= OnSecondaryAttackCanceled;
         _secondaryAttackInput.performed -= OnSecondaryAttackPerformed;
       }
+
+      if (_playerInventory != null && _playerInventory.Inventory != null)
+      {
+        _playerInventory.Inventory.OnEquip -= OnEquip;
+      }
     }
 
     private void Update()
@@ -85,8 +96,12 @@ namespace RFG.ScrollingShooter
     {
       if (_character.CharacterType == CharacterType.Player)
       {
-        _primaryAttackPressed = _primaryAttackInput.IsPressed();
-        _secondaryAttackPressed = _secondaryAttackInput.IsPressed();
+        _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
+        if (!_pointerOverUi)
+        {
+          _primaryAttackPressed = _primaryAttackInput.IsPressed();
+          _secondaryAttackPressed = _secondaryAttackInput.IsPressed();
+        }
       }
     }
 
@@ -223,6 +238,15 @@ namespace RFG.ScrollingShooter
         {
           projectileWeaponEquipable.Perform();
         }
+      }
+    }
+
+    private void OnEquip(KeyValuePair<EquipmentSlot, Equipable> item)
+    {
+      if (_playerInventory != null && _playerInventory.Inventory != null)
+      {
+        _primaryWeaponEquipable = _playerInventory.Inventory.LeftHand as ProjectileWeaponEquipable;
+        _secondaryWeaponEquipable = _playerInventory.Inventory.RightHand as ProjectileWeaponEquipable;
       }
     }
     #endregion

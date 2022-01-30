@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Inventory>k__BackingField: {fileID: 11400000, guid: 31b027c3f4273284a9cb17c6e06fba1d, type: 2}
-  <Clone>k__BackingField: 0
+  <Clone>k__BackingField: 1
 --- !u!114 &2330936963177849511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,10 +513,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileWeaponEquipable: {fileID: 11400000, guid: 8debc7df38ce37e48ad82751fbd8bc81, type: 2}
-  <PlayerInventory>k__BackingField: {fileID: 0}
+  ProjectileWeaponEquipable: {fileID: 0}
+  <PlayerInventory>k__BackingField: {fileID: 8333065331577022406}
   <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 1920359906747164598}
+  <UseStatePackFromEquipable>k__BackingField: 1
   WeaponState:
     StatePack: {fileID: 11400000, guid: 0f6ec9ca578c7694ca04fa791316fcbb, type: 2}
     PreviousState: {fileID: 0}
@@ -568,6 +569,7 @@ MonoBehaviour:
   <PlayerInventory>k__BackingField: {fileID: 0}
   <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 1920359906747164598}
+  <UseStatePackFromEquipable>k__BackingField: 0
   WeaponState:
     StatePack: {fileID: 11400000, guid: d9ce4eda44ead27418d40a5e71ad4cef, type: 2}
     PreviousState: {fileID: 0}

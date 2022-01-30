@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3503e3bed8f1648a36b3788b5ee971, type: 3}
+  m_Name: MissleEquipable
+  m_EditorClassIdentifier: 
+  Guid: 
+  Description: 
+  OnlyOne: 0
+  IsStackable: 0
+  StackableLimit: 1
+  PickUpSprite: {fileID: 0}
+  PickUpText: 
+  PickUpEffects: []
+  EquipmentType: 7
+  IsEquipped: 1
+  EquipOnPickUp: 0
+  OverrideInventorySlotOnPickUp: 0
+  EquipmentSlot: 8
+  EquipSprite: {fileID: 0}
+  EquipText: 
+  UnequipText: 
+  EquipEffects: []
+  UnequipEffects: []
+  WeaponEquipableType: 0
+  FireRate: 1
+  Cooldown: 0
+  IsInCooldown: 0
+  IsFiring: 0
+  CanUse: 1
+  Ammo: 1
+  MaxAmmo: 3
+  StartingAmmo: 1
+  RefillAmmo: 1
+  GainAmmoOverTime: 0
+  AmmoGain: 0
+  UnlimitedAmmo: 0

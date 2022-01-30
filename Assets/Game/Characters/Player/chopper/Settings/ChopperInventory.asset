@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: ChopperInventory
   m_EditorClassIdentifier: 
   Items:
-    list: []
+    list:
+    - Key: 0
+      Value:
+        item: {fileID: 11400000, guid: 6fa4cfda763292749a5aeb9002c416a3, type: 2}
+        quantity: 1
+    - Key: 1
+      Value:
+        item: {fileID: 11400000, guid: 6fa4cfda763292749a5aeb9002c416a3, type: 2}
+        quantity: 1
   Helmet: {fileID: 0}
   Amulet: {fileID: 0}
   Armor: {fileID: 0}

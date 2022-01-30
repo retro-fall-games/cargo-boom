@@ -140,6 +140,14 @@ namespace RFG.Items
         if (equipable.EquipOnPickUp)
         {
           equipable.Equip(other.transform, Inventory);
+          if (equipable.EquipmentSlot == EquipmentSlot.LeftHand)
+          {
+            Inventory.Equip(EquipmentSlot.LeftHand, equipable);
+          }
+          else if (equipable.EquipmentSlot == EquipmentSlot.RightHand)
+          {
+            Inventory.Equip(EquipmentSlot.RightHand, equipable);
+          }
         }
       }
     }

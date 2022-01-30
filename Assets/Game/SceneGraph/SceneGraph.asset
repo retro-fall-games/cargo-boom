@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: 520d47e3c74789843b215b05bc78697d
   position: {x: 60.241398, y: -167.42624}
-  scenePath: Assets/Scenes/MainMenu.unity
+  scenePath: Assets/Game/Scenes/MainMenu.unity
   sceneTransitions:
   - {fileID: 6962819123499750127}
   bounds:
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: 242f9bb9d3aea914cb9fadc2d990ca41
   position: {x: 380.99997, y: -165.17241}
-  scenePath: Assets/Scenes/GreenCity.unity
+  scenePath: Assets/Game/Scenes/GreenCity.unity
   sceneTransitions:
   - {fileID: -2247906642898277767}
   bounds:

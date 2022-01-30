@@ -47,6 +47,21 @@ MonoBehaviour:
   - tag: PlayerBullet
     prefab: {fileID: 5109261471553399367, guid: f2e5656a092f0b14881d3fc656224a86, type: 3}
     size: 30
+  - tag: PlayerBullet2
+    prefab: {fileID: 5109261471553399367, guid: 41bf4de7f543d1d408d9efeb7857c34a, type: 3}
+    size: 30
+  - tag: PlayerBullet3
+    prefab: {fileID: 5109261471553399367, guid: 4074c0d714c7e794c80eea36b4965773, type: 3}
+    size: 30
+  - tag: PlayerBullet4
+    prefab: {fileID: 5109261471553399367, guid: 66efff42cf0b60f4e9fd8b2f9bf1062a, type: 3}
+    size: 30
+  - tag: PlayerBullet5
+    prefab: {fileID: 5109261471553399367, guid: 14c19652be9e5ad47b17ede93c81bf29, type: 3}
+    size: 30
+  - tag: PlayerBullet6
+    prefab: {fileID: 5109261471553399367, guid: 73b343703804e324bb248f5033f6a353, type: 3}
+    size: 30
   - tag: Missle
     prefab: {fileID: 5793802038532824141, guid: 2b00c9bc84710cc41b8f04120b0829f9, type: 3}
     size: 10

@@ -31,26 +31,11 @@ namespace RFG.Weapons
     public int AmmoGain = 0;
     public bool UnlimitedAmmo = false;
 
+    [Header("State Pack")]
+    public StatePack StatePack;
+
     public Action<int> OnAmmoChange;
     public Action<Type> OnStateChange;
-
-    public override void Equip(Transform transform, Inventory inventory)
-    {
-      if (!IsEquipped)
-      {
-        if (inventory.LeftHand == null)
-        {
-          inventory.Equip(EquipmentSlot.LeftHand, this);
-          return;
-        }
-        if (inventory.RightHand == null)
-        {
-          inventory.Equip(EquipmentSlot.RightHand, this);
-          return;
-        }
-      }
-      base.Equip(transform, inventory);
-    }
 
     public override void Started()
     {
@@ -116,7 +101,7 @@ namespace RFG.Weapons
 
     public override string ToString()
     {
-      return $"IsEquipped: {IsEquipped} CanUse: {CanUse} IsInCooldown: {IsInCooldown} Ammo: {Ammo} UnlimitedAmmo: {UnlimitedAmmo}";
+      return $"Name: {name} IsEquipped: {IsEquipped} CanUse: {CanUse} IsInCooldown: {IsInCooldown} Ammo: {Ammo} UnlimitedAmmo: {UnlimitedAmmo}";
     }
 
     public ProjectileWeaponEquipableSave GetWeaponSave()

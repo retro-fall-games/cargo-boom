@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -337,6 +336,7 @@ namespace RFG.Items
     #endregion
   }
 
+  #region Clone
   public static class InventoryEx
   {
     public static Inventory Clone(this Inventory inventory)
@@ -393,4 +393,5 @@ namespace RFG.Items
       return newInventory;
     }
   }
+  #endregion
 }

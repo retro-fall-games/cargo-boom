@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using RFG.Items;
 
@@ -13,7 +14,9 @@ namespace RFG.Weapons
     [field: SerializeField] private PlayerInventory PlayerInventory { get; set; }
     [field: SerializeField] private ProjectileWeaponPosition ProjectileWeaponPosition { get; set; } = ProjectileWeaponPosition.LeftHand;
     public Transform FirePoint;
+    [field: SerializeField] private bool UseStatePackFromEquipable { get; set; }
     public RFG.StateMachine WeaponState;
+
 
     private float _fireRateElapsed;
     private float _cooldownElapsed;
@@ -22,20 +25,17 @@ namespace RFG.Weapons
     [HideInInspector] public StateProjectileWeaponContext Context => _projectileWeaponContext;
     private StateProjectileWeaponContext _projectileWeaponContext = new StateProjectileWeaponContext();
 
+    #region Unity Methods
     private void Awake()
     {
-      if (ProjectileWeaponEquipable == null && PlayerInventory != null && PlayerInventory.Inventory != null)
+      if (ProjectileWeaponEquipable == null)
       {
-        if (ProjectileWeaponPosition == ProjectileWeaponPosition.LeftHand)
-        {
-          ProjectileWeaponEquipable = PlayerInventory.Inventory.LeftHand as ProjectileWeaponEquipable;
-        }
-        else if (ProjectileWeaponPosition == ProjectileWeaponPosition.RightHand)
-        {
-          ProjectileWeaponEquipable = PlayerInventory.Inventory.RightHand as ProjectileWeaponEquipable;
-        }
+        EquipFromInventory();
       }
-      ProjectileWeaponEquipable.Ammo = ProjectileWeaponEquipable.StartingAmmo;
+      if (UseStatePackFromEquipable)
+      {
+        SetStatePackFromEquipable();
+      }
       InitContext();
     }
 
@@ -58,6 +58,25 @@ namespace RFG.Weapons
       Cooldown();
       GainAmmoOverTime();
     }
+
+    private void OnEnable()
+    {
+      ProjectileWeaponEquipable.OnStateChange += OnStateChange;
+      if (PlayerInventory != null && PlayerInventory.Inventory != null)
+      {
+        PlayerInventory.Inventory.OnEquip += OnEquip;
+      }
+    }
+
+    private void OnDisable()
+    {
+      ProjectileWeaponEquipable.OnStateChange -= OnStateChange;
+      if (PlayerInventory != null && PlayerInventory.Inventory != null)
+      {
+        PlayerInventory.Inventory.OnEquip -= OnEquip;
+      }
+    }
+    #endregion
 
     private void InitContext()
     {
@@ -110,15 +129,36 @@ namespace RFG.Weapons
       WeaponState.ChangeState(newStateType);
     }
 
-    private void OnEnable()
+    private void EquipFromInventory()
     {
-      ProjectileWeaponEquipable.OnStateChange += OnStateChange;
+      if (PlayerInventory != null && PlayerInventory.Inventory != null)
+      {
+        if (ProjectileWeaponPosition == ProjectileWeaponPosition.LeftHand)
+        {
+          ProjectileWeaponEquipable = PlayerInventory.Inventory.LeftHand as ProjectileWeaponEquipable;
+        }
+        else if (ProjectileWeaponPosition == ProjectileWeaponPosition.RightHand)
+        {
+          ProjectileWeaponEquipable = PlayerInventory.Inventory.RightHand as ProjectileWeaponEquipable;
+        }
+      }
+      ProjectileWeaponEquipable.Ammo = ProjectileWeaponEquipable.StartingAmmo;
+      if (UseStatePackFromEquipable)
+      {
+        SetStatePackFromEquipable();
+      }
     }
 
-    private void OnDisable()
+    private void OnEquip(KeyValuePair<EquipmentSlot, Equipable> item)
     {
-      ProjectileWeaponEquipable.OnStateChange -= OnStateChange;
+      EquipFromInventory();
+      OnDisable();
+      OnEnable();
     }
 
+    private void SetStatePackFromEquipable()
+    {
+      WeaponState.SetStatePack(ProjectileWeaponEquipable.StatePack);
+    }
   }
 }

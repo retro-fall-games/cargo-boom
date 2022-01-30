@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b074c2619362c4fa9906137e2819c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Inventory>k__BackingField: {fileID: 11400000, guid: 31b027c3f4273284a9cb17c6e06fba1d, type: 2}
+  <Inventory>k__BackingField: {fileID: 0}
   <Item>k__BackingField: {fileID: 11400000, guid: 0061e8da2fd8c0e4c8896a852e9b56d3, type: 2}
   <LayerMask>k__BackingField:
     serializedVersion: 2

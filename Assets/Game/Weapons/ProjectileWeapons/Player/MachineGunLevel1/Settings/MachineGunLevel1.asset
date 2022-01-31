@@ -18,7 +18,7 @@ MonoBehaviour:
   IsStackable: 0
   StackableLimit: 1
   PickUpSprite: {fileID: 0}
-  PickUpText: 
+  PickUpText: Weapon Upgrade
   PickUpEffects: []
   EquipmentType: 7
   IsEquipped: 1

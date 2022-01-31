@@ -123,6 +123,84 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &29713440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29713441}
+  - component: {fileID: 29713442}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevel3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &29713441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29713440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &29713442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29713440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: mediumheli
+      Count: 2
+      Interval: 3
+      SecondsUntilBegin: 0
+    - Tag: smallheli
+      Count: 4
+      Interval: 5
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &38692848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4323508755033745542, guid: de0331d005f163945af3a117317d4dab, type: 3}
@@ -429,6 +507,88 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8669ba49269fa6b46993451fee4eaae4, type: 3}
+--- !u!1 &263592659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263592661}
+  - component: {fileID: 263592660}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevel7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263592660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263592659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: smallheli
+      Count: 3
+      Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: smallhelireversed
+      Count: 3
+      Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &263592661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263592659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341715325
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +1008,12 @@ Transform:
   m_Children:
   - {fileID: 1182740331}
   - {fileID: 2038705323}
+  - {fileID: 1921892615}
+  - {fileID: 29713441}
+  - {fileID: 1629947493}
+  - {fileID: 1986664182}
+  - {fileID: 777765245}
+  - {fileID: 263592661}
   - {fileID: 879172138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -902,6 +1068,88 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: dc9b63887436de5489b74a82c708cb46, type: 2}
+--- !u!1 &777765244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777765245}
+  - component: {fileID: 777765246}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevel6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777765245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777765244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777765246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777765244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: smallheli
+      Count: 3
+      Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: smallhelireversed
+      Count: 3
+      Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &800776141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1361,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948337085
 GameObject:
@@ -1452,30 +1700,29 @@ MonoBehaviour:
         timer: {fileID: 1024946653}
         actionType: 1
     00000004:
-      type: {class: ObjectPoolWaveSpawnerAction, ns: RFG.Actions, asm: Assembly-CSharp}
-      data:
-        guid: 2f0390327f5f2374abeefe470eee44de
-        title: RFG.Actions.ObjectPoolWaveSpawnerAction
-        position: {x: 289, y: 710.9563}
-        state: 3
-        type: RFG.Actions.ObjectPoolWaveSpawnerAction
-        waitTimeToComplete: 0
-        children:
-        - id: 5
-        ObjectPoolWaveSpawner: {fileID: 2038705321}
-        actionType: 0
-    00000005:
       type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
         guid: b5688c41ca4f66d499bfdca9eaf3fbbd
         title: RFG.Actions.SetActiveAction
-        position: {x: 289, y: 988.845}
+        position: {x: 288.99997, y: 747.48596}
         state: 3
         type: RFG.Actions.SetActiveAction
         waitTimeToComplete: 0
-        children: []
+        children:
+        - id: 5
         gameObject: {fileID: 1720954288}
         active: 0
+    00000005:
+      type: {class: StartSkirmishAction, ns: , asm: Assembly-CSharp}
+      data:
+        guid: 005aa11eb4ad4754cbffe782f7d439c9
+        title: StartSkirmishAction
+        position: {x: 289, y: 991.2}
+        state: 0
+        type: StartSkirmishAction
+        waitTimeToComplete: 0
+        children: []
+        GameStateManager: {fileID: 7123798071250177914}
 --- !u!4 &989201903
 Transform:
   m_ObjectHideFlags: 0
@@ -2391,7 +2638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1498349476
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2840,6 +3087,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1629947492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629947493}
+  - component: {fileID: 1629947494}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevel4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629947493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629947492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1629947494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629947492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 1
+    TagGroups:
+    - Tag: smallheli
+      Count: 5
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: smallhelireversed
+      Count: 5
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: mediumheli
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1635297654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3809,178 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4375575246701598499, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
   m_PrefabInstance: {fileID: 1363934084}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1921892614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921892615}
+  - component: {fileID: 1921892616}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevel2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921892615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921892614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921892616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921892614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: smallheli
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: smallhelireversed
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: mediumheli
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1986664181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1986664182}
+  - component: {fileID: 1986664183}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevel5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1986664182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986664181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986664183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986664181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: smallheli
+      Count: 3
+      Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: smallhelireversed
+      Count: 3
+      Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2021981504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,7 +4106,7 @@ GameObject:
   - component: {fileID: 2038705323}
   - component: {fileID: 2038705321}
   m_Layer: 0
-  m_Name: WaveSpawner
+  m_Name: WaveSpawnerLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4495,6 +4996,34 @@ PrefabInstance:
       propertyPath: <HealthBehaviour>k__BackingField
       value: 
       objectReference: {fileID: 1363934093}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 2038705321}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[1]
+      value: 
+      objectReference: {fileID: 1921892616}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[2]
+      value: 
+      objectReference: {fileID: 29713442}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[3]
+      value: 
+      objectReference: {fileID: 1629947494}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[4]
+      value: 
+      objectReference: {fileID: 1986664183}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[5]
+      value: 
+      objectReference: {fileID: 777765246}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[6]
+      value: 
+      objectReference: {fileID: 263592660}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <StateChangeUnityEvents>k__BackingField.Array.data[0].OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

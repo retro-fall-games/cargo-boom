@@ -11,12 +11,14 @@ public class GameStateManager : MonoBehaviour
 
   [field: SerializeField] private RFG.ScrollingShooter.Character Player { get; set; }
   [field: SerializeField] private HealthBehaviour HealthBehaviour { get; set; }
-  [field: SerializeField] private ObjectPoolWaveSpawner WaveSpawner { get; set; }
   [field: SerializeField] private List<GameObject> PowerUps { get; set; }
+  [field: SerializeField] private List<ObjectPoolWaveSpawner> WaveSpawners { get; set; }
 
   private GameStateContext _gameStateContext;
+  private ObjectPoolWaveSpawner _currentWaveSpawner;
   private int _level = 0;
 
+  #region Unity Methods
   private void Awake()
   {
     _gameStateContext = new GameStateContext();
@@ -34,6 +36,18 @@ public class GameStateManager : MonoBehaviour
     GameState.Update();
   }
 
+  private void OnEnable()
+  {
+    GameState.OnStateChange += OnStateChange;
+  }
+
+  private void OnDisable()
+  {
+    GameState.OnStateChange -= OnStateChange;
+  }
+  #endregion
+
+  #region States
   public void Liftoff()
   {
     if (Player.CharacterState.CurrentStateType == typeof(DeadState))
@@ -42,7 +56,7 @@ public class GameStateManager : MonoBehaviour
       HealthBehaviour.ResetHealth();
       HealthBehaviour.ResetArmor();
     }
-    WaveSpawner.Stop();
+    _currentWaveSpawner.Stop();
 
     GameState.ChangeState(typeof(LiftoffState));
   }
@@ -60,10 +74,8 @@ public class GameStateManager : MonoBehaviour
   public void EnemiesDefeated()
   {
     GameState.ChangeState(typeof(EnemiesDefeatedState));
-    if (_level < PowerUps.Count)
-    {
-      GameObject powerUp = Instantiate(PowerUps[_level++], WaveSpawner.LastKillPosition, Quaternion.identity);
-    }
+    SpawnPowerUp();
+    NextLevel();
   }
 
   public void GameOver()
@@ -71,6 +83,30 @@ public class GameStateManager : MonoBehaviour
     GameState.ChangeState(typeof(GameOverState));
   }
 
+  public void StartSkirmish()
+  {
+    _currentWaveSpawner = WaveSpawners[_level];
+    _currentWaveSpawner.Play();
+  }
+
+  private void NextLevel()
+  {
+    if (_level < WaveSpawners.Count)
+    {
+      _level++;
+    }
+  }
+
+  private void SpawnPowerUp()
+  {
+    if (_level < PowerUps.Count)
+    {
+      GameObject powerUp = Instantiate(PowerUps[_level], _currentWaveSpawner.LastKillPosition, Quaternion.identity);
+    }
+  }
+  #endregion
+
+  #region Events
   private void OnStateChange(State prevState, State currentState)
   {
     CallStateChangeUnityEvents(prevState, currentState);
@@ -104,14 +140,6 @@ public class GameStateManager : MonoBehaviour
       }
     }
   }
+  #endregion
 
-  private void OnEnable()
-  {
-    GameState.OnStateChange += OnStateChange;
-  }
-
-  private void OnDisable()
-  {
-    GameState.OnStateChange -= OnStateChange;
-  }
 }

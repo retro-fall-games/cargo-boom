@@ -237,7 +237,6 @@ MonoBehaviour:
           m_CallState: 2
   <Player>k__BackingField: {fileID: 0}
   <HealthBehaviour>k__BackingField: {fileID: 0}
-  <WaveSpawner>k__BackingField: {fileID: 0}
   <PowerUps>k__BackingField:
   - {fileID: 3779561410878688453, guid: 1097ae653c0cfd749bb69067cecd64b6, type: 3}
   - {fileID: 1812730456502818852, guid: d40743a09f249964c8433c48f9b8f12e, type: 3}
@@ -245,7 +244,14 @@ MonoBehaviour:
   - {fileID: 3678477382713837862, guid: c9714de2b348ef047a5aeb2d9323224c, type: 3}
   - {fileID: 4994074106160926977, guid: 12db04c95624de24fa0bb36108326279, type: 3}
   - {fileID: 2146807775363209224, guid: 59652db674f512245918da7c32db370f, type: 3}
-  <PowerUpSpawn>k__BackingField: {fileID: 0}
+  <WaveSpawners>k__BackingField:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &5279270542201364071
 MonoBehaviour:
   m_ObjectHideFlags: 0

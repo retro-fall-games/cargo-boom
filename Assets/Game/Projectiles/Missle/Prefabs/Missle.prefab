@@ -4912,6 +4912,8 @@ MonoBehaviour:
   - Missle Shot
   - Missle Shot Sustained
   <KillEffects>k__BackingField: []
+  <HasTimeToLive>k__BackingField: 0
+  <TimeToLive>k__BackingField: 0
 --- !u!212 &86894087404135518
 SpriteRenderer:
   m_ObjectHideFlags: 0

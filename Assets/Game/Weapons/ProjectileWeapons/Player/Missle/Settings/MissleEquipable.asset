@@ -23,7 +23,6 @@ MonoBehaviour:
   EquipmentType: 7
   IsEquipped: 1
   EquipOnPickUp: 0
-  OverrideInventorySlotOnPickUp: 0
   EquipmentSlot: 8
   EquipSprite: {fileID: 0}
   EquipText: 
@@ -43,3 +42,4 @@ MonoBehaviour:
   GainAmmoOverTime: 0
   AmmoGain: 0
   UnlimitedAmmo: 0
+  StatePack: {fileID: 11400000, guid: d9ce4eda44ead27418d40a5e71ad4cef, type: 2}

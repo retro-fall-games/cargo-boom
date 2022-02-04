@@ -1,35 +1,27 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using MyBox;
 
 namespace RFG
 {
   public enum ProjectileEmitterType { Circle, Cone, Vector, Target }
-
   [AddComponentMenu("RFG/Projectiles/Projectile Emitter")]
   public class ProjectileEmitter : MonoBehaviour, IPooledObject
   {
     public ProjectileEmitterType EmitterType;
-    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Cone), Range(0, 90)] private float Angle { get; set; }
-    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Cone, ProjectileEmitterType.Circle)] private float Radius { get; set; }
-    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Vector)] private Vector3 Vector { get; set; }
+    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Cone), Range(1, 90)] private float Angle { get; set; } = 45f;
+    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Cone, ProjectileEmitterType.Circle)] private float Radius { get; set; } = 5f;
+    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Cone), Range(0, 360)] private float ConeDirection { get; set; } = 0;
+    [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Vector, ProjectileEmitterType.Target)] private Vector3 Vector { get; set; }
     [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Target)] private Transform Target { get; set; }
     [field: SerializeField, ConditionalField(nameof(EmitterType), false, ProjectileEmitterType.Target)] private string TargetTag { get; set; }
-    [field: SerializeField] private List<string> ProjectileTags { get; set; }
+    [field: SerializeField] public string ProjectileTag { get; set; }
     [field: SerializeField] private bool EmitOnSpawn { get; set; } = false;
     [field: SerializeField] private int Count { get; set; }
     [field: SerializeField] private float Interval { get; set; } = 0f;
-    [field: SerializeField] private Vector3 SpawnOffset { get; set; } = new Vector3(0f, 0f, 0f);
-    [field: SerializeField] private Vector3 Rotation { get; set; } = new Vector3(0f, 0f, 0f);
-    [field: SerializeField, Range(0, 1)] private float RandomOffsetX { get; set; }
-    [field: SerializeField, Range(0, 1)] private float RandomOffsetY { get; set; }
-
-    public Vector3 SpawnPosition { get { return transform.position + SpawnOffset; } }
-
-    private Vector3 _targetVector;
-
+    [field: SerializeField] private Transform FirePoint { get; set; }
 
     #region Object Pool
     public void OnObjectSpawn(params object[] objects)
@@ -41,9 +33,9 @@ namespace RFG
     }
     #endregion
 
-    private List<GameObject> Spawn()
+    private GameObject Spawn()
     {
-      return SpawnPosition.SpawnFromPool(Rotation, ProjectileTags.ToArray());
+      return ObjectPool.Instance.SpawnFromPool(ProjectileTag, FirePoint.position, FirePoint.rotation);
     }
 
     public void Emit()
@@ -67,30 +59,74 @@ namespace RFG
 
     private IEnumerator EmitCircle()
     {
-      // Angle is the the outer part of the cone
-      // Radius is the where the projectiles will emit from
-      yield return null;
+      float angleSection = Mathf.PI * 2f / Count;
+      for (int i = 0; i < Count; i++)
+      {
+        GameObject spawned = Spawn();
+        Projectile projectile = spawned.GetComponent<Projectile>();
+        if (projectile != null)
+        {
+          float angle = i * angleSection;
+          Vector3 newPos = FirePoint.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * Radius;
+          projectile.SetPosition(FirePoint.position);
+          projectile.SetRotation(FirePoint.position + newPos);
+          projectile.SetVelocity(newPos);
+        }
+        if (Interval > 0)
+        {
+          yield return new WaitForSeconds(Interval);
+        }
+      }
     }
 
     private IEnumerator EmitCone()
     {
-      // Radius is the where the projectiles will emit from
-      yield return null;
+      float rayRange = Radius;
+      float halfFOV = Angle / 2.0f;
+
+      Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV + ConeDirection, Vector3.forward);
+      Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV + ConeDirection, Vector3.forward);
+
+      Vector3 upRayDirection = upRayRotation * transform.right * rayRange;
+      Vector3 downRayDirection = downRayRotation * transform.right * rayRange;
+
+      Vector3 topPos = downRayDirection;
+      Vector3 bottomPos = upRayDirection;
+
+      Vector3 distance = topPos - bottomPos;
+      float lengthOfSegment = distance.magnitude / (Count <= 1 ? 1 : Count - 1);
+      float precent = lengthOfSegment / distance.magnitude;
+
+      for (int i = 0; i < Count; i++)
+      {
+        GameObject spawned = Spawn();
+        Projectile projectile = spawned.GetComponent<Projectile>();
+        if (projectile != null)
+        {
+          Vector3 newPos = (topPos + (i * precent) * (bottomPos - topPos));
+          projectile.SetPosition(FirePoint.position);
+          projectile.SetRotation(FirePoint.position + newPos * FirePoint.rotation.x);
+          projectile.SetVelocity(newPos);
+        }
+        if (Interval > 0)
+        {
+          yield return new WaitForSeconds(Interval);
+        }
+      }
     }
 
     private IEnumerator EmitVector()
     {
       for (int i = 0; i < Count; i++)
       {
-        List<GameObject> spawned = Spawn();
-        foreach (GameObject spawn in spawned)
+        GameObject spawned = Spawn();
+        Projectile projectile = spawned.GetComponent<Projectile>();
+        if (projectile != null)
         {
-          Projectile projectile = spawn.GetComponent<Projectile>();
-          if (projectile != null)
-          {
-            projectile.SetPosition(SpawnPosition);
-            projectile.SetVelocity(Vector);
-          }
+          Vector3 vector = new Vector3(Vector.x * (FirePoint.rotation.y < 0 ? -1 : 1), Vector.y, Vector.z);
+          projectile.SetPosition(FirePoint.position);
+          projectile.SetRotation(FirePoint.position);
+          projectile.SetVelocity(vector);
         }
         if (Interval > 0)
         {
@@ -101,57 +137,129 @@ namespace RFG
 
     private IEnumerator EmitTarget()
     {
-      // Get the target vector from the transform or the tag
-      if (!string.IsNullOrEmpty(TargetTag))
+      List<Transform> targets = GetTargets();
+      if (targets.Count == 0)
       {
-        StartCoroutine(WaitForTargetTag());
+        yield return EmitVector();
       }
-      else if (Target != null)
+      else
       {
-        _targetVector = Target.position - SpawnPosition;
-      }
-
-      for (int i = 0; i < Count; i++)
-      {
-        List<GameObject> spawned = Spawn();
-        foreach (GameObject spawn in spawned)
+        for (int i = 0; i < Count; i++)
         {
-          Projectile projectile = spawn.GetComponent<Projectile>();
+          GameObject spawned = Spawn();
+          Projectile projectile = spawned.GetComponent<Projectile>();
           if (projectile != null)
           {
-            projectile.SetPosition(SpawnPosition);
-            projectile.SetVelocity(_targetVector);
+            Transform target = i < targets.Count ? targets[i] : targets[0];
+            Vector3 targetVector = target.position - FirePoint.position;
+            Vector3 direction = targetVector / targetVector.magnitude;
+            projectile.Target = target;
+            projectile.TargetTag = TargetTag;
+            projectile.SetPosition(FirePoint.position);
+            projectile.SetVelocity(direction);
           }
-        }
-        if (Interval > 0)
-        {
-          yield return new WaitForSeconds(Interval);
+          if (Interval > 0)
+          {
+            yield return new WaitForSeconds(Interval);
+          }
         }
       }
     }
 
-    private IEnumerator WaitForTargetTag()
+    private List<Transform> GetTargets()
     {
-      yield return new WaitUntil(() => GameObject.FindGameObjectWithTag(TargetTag) != null);
-      GameObject targetTag = GameObject.FindGameObjectWithTag(TargetTag);
-      if (targetTag != null)
+      List<Transform> targets = new List<Transform>();
+      if (Target != null)
       {
-        Target = targetTag.transform;
-        _targetVector = Target.position - SpawnPosition;
+        targets.Add(Target.transform);
       }
+      else if (!string.IsNullOrEmpty(TargetTag))
+      {
+        GameObject[] goTargets = GameObject.FindGameObjectsWithTag(TargetTag);
+        if (goTargets.Length == 1)
+        {
+          targets.Add(goTargets[0].transform);
+        }
+        else
+        {
+          targets = gameObject.GetNearestSorted(goTargets).Select(go => go.transform).ToList();
+        }
+      }
+      return targets;
     }
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-      Gizmos.color = Color.red;
-      Gizmos.DrawWireSphere(SpawnPosition, 0.1f);
-
-      if (EmitterType == ProjectileEmitterType.Vector)
+      if (FirePoint == null)
       {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(SpawnPosition, SpawnPosition + Vector);
+        LogExt.Warn<ProjectileEmitter>("Fire Point is not defined, setting default");
+        FirePoint = transform;
+        return;
       }
+      Gizmos.color = Color.red;
+      Gizmos.DrawWireSphere(FirePoint.position, 0.1f);
+
+      Gizmos.color = Color.blue;
+
+      switch (EmitterType)
+      {
+        case ProjectileEmitterType.Circle:
+          DebugEx.DrawEllipse(FirePoint.position, transform.forward, transform.up, Radius * transform.localScale.x, Radius * transform.localScale.y, 32, Color.blue);
+          float angleSection = Mathf.PI * 2f / Count;
+          Gizmos.color = Color.magenta;
+          for (int i = 0; i < Count; i++)
+          {
+            float angle = i * angleSection;
+            Vector3 newPos = FirePoint.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * Radius;
+            Gizmos.DrawWireSphere(newPos, 0.1f);
+          }
+          break;
+        case ProjectileEmitterType.Cone:
+          DebugEx.DrawCone(FirePoint.position, transform.right, Angle, Radius, ConeDirection);
+
+          float rayRange = Radius;
+          float halfFOV = Angle / 2.0f;
+
+          Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV + ConeDirection, Vector3.forward);
+          Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV + ConeDirection, Vector3.forward);
+
+          Vector3 upRayDirection = upRayRotation * transform.right * rayRange;
+          Vector3 downRayDirection = downRayRotation * transform.right * rayRange;
+
+          Vector3 topPos = FirePoint.position + downRayDirection;
+          Vector3 bottomPos = FirePoint.position + upRayDirection;
+
+          Vector3 distance = topPos - bottomPos;
+          float lengthOfSegment = distance.magnitude / (Count <= 1 ? 1 : Count - 1);
+          float precent = lengthOfSegment / distance.magnitude;
+
+          for (int i = 0; i < Count; i++)
+          {
+            Vector3 newPos = topPos + (i * precent) * (bottomPos - topPos);
+            Gizmos.DrawWireSphere(newPos, 0.1f);
+          }
+          break;
+        case ProjectileEmitterType.Vector:
+          Gizmos.DrawLine(FirePoint.position, FirePoint.position + Vector);
+          break;
+        case ProjectileEmitterType.Target:
+          List<Transform> targets = GetTargets();
+          if (targets.Count > 0)
+          {
+            foreach (Transform target in targets)
+            {
+              Gizmos.DrawLine(FirePoint.position, target.position);
+            }
+          }
+          break;
+      }
+    }
+
+    [ButtonMethod]
+    private void EmitProjectile()
+    {
+      Emit();
     }
 #endif
 

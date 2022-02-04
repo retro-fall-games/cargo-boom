@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using RFG.Character;
+using System;
 
 namespace RFG
 {
@@ -10,14 +12,18 @@ namespace RFG
   public class Projectile : MonoBehaviour, IPooledObject
   {
     [field: SerializeField] private float Speed { get; set; } = 5f;
+    [field: SerializeField] private float RotationSpeed { get; set; } = .1f;
     [field: SerializeField] private float Damage { get; set; } = 10f;
     [field: SerializeField] private string SpawnAtName { get; set; }
     [field: SerializeField] private Vector3 SpawnOffset { get; set; }
-    [field: SerializeField] private Transform Target { get; set; }
-    [field: SerializeField] private string TargetTag { get; set; }
+    public Transform Target { get; set; }
+    public string TargetTag { get; set; }
     [field: SerializeField] private LayerMask LayerMask { get; set; }
-    [field: SerializeField] private string[] SpawnEffects { get; set; }
-    [field: SerializeField] private string[] KillEffects { get; set; }
+    [field: SerializeField] private List<string> SpawnEffects { get; set; }
+    [field: SerializeField] private List<string> CollisionEffects { get; set; }
+    [field: SerializeField] private bool RotateTowardsTarget { get; set; } = false;
+    [field: SerializeField] private bool MoveTowardsTarget { get; set; } = false;
+    [field: SerializeField] private bool FindNewTargets { get; set; } = false;
     [field: SerializeField] private bool HasTimeToLive { get; set; } = false;
     [field: SerializeField] private float TimeToLive { get; set; } = 0f;
 
@@ -40,10 +46,30 @@ namespace RFG
       {
         if (_timeElapsed > TimeToLive)
         {
-          OnDestroy();
+          HandleCollision(transform.position, Vector3.zero);
           _timeElapsed = 0f;
         }
         _timeElapsed += Time.deltaTime;
+      }
+    }
+
+    private void LateUpdate()
+    {
+      if (Target != null && RotateTowardsTarget)
+      {
+        HandleRotateTowardsTarget();
+      }
+      if (Target != null && MoveTowardsTarget)
+      {
+        HandleMoveTowardsTarget();
+      }
+      if (Target != null && !Target.gameObject.activeInHierarchy)
+      {
+        Target = null;
+      }
+      if (FindNewTargets && Target == null && TargetTag != null)
+      {
+        TargetNearestByTag(TargetTag);
       }
     }
     #endregion
@@ -56,54 +82,11 @@ namespace RFG
       {
         _animator.ResetCurrentClip();
       }
-      CalculateDefaultVelocity();
-      CalculateDefaultSpawnPosition();
-      transform.SpawnFromPool(SpawnEffects, Quaternion.identity);
+      transform.SpawnFromPool(SpawnEffects.ToArray(), Quaternion.identity);
     }
     #endregion
 
     #region Setters
-    private void CalculateDefaultVelocity()
-    {
-      if (!string.IsNullOrEmpty(TargetTag))
-      {
-        StartCoroutine(WaitForTargetTag());
-      }
-      else if (Target != null)
-      {
-        SetVelocity(Target.position - transform.position);
-      }
-      else
-      {
-        SetVelocity(transform.right);
-      }
-    }
-
-    private void CalculateDefaultSpawnPosition()
-    {
-      if (!string.IsNullOrEmpty(SpawnAtName))
-      {
-        GameObject spawnAtName = GameObject.Find(SpawnAtName);
-        if (spawnAtName != null)
-        {
-          transform.position = spawnAtName.transform.position;
-          transform.rotation = spawnAtName.transform.rotation;
-        }
-      }
-      transform.position += SpawnOffset;
-    }
-
-    private IEnumerator WaitForTargetTag()
-    {
-      yield return new WaitUntil(() => GameObject.FindGameObjectWithTag(TargetTag) != null);
-      GameObject targetTag = GameObject.FindGameObjectWithTag(TargetTag);
-      if (targetTag != null)
-      {
-        Target = targetTag.transform;
-      }
-      SetVelocity(Target.position - transform.position);
-    }
-
     public void SetPosition(Vector3 position)
     {
       transform.position = position;
@@ -113,10 +96,48 @@ namespace RFG
     {
       _rb.velocity = velocity.normalized * Speed;
     }
+
+    public void SetRotation(Vector3 direction)
+    {
+      Vector3 targetDirection = direction - transform.position;
+      float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+      transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+    public void TargetNearestByTag(string tag)
+    {
+      TargetTag = tag;
+      GameObject nearest = gameObject.GetNearestByTag(TargetTag);
+      Target = nearest.transform;
+      HandleRotateTowardsTarget();
+      HandleMoveTowardsTarget();
+    }
     #endregion
 
-    #region Collision
-    private void OnTriggerEnter2D(Collider2D col)
+    #region Handlers
+    private void HandleRotateTowardsTarget()
+    {
+      Vector3 targetDirection = Target.position - transform.position;
+      float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+      transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * RotationSpeed);
+    }
+
+    private void HandleMoveTowardsTarget()
+    {
+      Vector3 targetVector = Target.position - transform.position;
+      Vector3 direction = targetVector / targetVector.magnitude;
+      SetVelocity(direction);
+    }
+
+    private void HandleCollision(Vector3 position, Vector3 rotation)
+    {
+      position.SpawnFromPool(rotation, CollisionEffects.ToArray(), Quaternion.identity);
+      gameObject.SetActive(false);
+    }
+    #endregion
+
+    #region Events
+    private void OnCollisionEnter2D(Collision2D col)
     {
       if (LayerMask.Contains(col.gameObject.layer))
       {
@@ -125,16 +146,9 @@ namespace RFG
         {
           health.TakeDamage(Damage);
         }
-        OnDestroy();
+        ContactPoint2D contact = col.contacts[0];
+        HandleCollision(contact.point, Vector3.zero);
       }
-    }
-    #endregion
-
-    #region Events
-    private void OnDestroy()
-    {
-      transform.SpawnFromPool(KillEffects, Quaternion.identity);
-      gameObject.SetActive(false);
     }
     #endregion
   }

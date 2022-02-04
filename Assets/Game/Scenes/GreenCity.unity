@@ -337,18 +337,15 @@ MonoBehaviour:
   EmitterType: 2
   <Angle>k__BackingField: 0
   <Radius>k__BackingField: 0
+  <ConeDirection>k__BackingField: 0
   <Vector>k__BackingField: {x: 1, y: 1, z: 0}
   <Target>k__BackingField: {fileID: 0}
   <TargetTag>k__BackingField: 
-  <ProjectileTags>k__BackingField:
-  - Missle
+  <ProjectileTag>k__BackingField: 
   <EmitOnSpawn>k__BackingField: 0
   <Count>k__BackingField: 0
   <Interval>k__BackingField: 0
-  <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
-  <Rotation>k__BackingField: {x: 0, y: 0, z: 0}
-  <RandomOffsetX>k__BackingField: 0
-  <RandomOffsetY>k__BackingField: 0
+  <FirePoint>k__BackingField: {fileID: 0}
 --- !u!4 &101533599
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,7 +1058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000009536743, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: 0.00000047683716, y: 0.00000023841858, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1182740331}
@@ -2389,6 +2386,18 @@ PrefabInstance:
     - target: {fileID: 4375575246701598499, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250002462845727085, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: EmitterType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250002462845727085, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: <Count>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250002462845727085, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: <Interval>k__BackingField
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8884055576111153889, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: Bounds.m_Center.y

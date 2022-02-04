@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace RFG
 {
@@ -32,12 +33,6 @@ namespace RFG
       return false;
     }
 
-    /// <summary>
-    /// Grabs a component without allocating memory uselessly
-    /// </summary>
-    /// <param name="this"></param>
-    /// <param name="componentType"></param>
-    /// <returns></returns>
     public static Component GetComponentNoAlloc(this GameObject @this, System.Type componentType)
     {
       @this.GetComponents(componentType, m_ComponentCache);
@@ -46,12 +41,6 @@ namespace RFG
       return component;
     }
 
-    /// <summary>
-    /// Grabs a component without allocating memory uselessly
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="this"></param>
-    /// <returns></returns>
     public static T GetComponentNoAlloc<T>(this GameObject @this) where T : Component
     {
       @this.GetComponents(typeof(T), m_ComponentCache);
@@ -63,6 +52,35 @@ namespace RFG
     public static T GetOrAddComponent<T>(this GameObject @this) where T : Component
     {
       return (@this.GetComponent<T>() == null) ? @this.AddComponent<T>() : @this.GetComponent<T>();
+    }
+
+    public static GameObject GetNearest(this GameObject @this, GameObject[] gameObjects)
+    {
+      GameObject tMin = null;
+      float minDist = Mathf.Infinity;
+      Vector3 currentPos = @this.transform.position;
+      foreach (GameObject go in gameObjects)
+      {
+        Transform t = go.transform;
+        float dist = Vector3.Distance(t.position, currentPos);
+        if (dist < minDist)
+        {
+          tMin = go;
+          minDist = dist;
+        }
+      }
+      return tMin;
+    }
+
+    public static List<GameObject> GetNearestSorted(this GameObject @this, GameObject[] gameObjects)
+    {
+      return gameObjects.OrderBy(go => (@this.transform.position - go.transform.position).sqrMagnitude).ToList();
+    }
+
+    public static GameObject GetNearestByTag(this GameObject @this, string Tag)
+    {
+      GameObject[] go = GameObject.FindGameObjectsWithTag(Tag);
+      return @this.GetNearest(go);
     }
 
   }

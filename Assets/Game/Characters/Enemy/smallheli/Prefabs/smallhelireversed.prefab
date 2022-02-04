@@ -202,7 +202,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101132019968963305}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -214,7 +214,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &2683777155577199675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.11898439, y: 0.06289172}
@@ -481,6 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5255921415811421151}
   - component: {fileID: 8436031878596138578}
+  - component: {fileID: 190946509334425568}
   m_Layer: 0
   m_Name: EnemyMachineGun
   m_TagString: Untagged
@@ -518,8 +519,32 @@ MonoBehaviour:
   <PlayerInventory>k__BackingField: {fileID: 1389500572276884162}
   <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 4812243255576683745}
-  <UseStatePackFromEquipable>k__BackingField: 0
+  <UseStatePackFromEquipable>k__BackingField: 1
   WeaponState:
     StatePack: {fileID: 11400000, guid: 153e8633b1fe32a48ba4469c6248266b, type: 2}
     PreviousState: {fileID: 0}
     CurrentState: {fileID: 0}
+--- !u!114 &190946509334425568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9126782528239409452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14a9981b6d68645b6062d7d8f1fc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmitterType: 2
+  <Angle>k__BackingField: 45
+  <Radius>k__BackingField: 5
+  <ConeDirection>k__BackingField: 0
+  <Vector>k__BackingField: {x: 1, y: 0, z: 0}
+  <Target>k__BackingField: {fileID: 0}
+  <TargetTag>k__BackingField: 
+  <ProjectileTag>k__BackingField: 
+  <EmitOnSpawn>k__BackingField: 0
+  <Count>k__BackingField: 1
+  <Interval>k__BackingField: 0
+  <FirePoint>k__BackingField: {fileID: 4812243255576683745}

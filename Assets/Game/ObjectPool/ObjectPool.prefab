@@ -116,3 +116,6 @@ MonoBehaviour:
   - tag: smallhelireversed
     prefab: {fileID: 7101132019968963305, guid: 2d5fa910471645e478a88cf1b2d4eec8, type: 3}
     size: 10
+  - tag: Small Explosion
+    prefab: {fileID: 5455639365744478110, guid: a7f2cf9fc2603304a8f63bb4e5a5bf09, type: 3}
+    size: 10

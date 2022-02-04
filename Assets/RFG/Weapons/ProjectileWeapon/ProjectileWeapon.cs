@@ -83,6 +83,7 @@ namespace RFG.Weapons
       _projectileWeaponContext = new StateProjectileWeaponContext();
       _projectileWeaponContext.transform = transform;
       _projectileWeaponContext.ProjectileWeapon = this;
+      _projectileWeaponContext.ProjectileEmitter = GetComponent<ProjectileEmitter>();
 
       WeaponState.Init();
       WeaponState.Bind(_projectileWeaponContext);

@@ -143,7 +143,6 @@ namespace RFG.Weapons
           ProjectileWeaponEquipable = PlayerInventory.Inventory.RightHand as ProjectileWeaponEquipable;
         }
       }
-      ProjectileWeaponEquipable.Ammo = ProjectileWeaponEquipable.StartingAmmo;
       if (UseStatePackFromEquipable)
       {
         SetStatePackFromEquipable();

@@ -16,9 +16,7 @@ MonoBehaviour:
   EnterClip: Death
   ExitClip: 
   EnterEffects:
-  - SmokeDamage
-  - BulletDamage
-  - ExplosionSoundEffect
+  - Small Explosion
   ExitEffects: []
   StopEnterEffectsOnExit: 0
   FreezeState: 1

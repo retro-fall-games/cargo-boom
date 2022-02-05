@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileWeaponEquipable: {fileID: 11400000, guid: ea57abb229b4e0b43a779d510e9dd298, type: 2}
+  <PlayerInventory>k__BackingField: {fileID: 0}
+  <ProjectileWeaponPosition>k__BackingField: 1
   FirePoint: {fileID: 0}
+  <UseStatePackFromEquipable>k__BackingField: 0
   WeaponState:
     StatePack: {fileID: 11400000, guid: d9ce4eda44ead27418d40a5e71ad4cef, type: 2}
     PreviousState: {fileID: 0}

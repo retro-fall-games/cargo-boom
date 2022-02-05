@@ -102,15 +102,19 @@ namespace RFG
       Vector3 targetDirection = direction - transform.position;
       float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
       transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+      transform.right = targetDirection;
     }
 
     public void TargetNearestByTag(string tag)
     {
       TargetTag = tag;
       GameObject nearest = gameObject.GetNearestByTag(TargetTag);
-      Target = nearest.transform;
-      HandleRotateTowardsTarget();
-      HandleMoveTowardsTarget();
+      if (nearest != null)
+      {
+        Target = nearest.transform;
+        HandleRotateTowardsTarget();
+        HandleMoveTowardsTarget();
+      }
     }
     #endregion
 
@@ -120,6 +124,7 @@ namespace RFG
       Vector3 targetDirection = Target.position - transform.position;
       float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
       transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * RotationSpeed);
+      transform.right = targetDirection;
     }
 
     private void HandleMoveTowardsTarget()

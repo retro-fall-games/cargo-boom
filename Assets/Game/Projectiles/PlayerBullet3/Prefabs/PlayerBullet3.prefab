@@ -104,7 +104,8 @@ MonoBehaviour:
     m_Bits: 1024
   <SpawnEffects>k__BackingField:
   - MachineGunSoundEffect
-  <CollisionEffects>k__BackingField: []
+  <CollisionEffects>k__BackingField:
+  - BulletDamage
   <RotateTowardsTarget>k__BackingField: 0
   <MoveTowardsTarget>k__BackingField: 0
   <FindNewTargets>k__BackingField: 0

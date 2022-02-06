@@ -15,12 +15,11 @@ MonoBehaviour:
   lifetime: 1
   pooledObject: 1
   animationClip: 
-  soundEffects:
-  - {fileID: 11400000, guid: db27627c533fb9646bb15f84c2f6cf01, type: 2}
+  soundEffects: []
   spawnEffects: []
   cameraShakeIntensity: 1
   cameraShakeTime: 1
-  cameraShakeFade: 0
+  cameraShakeFade: 1
   spawnOffset: {x: 0, y: 0}
   invertX: 0
   invertY: 0

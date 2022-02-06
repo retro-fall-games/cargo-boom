@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 7757290585291456934
     second: SmallExplosion-Sheet_2
+  - first:
+      213: -5944538644684127971
+    second: SmallExplosion-Sheet_3
+  - first:
+      213: 8747968993210867966
+    second: SmallExplosion-Sheet_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +176,48 @@ TextureImporter:
       bones: []
       spriteID: 6a187cbffae67ab60800000000000000
       internalID: 7757290585291456934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallExplosion-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1145022991c08da0800000000000000
+      internalID: -5944538644684127971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallExplosion-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0277a5377076970800000000000000
+      internalID: 8747968993210867966
       vertices: []
       indices: 
       edges: []

@@ -337,9 +337,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthReference: {fileID: 0}
   MaxHealthReference: {fileID: 0}
-  Health: 5
-  MaxHealth: 5
-  DefaultMaxHealth: 5
+  Health: 1
+  MaxHealth: 1
+  DefaultMaxHealth: 1
   ArmorReference: {fileID: 0}
   MaxArmorReference: {fileID: 0}
   Armor: 1
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TweenLoopType>k__BackingField: 2
   <EaseType>k__BackingField: 16
-  <Time>k__BackingField: 10
+  <Time>k__BackingField: 5
   <Delay>k__BackingField: 1
   <Loops>k__BackingField: -1
   <PlayOnAwake>k__BackingField: 0

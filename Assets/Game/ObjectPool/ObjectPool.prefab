@@ -119,3 +119,6 @@ MonoBehaviour:
   - tag: Small Explosion
     prefab: {fileID: 5455639365744478110, guid: a7f2cf9fc2603304a8f63bb4e5a5bf09, type: 3}
     size: 10
+  - tag: ScreenShake
+    prefab: {fileID: 4531718760120479492, guid: 9536e118d8be6be4abcebbf091dcf234, type: 3}
+    size: 1

@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RFG;
+using RFG.Items;
 using RFG.Character;
 using RFG.ScrollingShooter;
+using RFG.Weapons;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -11,9 +13,11 @@ public class GameStateManager : MonoBehaviour
 
   [field: SerializeField] private RFG.ScrollingShooter.Character Player { get; set; }
   [field: SerializeField] private HealthBehaviour HealthBehaviour { get; set; }
+  [field: SerializeField] private ProjectileWeaponEquipable DefaultProjectileWeaponEquipable { get; set; }
   [field: SerializeField] private List<GameObject> PowerUps { get; set; }
   [field: SerializeField] private List<ObjectPoolWaveSpawner> WaveSpawners { get; set; }
 
+  private PlayerInventory _playerInventory;
   private GameStateContext _gameStateContext;
   private ObjectPoolWaveSpawner _currentWaveSpawner;
   private int _level = 0;
@@ -21,6 +25,7 @@ public class GameStateManager : MonoBehaviour
   #region Unity Methods
   private void Awake()
   {
+    _playerInventory = Player.gameObject.GetComponent<PlayerInventory>();
     _gameStateContext = new GameStateContext();
     _gameStateContext.transform = transform;
     GameState.Init();
@@ -55,6 +60,7 @@ public class GameStateManager : MonoBehaviour
       Player.Respawn();
       HealthBehaviour.ResetHealth();
       HealthBehaviour.ResetArmor();
+      _playerInventory.Inventory.Equip(EquipmentSlot.LeftHand, DefaultProjectileWeaponEquipable);
     }
     _currentWaveSpawner.Stop();
 

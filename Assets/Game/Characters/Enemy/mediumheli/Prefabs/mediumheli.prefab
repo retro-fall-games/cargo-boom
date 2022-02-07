@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: -4144772059440850430}
   m_Layer: 10
   m_Name: mediumheli
-  m_TagString: AI
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

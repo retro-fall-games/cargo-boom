@@ -18,9 +18,11 @@ namespace RFG
     [Header("Effects")]
     [Tooltip("Define what effects to run when the state exits")]
     public string[] EnterEffects;
+    public bool EnterEffectsParent = false;
 
     [Tooltip("Define what effect to run when the state exits")]
     public string[] ExitEffects;
+    public bool ExitEffectsParent = false;
 
     public bool StopEnterEffectsOnExit = false;
 
@@ -36,7 +38,7 @@ namespace RFG
 
     public virtual void Enter(IStateContext context)
     {
-      PlayEffects(context, EnterEffects);
+      PlayEffects(context, EnterEffects, EnterEffectsParent);
       PlayAnimations(context, EnterClip);
     }
 
@@ -51,7 +53,7 @@ namespace RFG
       {
         StopEffects(context, EnterEffects);
       }
-      PlayEffects(context, ExitEffects);
+      PlayEffects(context, ExitEffects, ExitEffectsParent);
       PlayAnimations(context, ExitClip);
     }
 
@@ -65,10 +67,17 @@ namespace RFG
       animatorContext.animator.PlayClip(clip, Layer);
     }
 
-    protected void PlayEffects(IStateContext context, string[] effects)
+    protected void PlayEffects(IStateContext context, string[] effects, bool parent)
     {
       StateTransformContext transformContext = context as StateTransformContext;
-      transformContext.transform.SpawnFromPool(effects, transformContext.transform);
+      if (parent)
+      {
+        transformContext.transform.SpawnFromPool(effects, transformContext.transform, parent);
+      }
+      else
+      {
+        transformContext.transform.SpawnFromPool(effects, transformContext.transform);
+      }
     }
 
     protected void StopEffects(IStateContext context, string[] effects)

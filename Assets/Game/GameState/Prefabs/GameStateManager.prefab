@@ -237,6 +237,7 @@ MonoBehaviour:
           m_CallState: 2
   <Player>k__BackingField: {fileID: 0}
   <HealthBehaviour>k__BackingField: {fileID: 0}
+  <DefaultProjectileWeaponEquipable>k__BackingField: {fileID: 11400000, guid: 8debc7df38ce37e48ad82751fbd8bc81, type: 2}
   <PowerUps>k__BackingField:
   - {fileID: 3779561410878688453, guid: 1097ae653c0cfd749bb69067cecd64b6, type: 3}
   - {fileID: 1812730456502818852, guid: d40743a09f249964c8433c48f9b8f12e, type: 3}

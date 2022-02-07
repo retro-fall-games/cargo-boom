@@ -82,7 +82,7 @@ namespace RFG
         CinemachineShake.Instance.ShakeCamera(EffectData.cameraShakeIntensity, EffectData.cameraShakeTime, EffectData.cameraShakeFade);
       }
 
-      if (EffectData.lifetime > 0)
+      if (EffectData.lifetime > 0 && gameObject.activeInHierarchy)
       {
         StartCoroutine(StartTtl());
       }
@@ -112,7 +112,7 @@ namespace RFG
         {
           StartCoroutine(audioSource.FadeIn(audioData.fadeTime));
         }
-        else
+        else if (audioSource.enabled)
         {
           audioSource.Play();
         }

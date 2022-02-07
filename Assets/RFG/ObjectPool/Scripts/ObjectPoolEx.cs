@@ -50,6 +50,21 @@ namespace RFG
       return null;
     }
 
+    public static List<GameObject> SpawnFromPool(this Transform transform, string[] tags, Transform parent = null, bool worldPositionStays = false, params object[] objects)
+    {
+      if (tags != null && tags.Length > 0)
+      {
+        List<GameObject> spawnedObjects = new List<GameObject>();
+        foreach (string tag in tags)
+        {
+          GameObject spawned = ObjectPool.Instance.SpawnFromPool(tag, transform.position, transform.rotation, parent, worldPositionStays, objects);
+          spawnedObjects.Add(spawned);
+        }
+        return spawnedObjects;
+      }
+      return null;
+    }
+
     public static List<GameObject> SpawnFromPool(this Transform transform, string[] tags, Quaternion rotation, params object[] objects)
     {
       if (tags != null && tags.Length > 0)

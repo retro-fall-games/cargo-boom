@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using MyBox;
+using System;
 
 namespace RFG
 {
@@ -105,7 +106,7 @@ namespace RFG
         {
           Vector3 newPos = (topPos + (i * precent) * (bottomPos - topPos));
           projectile.SetPosition(FirePoint.position);
-          projectile.SetRotation(FirePoint.position + newPos * FirePoint.rotation.x);
+          projectile.SetRotation(FirePoint.position + FirePoint.right);
           projectile.SetVelocity(newPos);
         }
         if (Interval > 0)
@@ -123,9 +124,9 @@ namespace RFG
         Projectile projectile = spawned.GetComponent<Projectile>();
         if (projectile != null)
         {
-          Vector3 vector = new Vector3(Vector.x * (FirePoint.rotation.y < 0 ? -1 : 1), Vector.y, Vector.z);
+          Vector3 vector = new Vector3(Vector.x * FirePoint.right.x, Vector.y, Vector.z);
           projectile.SetPosition(FirePoint.position);
-          projectile.SetRotation(FirePoint.position);
+          projectile.SetRotation(FirePoint.position + vector);
           projectile.SetVelocity(vector);
         }
         if (Interval > 0)
@@ -156,6 +157,7 @@ namespace RFG
             projectile.Target = target;
             projectile.TargetTag = TargetTag;
             projectile.SetPosition(FirePoint.position);
+            projectile.SetRotation(FirePoint.position + direction);
             projectile.SetVelocity(direction);
           }
           if (Interval > 0)
@@ -205,54 +207,75 @@ namespace RFG
       switch (EmitterType)
       {
         case ProjectileEmitterType.Circle:
-          DebugEx.DrawEllipse(FirePoint.position, transform.forward, transform.up, Radius * transform.localScale.x, Radius * transform.localScale.y, 32, Color.blue);
-          float angleSection = Mathf.PI * 2f / Count;
-          Gizmos.color = Color.magenta;
-          for (int i = 0; i < Count; i++)
-          {
-            float angle = i * angleSection;
-            Vector3 newPos = FirePoint.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * Radius;
-            Gizmos.DrawWireSphere(newPos, 0.1f);
-          }
+          DrawCircle();
           break;
         case ProjectileEmitterType.Cone:
-          DebugEx.DrawCone(FirePoint.position, transform.right, Angle, Radius, ConeDirection);
-
-          float rayRange = Radius;
-          float halfFOV = Angle / 2.0f;
-
-          Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV + ConeDirection, Vector3.forward);
-          Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV + ConeDirection, Vector3.forward);
-
-          Vector3 upRayDirection = upRayRotation * transform.right * rayRange;
-          Vector3 downRayDirection = downRayRotation * transform.right * rayRange;
-
-          Vector3 topPos = FirePoint.position + downRayDirection;
-          Vector3 bottomPos = FirePoint.position + upRayDirection;
-
-          Vector3 distance = topPos - bottomPos;
-          float lengthOfSegment = distance.magnitude / (Count <= 1 ? 1 : Count - 1);
-          float precent = lengthOfSegment / distance.magnitude;
-
-          for (int i = 0; i < Count; i++)
-          {
-            Vector3 newPos = topPos + (i * precent) * (bottomPos - topPos);
-            Gizmos.DrawWireSphere(newPos, 0.1f);
-          }
+          DrawCone();
           break;
         case ProjectileEmitterType.Vector:
-          Gizmos.DrawLine(FirePoint.position, FirePoint.position + Vector);
+          DrawVector();
           break;
         case ProjectileEmitterType.Target:
-          List<Transform> targets = GetTargets();
-          if (targets.Count > 0)
-          {
-            foreach (Transform target in targets)
-            {
-              Gizmos.DrawLine(FirePoint.position, target.position);
-            }
-          }
+          DrawTarget();
           break;
+      }
+    }
+
+    private void DrawCircle()
+    {
+      DebugEx.DrawEllipse(FirePoint.position, transform.forward, transform.up, Radius * transform.localScale.x, Radius * transform.localScale.y, 32, Color.blue);
+      float angleSection = Mathf.PI * 2f / Count;
+      Gizmos.color = Color.magenta;
+      for (int i = 0; i < Count; i++)
+      {
+        float angle = i * angleSection;
+        Vector3 newPos = FirePoint.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * Radius;
+        Gizmos.DrawWireSphere(newPos, 0.1f);
+      }
+    }
+
+    private void DrawCone()
+    {
+      DebugEx.DrawCone(FirePoint.position, transform.right, Angle, Radius, ConeDirection);
+
+      float rayRange = Radius;
+      float halfFOV = Angle / 2.0f;
+
+      Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV + ConeDirection, Vector3.forward);
+      Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV + ConeDirection, Vector3.forward);
+
+      Vector3 upRayDirection = upRayRotation * transform.right * rayRange;
+      Vector3 downRayDirection = downRayRotation * transform.right * rayRange;
+
+      Vector3 topPos = FirePoint.position + downRayDirection;
+      Vector3 bottomPos = FirePoint.position + upRayDirection;
+
+      Vector3 distance = topPos - bottomPos;
+      float lengthOfSegment = distance.magnitude / (Count <= 1 ? 1 : Count - 1);
+      float precent = lengthOfSegment / distance.magnitude;
+
+      for (int i = 0; i < Count; i++)
+      {
+        Vector3 newPos = topPos + (i * precent) * (bottomPos - topPos);
+        Gizmos.DrawWireSphere(newPos, 0.1f);
+      }
+    }
+
+    private void DrawVector()
+    {
+      Vector3 vector = new Vector3(Vector.x * FirePoint.right.x, Vector.y, Vector.z);
+      Gizmos.DrawLine(FirePoint.position, FirePoint.position + vector);
+    }
+
+    private void DrawTarget()
+    {
+      List<Transform> targets = GetTargets();
+      if (targets.Count > 0)
+      {
+        foreach (Transform target in targets)
+        {
+          Gizmos.DrawLine(FirePoint.position, target.position);
+        }
       }
     }
 

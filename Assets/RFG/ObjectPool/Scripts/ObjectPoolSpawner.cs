@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,6 +17,7 @@ namespace RFG
     [field: SerializeField] private UnityEvent OnSpawn { get; set; }
 
     private Dictionary<string, GameObject> _currentSpawnedObjects;
+    private int _previousRandomIndex;
 
     private void Awake()
     {
@@ -62,10 +64,22 @@ namespace RFG
 
       if (Random)
       {
-        string Tag = Tags[UnityEngine.Random.Range(0, Tags.Count)];
+        SpawnRandom();
+      }
+      else
+      {
+        SpawnAll();
+      }
+    }
+
+    private void SpawnAll()
+    {
+      bool didSpawnAny = false;
+      foreach (string Tag in Tags)
+      {
         if (OneTagAtATime && _currentSpawnedObjects.ContainsKey(Tag))
         {
-          return;
+          continue;
         }
         GameObject spawn = ObjectPool.Instance.SpawnFromPool(Tag, transform.position, Quaternion.identity);
         if (Parent)
@@ -73,31 +87,37 @@ namespace RFG
           spawn.transform.SetParent(transform);
         }
         _currentSpawnedObjects.Add(Tag, spawn);
-        OnSpawn?.Invoke();
+        didSpawnAny = true;
       }
-      else
+      if (didSpawnAny)
       {
-        bool didSpawnAny = false;
-        foreach (string Tag in Tags)
-        {
-          if (OneTagAtATime && _currentSpawnedObjects.ContainsKey(Tag))
-          {
-            continue;
-          }
-          GameObject spawn = ObjectPool.Instance.SpawnFromPool(Tag, transform.position, Quaternion.identity);
-          if (Parent)
-          {
-            spawn.transform.SetParent(transform);
-          }
-          _currentSpawnedObjects.Add(Tag, spawn);
-          didSpawnAny = true;
-        }
-        if (didSpawnAny)
-        {
-          OnSpawn?.Invoke();
-        }
+        OnSpawn?.Invoke();
       }
     }
 
+    private void SpawnRandom()
+    {
+      int index = UnityEngine.Random.Range(0, Tags.Count);
+
+      if (index == _previousRandomIndex)
+      {
+        SpawnRandom();
+        return;
+      }
+
+      _previousRandomIndex = index;
+      string Tag = Tags[index];
+      if (OneTagAtATime && _currentSpawnedObjects.ContainsKey(Tag))
+      {
+        return;
+      }
+      GameObject spawn = ObjectPool.Instance.SpawnFromPool(Tag, transform.position, Quaternion.identity);
+      if (Parent)
+      {
+        spawn.transform.SetParent(transform);
+      }
+      _currentSpawnedObjects.Add(Tag, spawn);
+      OnSpawn?.Invoke();
+    }
   }
 }

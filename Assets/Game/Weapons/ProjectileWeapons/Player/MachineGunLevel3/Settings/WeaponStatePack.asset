@@ -96,7 +96,7 @@ MonoBehaviour:
   NextState: {fileID: 0}
   NextStateAfterTime: 0
   GoToNextStateAfterCompletion: 0
-  ProjectileTag: PlayerBullet6
+  ProjectileTag: PlayerBullet2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using System;
+using RFG.BehaviourTree;
 
 namespace RFG.ScrollingShooter
 {
@@ -118,7 +119,13 @@ namespace RFG.ScrollingShooter
       string newFolderPath = CreateFolder(name);
       GameObject gameObject = CreateDefaultCharacter(name, CharacterType.AI, LayerMask.NameToLayer("AI"), "AI", newFolderPath);
 
-      gameObject.GetOrAddComponent<RFG.BehaviourTree.BehaviourTreeRunner>();
+      RFG.BehaviourTree.BehaviourTree tree = EditorUtils.CreateScriptableObject<RFG.BehaviourTree.BehaviourTree>(newFolderPath + "/Settings", name + "BehaviourTree");
+      tree.name = name + "BehaviourTree";
+      EditorUtility.SetDirty(tree);
+
+      RFG.BehaviourTree.BehaviourTreeRunner behaviourRunner = gameObject.GetOrAddComponent<RFG.BehaviourTree.BehaviourTreeRunner>();
+      behaviourRunner.tree = tree;
+
       gameObject.GetOrAddComponent<AIBrainBehaviour>();
       gameObject.GetOrAddComponent<AIMovementBehaviour>();
       gameObject.GetOrAddComponent<Tween>();

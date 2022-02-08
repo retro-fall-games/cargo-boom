@@ -44,6 +44,9 @@ namespace RFG.BehaviourTree
       // A stylesheet can be added to a VisualElement.
       // The style will be applied to the VisualElement and all of its children.
       // var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/AssetPacks/RFGBehaviourTree/Scripts/UIBuilder/BehaviourTreeEditor.uss");
+
+      Debug.Log(settings);
+
       var styleSheet = settings.behaviourTreeStyle;
       styleSheets.Add(styleSheet);
 

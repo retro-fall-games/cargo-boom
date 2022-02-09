@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 1842947027565729071}
   - component: {fileID: 7016619562602257919}
   - component: {fileID: 780245792062640817}
+  - component: {fileID: 2075544591595627275}
   m_Layer: 10
   m_Name: BigCargoShip
   m_TagString: Enemy
@@ -69,11 +70,95 @@ MonoBehaviour:
     CurrentState: {fileID: 0}
   OnStartEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7016619562602257919}
+        m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnObjectSpawnEvent:
     m_PersistentCalls:
-      m_Calls: []
-  StateChangeUnityEvents: []
+      m_Calls:
+      - m_Target: {fileID: 5462132558381630822}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7016619562602257919}
+        m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  StateChangeUnityEvents:
+  - StateChangeType: 1
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: 7411003712813226001, guid: 009c2436e649e324286a52438db2f33d, type: 2}
+    OnChange:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7016619562602257919}
+          m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+          m_MethodName: Cancel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5462132558381630822}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - StateChangeType: 1
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: 5342948201271028894, guid: 009c2436e649e324286a52438db2f33d, type: 2}
+    OnChange:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8763734921395324018}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6183047452881098977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae1075ddb710a44976d5a8d14fcc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <RotateTowardsDirection>k__BackingField: 0
 --- !u!114 &7016619562602257919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,16 +390,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TweenLoopType>k__BackingField: 1
-  <EaseType>k__BackingField: 1
-  <Time>k__BackingField: 3
-  <Delay>k__BackingField: 1
-  <Loops>k__BackingField: 1
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 10
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
   <PlayOnAwake>k__BackingField: 0
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
-  <Path>k__BackingField: []
-  <Local>k__BackingField: 0
+  <Path>k__BackingField:
+  - {x: 9, y: 1.6, z: 10}
+  - {x: -9, y: 1.6, z: 10}
+  - {x: 9, y: 1.6, z: 10}
+  - {x: -9, y: 1.6, z: 10}
+  <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 0}
   onPlay:
@@ -342,10 +432,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target1: {fileID: 0}
   target2: {fileID: 0}
-  target2IsPlayer: 0
+  target2IsPlayer: 1
   minDistance: 5
   WarmUpTime: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  tags: []
+    m_Bits: 256
+  tags:
+  - Player
+--- !u!114 &2075544591595627275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763734921395324018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6454203eaeb9488ca631ea4822cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

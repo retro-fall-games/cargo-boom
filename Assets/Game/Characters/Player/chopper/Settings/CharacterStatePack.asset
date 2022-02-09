@@ -16,7 +16,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -39,8 +45,15 @@ MonoBehaviour:
   Layer: Base Layer
   EnterClip: Death
   ExitClip: 
-  EnterEffects: []
+  EnterEffects:
+  - Small Explosion
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 1
   WaitToUnfreezeTime: 1
@@ -64,7 +77,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -106,7 +125,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0

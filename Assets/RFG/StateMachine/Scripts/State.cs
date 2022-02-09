@@ -19,10 +19,14 @@ namespace RFG
     [Tooltip("Define what effects to run when the state exits")]
     public string[] EnterEffects;
     public bool EnterEffectsParent = false;
+    public bool EnterEffectsGrandParent = false;
+    public bool EnterEffectsWorldPositionStays = false;
 
     [Tooltip("Define what effect to run when the state exits")]
     public string[] ExitEffects;
     public bool ExitEffectsParent = false;
+    public bool ExitEffectsGrandParent = false;
+    public bool ExitEffectsWorldPositionStays = false;
 
     public bool StopEnterEffectsOnExit = false;
 
@@ -38,7 +42,7 @@ namespace RFG
 
     public virtual void Enter(IStateContext context)
     {
-      PlayEffects(context, EnterEffects, EnterEffectsParent);
+      PlayEffects(context, EnterEffects, EnterEffectsParent, EnterEffectsGrandParent, EnterEffectsWorldPositionStays);
       PlayAnimations(context, EnterClip);
     }
 
@@ -53,7 +57,7 @@ namespace RFG
       {
         StopEffects(context, EnterEffects);
       }
-      PlayEffects(context, ExitEffects, ExitEffectsParent);
+      PlayEffects(context, ExitEffects, ExitEffectsParent, ExitEffectsGrandParent, ExitEffectsWorldPositionStays);
       PlayAnimations(context, ExitClip);
     }
 
@@ -67,16 +71,20 @@ namespace RFG
       animatorContext.animator.PlayClip(clip, Layer);
     }
 
-    protected void PlayEffects(IStateContext context, string[] effects, bool parent)
+    protected void PlayEffects(IStateContext context, string[] effects, bool parent, bool grandParent, bool worldPositionStays)
     {
       StateTransformContext transformContext = context as StateTransformContext;
-      if (parent)
+      if (grandParent)
       {
-        transformContext.transform.SpawnFromPool(effects, transformContext.transform, parent);
+        transformContext.transform.SpawnFromPool(effects, transformContext.transform.parent, worldPositionStays);
+      }
+      else if (parent)
+      {
+        transformContext.transform.SpawnFromPool(effects, transformContext.transform, worldPositionStays);
       }
       else
       {
-        transformContext.transform.SpawnFromPool(effects, transformContext.transform);
+        transformContext.transform.SpawnFromPool(effects);
       }
     }
 

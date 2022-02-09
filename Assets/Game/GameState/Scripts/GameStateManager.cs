@@ -32,6 +32,11 @@ public class GameStateManager : MonoBehaviour
     GameState.Bind(_gameStateContext);
   }
 
+  private void Start()
+  {
+    Liftoff();
+  }
+
   private void Update()
   {
     if (Time.timeScale == 0f)
@@ -55,14 +60,16 @@ public class GameStateManager : MonoBehaviour
   #region States
   public void Liftoff()
   {
-    if (Player.CharacterState.CurrentStateType == typeof(DeadState))
+
+    Player.Respawn();
+    HealthBehaviour.ResetHealth();
+    HealthBehaviour.ResetArmor();
+    _playerInventory.Inventory.Equip(EquipmentSlot.LeftHand, DefaultProjectileWeaponEquipable);
+
+    if (_currentWaveSpawner != null)
     {
-      Player.Respawn();
-      HealthBehaviour.ResetHealth();
-      HealthBehaviour.ResetArmor();
-      _playerInventory.Inventory.Equip(EquipmentSlot.LeftHand, DefaultProjectileWeaponEquipable);
+      _currentWaveSpawner.Stop();
     }
-    _currentWaveSpawner.Stop();
 
     GameState.ChangeState(typeof(LiftoffState));
   }

@@ -17,9 +17,13 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects:
   - Small Explosion
-  EnterEffectsParent: 1
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 1
+  EnterEffectsWorldPositionStays: 1
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 1
   WaitToUnfreezeTime: 1
@@ -44,8 +48,12 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects: []
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -70,8 +78,12 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects: []
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -114,8 +126,12 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects: []
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0

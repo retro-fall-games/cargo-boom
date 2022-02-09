@@ -168,15 +168,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 3
+    Loop: 3
+    TagGroups:
+    - Tag: smallheli
+      Count: 5
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: smallhelireversed
+      Count: 5
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
     - Tag: mediumheli
-      Count: 2
-      Interval: 3
-      SecondsUntilBegin: 0
-    - Tag: smallheli
-      Count: 4
+      Count: 3
       Interval: 5
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: Bomber
+      Count: 1
+      Interval: 0
       SecondsUntilBegin: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
@@ -540,7 +556,7 @@ MonoBehaviour:
   - SecondsUntilBegin: 3
     Loop: 0
     TagGroups:
-    - Tag: smallheli
+    - Tag: AlienShip
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
@@ -548,9 +564,17 @@ MonoBehaviour:
   - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
-    - Tag: smallhelireversed
+    - Tag: MediumAlienShip
       Count: 3
-      Interval: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: BigAlienShip
+      Count: 1
+      Interval: 0
       SecondsUntilBegin: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
@@ -1102,6 +1126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 777765245}
   - component: {fileID: 777765246}
+  - component: {fileID: 777765247}
   m_Layer: 0
   m_Name: WaveSpawnerLevel6
   m_TagString: Untagged
@@ -1139,7 +1164,7 @@ MonoBehaviour:
   - SecondsUntilBegin: 3
     Loop: 0
     TagGroups:
-    - Tag: smallheli
+    - Tag: AlienShip
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
@@ -1147,9 +1172,108 @@ MonoBehaviour:
   - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
+    - Tag: Jet
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    - Tag: smallheli
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
     - Tag: smallhelireversed
       Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: AlienShip
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: MediumAlienShip
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &777765247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777765244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: AlienShip
+      Count: 3
       Interval: 3
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: Jet
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    - Tag: smallheli
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: smallhelireversed
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: AlienShip
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: MediumAlienShip
+      Count: 1
+      Interval: 0
       SecondsUntilBegin: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
@@ -2427,6 +2551,78 @@ PrefabInstance:
       propertyPath: SpawnAt
       value: 
       objectReference: {fileID: 364905430}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1363934101}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1363934101}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1363934101}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4190574005416796566, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: m_Name
       value: MachineGun
@@ -2476,6 +2672,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09f8c410c6b5f6419f5a3daa7c8d846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1363934101 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5700048134774171172, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+  m_PrefabInstance: {fileID: 1363934084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421578190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,16 +3298,40 @@ MonoBehaviour:
   - SecondsUntilBegin: 3
     Loop: 1
     TagGroups:
+    - Tag: Jet
+      Count: 1
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 3
+    Loop: 1
+    TagGroups:
     - Tag: smallheli
-      Count: 5
+      Count: 3
       Interval: 1
       SecondsUntilBegin: 0
     - Tag: smallhelireversed
-      Count: 5
+      Count: 3
       Interval: 1
       SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 3
+    Loop: 1
+    TagGroups:
     - Tag: mediumheli
       Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: Jet
+      Count: 1
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 3
+    Loop: 0
+    TagGroups:
+    - Tag: BigCargoShip
+      Count: 1
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
@@ -3510,6 +3735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Actions>k__BackingField:
   - id: 0
+  - id: 1
   <PlayOnAwake>k__BackingField: 0
   OnStart:
     m_PersistentCalls:
@@ -3520,6 +3746,19 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
+      type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
+      data:
+        guid: cf41cc4422ee3604180c5475c48c5a3f
+        title: RFG.Actions.SetActiveAction
+        position: {x: 314, y: -224.08002}
+        state: 0
+        type: RFG.Actions.SetActiveAction
+        waitTimeToComplete: 3
+        children:
+        - id: 1
+        gameObject: {fileID: 2068731367979954961}
+        active: 0
+    00000001:
       type: {class: SetActiveAction, ns: RFG.Actions, asm: Assembly-CSharp}
       data:
         guid: 890d7aa1cf9cb8a4bb455b1d4a3a099a
@@ -3817,18 +4056,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 3
-    Loop: 0
+    Loop: 3
     TagGroups:
     - Tag: smallheli
-      Count: 3
+      Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
     - Tag: smallhelireversed
-      Count: 3
+      Count: 5
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
@@ -3976,20 +4211,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
+  - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
+    - Tag: Jet
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
     - Tag: smallheli
       Count: 3
-      Interval: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    - Tag: smallhelireversed
+      Count: 3
+      Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
-    - Tag: smallhelireversed
+    - Tag: Jet
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    - Tag: mediumheli
       Count: 3
-      Interval: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: Jet
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+    - Tag: Bomber
+      Count: 3
+      Interval: 1
+      SecondsUntilBegin: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: Rover
+      Count: 1
+      Interval: 0
       SecondsUntilBegin: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
@@ -5012,7 +5279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469351128024667678, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -66.01102
+      value: -66.01099
       objectReference: {fileID: 0}
     - target: {fileID: 6469351128443406496, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_Material
@@ -5040,7 +5307,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1a53be1f799e1a84fa5cd093b77985a0, type: 2}
     - target: {fileID: 6469351128729093552, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.4550018
+      value: -2.455017
       objectReference: {fileID: 0}
     - target: {fileID: 6469351129217033240, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_RootOrder
@@ -5048,7 +5315,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469351129217033240, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -66.01102
+      value: -66.01099
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469351129217033241, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6469351129407945818, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_SizeDelta.x

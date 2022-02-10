@@ -28,6 +28,7 @@ namespace RFG
       mainContainer.Add(CreateEnvironmentSpriteContainer());
       mainContainer.Add(CreateEffectContainer());
       mainContainer.Add(CreateProjectileContainer.CreateContainer());
+      mainContainer.Add(CreateTweenContainer.CreateContainer());
     }
     #endregion
 

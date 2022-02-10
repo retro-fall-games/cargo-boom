@@ -1,5 +1,347 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5538173167637771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6883508157057146484}
+  - component: {fileID: 5804118560769866947}
+  m_Layer: 0
+  m_Name: TweenList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6883508157057146484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538173167637771}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.78, y: -1.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5804118560769866947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538173167637771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5798137909281a84db601fdea7adf794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenListInfo>k__BackingField:
+  - Tweens:
+    - {fileID: 7791468759960328662}
+    - {fileID: 6392069284126092971}
+  - Tweens:
+    - {fileID: 4994238301435323264}
+    - {fileID: 957518932282796639}
+  - Tweens:
+    - {fileID: 1826656451758903400}
+    - {fileID: 3217683884163622303}
+  - Tweens:
+    - {fileID: 7877453796542146691}
+    - {fileID: 765352915021368206}
+  <TweenListProcessType>k__BackingField: 1
+  DefaultTweenListInfoIndex: 0
+--- !u!1 &232243497415711607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7409035808509878851}
+  - component: {fileID: 7877453796542146691}
+  m_Layer: 0
+  m_Name: TweenPathIntro4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7409035808509878851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232243497415711607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7877453796542146691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232243497415711607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 1
+  <EaseType>k__BackingField: 1
+  <Time>k__BackingField: 3
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: 0
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: 7, y: -1, z: 10}
+  - {x: 6, y: -1, z: 10}
+  - {x: 5, y: -1, z: 10}
+  - {x: 4, y: -1, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1577555478812858368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7100732019058038792}
+  - component: {fileID: 6392069284126092971}
+  m_Layer: 0
+  m_Name: TweenPath2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7100732019058038792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577555478812858368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6392069284126092971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577555478812858368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: 4, y: 2, z: 10}
+  - {x: -4, y: 2, z: 10}
+  - {x: 4, y: -1, z: 10}
+  - {x: -4, y: -1, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2779922038832775366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6891899104753688399}
+  - component: {fileID: 765352915021368206}
+  m_Layer: 0
+  m_Name: TweenPathRoute4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6891899104753688399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779922038832775366}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765352915021368206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779922038832775366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: 4, y: -1, z: 10}
+  - {x: -4, y: -1, z: 10}
+  - {x: 4, y: 2, z: 10}
+  - {x: -4, y: 2, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2898841633467032428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7783375026547537188}
+  - component: {fileID: 4994238301435323264}
+  m_Layer: 0
+  m_Name: TweenPathIntro2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7783375026547537188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898841633467032428}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4994238301435323264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898841633467032428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 1
+  <EaseType>k__BackingField: 1
+  <Time>k__BackingField: 3
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: 0
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: -7, y: 2, z: 10}
+  - {x: -6, y: 2, z: 10}
+  - {x: -5, y: 2, z: 10}
+  - {x: -4, y: 2, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3792143752371061294
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +372,77 @@ Transform:
   m_Father: {fileID: 3288670248968376839}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4957292763625035201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3020754886146749712}
+  - component: {fileID: 7791468759960328662}
+  m_Layer: 0
+  m_Name: TweenPath1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3020754886146749712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957292763625035201}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7791468759960328662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957292763625035201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 1
+  <EaseType>k__BackingField: 1
+  <Time>k__BackingField: 3
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: 0
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: 7, y: 2, z: 10}
+  - {x: 6, y: 2, z: 10}
+  - {x: 5, y: 2, z: 10}
+  - {x: 4, y: 2, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5303186719066698441
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,7 +463,6 @@ GameObject:
   - component: {fileID: 4061264601900696290}
   - component: {fileID: 5171641352868751093}
   - component: {fileID: 3739016980617053038}
-  - component: {fileID: 6313622541156219784}
   - component: {fileID: 2670599818607401374}
   - component: {fileID: 4355897678197754421}
   - component: {fileID: -298414266745242196}
@@ -74,6 +486,15 @@ Transform:
   m_Children:
   - {fileID: 7628104314032366785}
   - {fileID: 7197936816280966143}
+  - {fileID: 3020754886146749712}
+  - {fileID: 7100732019058038792}
+  - {fileID: 6883508157057146484}
+  - {fileID: 7783375026547537188}
+  - {fileID: 2688768075996062831}
+  - {fileID: 5618702618209500065}
+  - {fileID: 6491988072415306177}
+  - {fileID: 7409035808509878851}
+  - {fileID: 6891899104753688399}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,7 +523,19 @@ MonoBehaviour:
     CurrentState: {fileID: 0}
   OnStartEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5804118560769866947}
+        m_TargetAssemblyTypeName: RFG.TweenList, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnObjectSpawnEvent:
     m_PersistentCalls:
       m_Calls:
@@ -118,10 +551,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 6313622541156219784}
-        m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+      - m_Target: {fileID: 5804118560769866947}
+        m_TargetAssemblyTypeName: RFG.TweenList, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -137,8 +570,8 @@ MonoBehaviour:
     OnChange:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6313622541156219784}
-          m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+        - m_Target: {fileID: 5804118560769866947}
+          m_TargetAssemblyTypeName: RFG.TweenList, Assembly-CSharp
           m_MethodName: Cancel
           m_Mode: 1
           m_Arguments:
@@ -385,46 +818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96dcd825c03e1e344bf4df042f938cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6313622541156219784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303186719066698441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <TweenLoopType>k__BackingField: 2
-  <EaseType>k__BackingField: 16
-  <Time>k__BackingField: 5
-  <Delay>k__BackingField: 1
-  <Loops>k__BackingField: -1
-  <PlayOnAwake>k__BackingField: 0
-  <SetOrientToPath>k__BackingField: 0
-  <TweenPathType>k__BackingField: 2
-  <Path>k__BackingField:
-  - {x: 5.59141, y: 1.4083002, z: 10}
-  - {x: -4.366699, y: 1.5304856, z: 10}
-  - {x: 4.3206825, y: -0.11901715, z: 10}
-  - {x: -4.256732, y: -1.1942487, z: 10}
-  <Local>k__BackingField: 1
-  <ReversePath>k__BackingField: 0
-  <TweenGameObject>k__BackingField: {fileID: 0}
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onPause:
-    m_PersistentCalls:
-      m_Calls: []
-  onResume:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2670599818607401374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae1075ddb710a44976d5a8d14fcc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <RotateTowardsDirection>k__BackingField: 0
 --- !u!114 &-298414266745242196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,3 +942,216 @@ MonoBehaviour:
   <Count>k__BackingField: 1
   <Interval>k__BackingField: 0
   <FirePoint>k__BackingField: {fileID: 7628104314032366785}
+--- !u!1 &6215120069828552770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6491988072415306177}
+  - component: {fileID: 3217683884163622303}
+  m_Layer: 0
+  m_Name: TweenPathRoute3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6491988072415306177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215120069828552770}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3217683884163622303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215120069828552770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: -4, y: -1, z: 10}
+  - {x: 4, y: -1, z: 10}
+  - {x: -4, y: 2, z: 10}
+  - {x: 4, y: 2, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &6279109412695019739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2688768075996062831}
+  - component: {fileID: 957518932282796639}
+  m_Layer: 0
+  m_Name: TweenPathRoute2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2688768075996062831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279109412695019739}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957518932282796639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279109412695019739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: -4, y: 2, z: 10}
+  - {x: 4, y: 2, z: 10}
+  - {x: -4, y: -1, z: 10}
+  - {x: 4, y: -1, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &7204731875930102573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5618702618209500065}
+  - component: {fileID: 1826656451758903400}
+  m_Layer: 0
+  m_Name: TweenPathIntro3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5618702618209500065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7204731875930102573}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3288670248968376839}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826656451758903400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7204731875930102573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 1
+  <EaseType>k__BackingField: 1
+  <Time>k__BackingField: 3
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: 0
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: -7, y: -1, z: 10}
+  - {x: -6, y: -1, z: 10}
+  - {x: -5, y: -1, z: 10}
+  - {x: -4, y: -1, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 5303186719066698441}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []

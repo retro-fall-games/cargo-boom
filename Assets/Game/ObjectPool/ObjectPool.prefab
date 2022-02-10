@@ -89,12 +89,6 @@ MonoBehaviour:
   - tag: PowerUpCargo
     prefab: {fileID: 3779561410878688453, guid: 1097ae653c0cfd749bb69067cecd64b6, type: 3}
     size: 1
-  - tag: mediumheli
-    prefab: {fileID: 2555374009427921504, guid: e93637c542ce8744999306dd3c342e66, type: 3}
-    size: 10
-  - tag: smallheli
-    prefab: {fileID: 5303186719066698441, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
-    size: 5
   - tag: FloatingText
     prefab: {fileID: 3080913505683421689, guid: d6f9efa33498a7f4dab8bdac402a3b95, type: 3}
     size: 1
@@ -113,15 +107,18 @@ MonoBehaviour:
   - tag: Missle Shot Sustained
     prefab: {fileID: 4859887867585099934, guid: dfcd6ad25dd74774fad0e471a6bd13ba, type: 3}
     size: 1
-  - tag: smallhelireversed
-    prefab: {fileID: 7101132019968963305, guid: 2d5fa910471645e478a88cf1b2d4eec8, type: 3}
-    size: 5
   - tag: Small Explosion
     prefab: {fileID: 5455639365744478110, guid: a7f2cf9fc2603304a8f63bb4e5a5bf09, type: 3}
     size: 10
   - tag: ScreenShake
     prefab: {fileID: 4531718760120479492, guid: 9536e118d8be6be4abcebbf091dcf234, type: 3}
     size: 1
+  - tag: smallheli
+    prefab: {fileID: 5303186719066698441, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
+    size: 10
+  - tag: mediumheli
+    prefab: {fileID: 2555374009427921504, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+    size: 10
   - tag: AlienShip
     prefab: {fileID: 8667692701809365845, guid: a786b23f3cb493b4490792629149d14c, type: 3}
     size: 5

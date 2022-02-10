@@ -128,7 +128,6 @@ namespace RFG.ScrollingShooter
 
       gameObject.GetOrAddComponent<AIBrainBehaviour>();
       gameObject.GetOrAddComponent<AIMovementBehaviour>();
-      gameObject.GetOrAddComponent<Tween>();
       gameObject.GetOrAddComponent<Aggro>();
 
       EditorUtils.SaveAsPrefabAsset(gameObject, newFolderPath, name);

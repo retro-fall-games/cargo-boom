@@ -134,6 +134,16 @@ namespace RFG.ScrollingShooter
     {
       _secondaryAttackPressed = pressed;
     }
+
+    public void PerformPrimary()
+    {
+      _primaryWeaponEquipable.Perform();
+    }
+
+    public void PerformSecondary()
+    {
+      _secondaryWeaponEquipable.Perform();
+    }
     #endregion
 
     #region Events

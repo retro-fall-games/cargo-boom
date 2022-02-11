@@ -1,5 +1,414 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1490746684133033313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2888640547139915142}
+  - component: {fileID: 8476946763631007155}
+  m_Layer: 0
+  m_Name: Route3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2888640547139915142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490746684133033313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785389322090538150}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8476946763631007155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490746684133033313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: -7, y: 2, z: 10}
+  - {x: 7, y: 2, z: 10}
+  - {x: -7, y: 2, z: 10}
+  - {x: 7, y: 2, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 7809796487736408322}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1760812638544145497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3873420675570053707}
+  - component: {fileID: 7837709319367018812}
+  m_Layer: 0
+  m_Name: Route4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &3873420675570053707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760812638544145497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785389322090538150}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7837709319367018812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760812638544145497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: -7, y: 0, z: 10}
+  - {x: 7, y: 0, z: 10}
+  - {x: -7, y: 0, z: 10}
+  - {x: 7, y: 0, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 7809796487736408322}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2477125872641151385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4322904740951272270}
+  m_Layer: 10
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4322904740951272270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477125872641151385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7465468937943624351}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2889413757143358709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2686448834924766088}
+  - component: {fileID: 152172770494008150}
+  m_Layer: 0
+  m_Name: TweenList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2686448834924766088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889413757143358709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785389322090538150}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152172770494008150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889413757143358709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5798137909281a84db601fdea7adf794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenListInfo>k__BackingField:
+  - Tweens:
+    - {fileID: 2245107916708756422}
+  - Tweens:
+    - {fileID: 6142542602029232206}
+  - Tweens:
+    - {fileID: 8476946763631007155}
+  - Tweens:
+    - {fileID: 7837709319367018812}
+  <TweenListProcessType>k__BackingField: 1
+  DefaultTweenListInfoIndex: 0
+--- !u!1 &4405143752458987419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4466762421711417677}
+  - component: {fileID: 8687594790533195478}
+  - component: {fileID: 5383763534290534922}
+  m_Layer: 10
+  m_Name: Missle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4466762421711417677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405143752458987419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7465468937943624351}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8687594790533195478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405143752458987419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileWeaponEquipable: {fileID: 0}
+  <PlayerInventory>k__BackingField: {fileID: 4233253210922026056}
+  <ProjectileWeaponPosition>k__BackingField: 1
+  FirePoint: {fileID: 4322904740951272270}
+  <UseStatePackFromEquipable>k__BackingField: 1
+  WeaponState:
+    StatePack: {fileID: 11400000, guid: 65667c9aff7f77f49a7670fe15d5e60e, type: 2}
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: 0}
+--- !u!114 &5383763534290534922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405143752458987419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14a9981b6d68645b6062d7d8f1fc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmitterType: 3
+  <Angle>k__BackingField: 45
+  <Radius>k__BackingField: 5
+  <ConeDirection>k__BackingField: 0
+  <Vector>k__BackingField: {x: 1, y: 0, z: 0}
+  <Target>k__BackingField: {fileID: 0}
+  <TargetTag>k__BackingField: Player
+  <ProjectileTag>k__BackingField: 
+  <EmitOnSpawn>k__BackingField: 0
+  <Count>k__BackingField: 1
+  <Interval>k__BackingField: 0
+  <FirePoint>k__BackingField: {fileID: 4322904740951272270}
+--- !u!1 &4739547152221357102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5361132201335523924}
+  - component: {fileID: 6142542602029232206}
+  m_Layer: 0
+  m_Name: Route2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &5361132201335523924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739547152221357102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785389322090538150}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6142542602029232206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739547152221357102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: 7, y: 0, z: 10}
+  - {x: -7, y: 0, z: 10}
+  - {x: 7, y: 0, z: 10}
+  - {x: -7, y: 0, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 7809796487736408322}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &6111089369558147033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785389322090538150}
+  m_Layer: 10
+  m_Name: Paths
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1785389322090538150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111089369558147033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2686448834924766088}
+  - {fileID: 6722089783801888976}
+  - {fileID: 5361132201335523924}
+  - {fileID: 2888640547139915142}
+  - {fileID: 3873420675570053707}
+  m_Father: {fileID: 7465468937943624351}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7809796487736408322
 GameObject:
   m_ObjectHideFlags: 0
@@ -21,7 +430,6 @@ GameObject:
   - component: {fileID: 7352779303676280000}
   - component: {fileID: 3261861302811057206}
   - component: {fileID: 1158856302308387476}
-  - component: {fileID: 5347601766374231781}
   - component: {fileID: 8970110069953755716}
   m_Layer: 10
   m_Name: Jet
@@ -40,7 +448,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4322904740951272270}
+  - {fileID: 4466762421711417677}
+  - {fileID: 1785389322090538150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70,10 +481,10 @@ MonoBehaviour:
   OnStartEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5347601766374231781}
-        m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+      - m_Target: {fileID: 152172770494008150}
+        m_TargetAssemblyTypeName: RFG.TweenList, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -97,10 +508,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 5347601766374231781}
-        m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+      - m_Target: {fileID: 152172770494008150}
+        m_TargetAssemblyTypeName: RFG.TweenList, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -116,8 +527,8 @@ MonoBehaviour:
     OnChange:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5347601766374231781}
-          m_TargetAssemblyTypeName: RFG.Tween, Assembly-CSharp
+        - m_Target: {fileID: 152172770494008150}
+          m_TargetAssemblyTypeName: RFG.TweenList, Assembly-CSharp
           m_MethodName: Cancel
           m_Mode: 1
           m_Arguments:
@@ -337,8 +748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cac299574fe6a4eb3439ac9fee8b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Inventory>k__BackingField: {fileID: 0}
-  <Clone>k__BackingField: 0
+  <Inventory>k__BackingField: {fileID: 11400000, guid: d784c28747d8c524abe206ae6c0460a9, type: 2}
+  <Clone>k__BackingField: 1
 --- !u!114 &7352779303676280000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,46 +788,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <RotateTowardsDirection>k__BackingField: 1
---- !u!114 &5347601766374231781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7809796487736408322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <TweenLoopType>k__BackingField: 2
-  <EaseType>k__BackingField: 16
-  <Time>k__BackingField: 5
-  <Delay>k__BackingField: 0
-  <Loops>k__BackingField: -1
-  <PlayOnAwake>k__BackingField: 0
-  <SetOrientToPath>k__BackingField: 0
-  <TweenPathType>k__BackingField: 2
-  <Path>k__BackingField:
-  - {x: 9, y: 2, z: 10}
-  - {x: -9, y: 2, z: 10}
-  - {x: 9, y: 2, z: 10}
-  - {x: -9, y: 2, z: 10}
-  <Local>k__BackingField: 1
-  <ReversePath>k__BackingField: 0
-  <TweenGameObject>k__BackingField: {fileID: 0}
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onPause:
-    m_PersistentCalls:
-      m_Calls: []
-  onResume:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8970110069953755716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,3 +810,74 @@ MonoBehaviour:
     m_Bits: 256
   tags:
   - Player
+--- !u!1 &8136900493834432578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6722089783801888976}
+  - component: {fileID: 2245107916708756422}
+  m_Layer: 0
+  m_Name: Route1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &6722089783801888976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8136900493834432578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785389322090538150}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2245107916708756422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8136900493834432578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc543a1e2bb6c4299509147b9962fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TweenLoopType>k__BackingField: 2
+  <EaseType>k__BackingField: 16
+  <Time>k__BackingField: 5
+  <Delay>k__BackingField: 0
+  <Loops>k__BackingField: -1
+  <PlayOnAwake>k__BackingField: 0
+  <SetOrientToPath>k__BackingField: 0
+  <TweenPathType>k__BackingField: 2
+  <Path>k__BackingField:
+  - {x: 7, y: 2, z: 10}
+  - {x: -7, y: 2, z: 10}
+  - {x: 7, y: 2, z: 10}
+  - {x: -7, y: 2, z: 10}
+  <Local>k__BackingField: 1
+  <ReversePath>k__BackingField: 0
+  <TweenGameObject>k__BackingField: {fileID: 7809796487736408322}
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  onResume:
+    m_PersistentCalls:
+      m_Calls: []

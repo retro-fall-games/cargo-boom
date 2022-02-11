@@ -73,10 +73,13 @@ namespace RFG.ScrollingShooter
       {
         return;
       }
+      float dir = 1f;
       Vector3 targetDirection = _currentVector - _prevVector;
-      float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-      transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-      transform.right = targetDirection;
+      if (targetDirection.x < 0)
+      {
+        dir = -1f;
+      }
+      transform.right = new Vector3(dir, 0f, 0f);
     }
   }
 }

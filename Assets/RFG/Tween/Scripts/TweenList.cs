@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using MyBox;
+#endif
 
 namespace RFG
 {
@@ -106,5 +109,14 @@ namespace RFG
         _currentTween.Play();
       }
     }
+
+#if UNITY_EDITOR
+    [ButtonMethod]
+    private void Reset()
+    {
+      Cancel();
+      Play();
+    }
+#endif
   }
 }

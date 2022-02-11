@@ -101,6 +101,9 @@ MonoBehaviour:
   - tag: Siren
     prefab: {fileID: 1191256624347183549, guid: a6fdf8a6a2af712469985dc2d087e619, type: 3}
     size: 1
+  - tag: EnemyMissle
+    prefab: {fileID: 5793802038532824141, guid: 0eafa9acdb2a81c48938768c49c3b3d4, type: 3}
+    size: 10
   - tag: Missle Shot
     prefab: {fileID: 1247860802447759144, guid: fc11e2235af24b34a89b0deccb66f3c4, type: 3}
     size: 1

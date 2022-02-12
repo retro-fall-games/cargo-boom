@@ -1,97 +1,194 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using System.Linq;
 
 namespace RFG
 {
+  public enum MovementPathType { Loop, PingPong, OneWay };
+  public enum MovementPathDirection { Forwards, Backwards };
+
+  [AddComponentMenu("RFG/Movement/Movement Path")]
   public class MovementPath : MonoBehaviour
   {
-    public enum State { Loop, PingPong, OneWay };
-    public State state = State.OneWay;
-    public enum Direction { Forwards, Backwards };
-    public Direction direction = Direction.Forwards;
-    public bool spawnAtStart = false;
-    public Transform[] paths;
-    public bool ReachedEnd { get; private set; }
-    public bool ReachedStart { get; private set; }
+    [field: SerializeField] private MovementPathType MovementPathType = MovementPathType.OneWay;
+    [field: SerializeField] private MovementPathDirection MovementPathDirection = MovementPathDirection.Forwards;
+    [field: SerializeField] private float Speed { get; set; } = 5f;
+    [field: SerializeField] private bool LocalSpace { get; set; } = false;
+    [field: SerializeField] private float DistanceThreshold { get; set; } = .1f;
+    [field: SerializeField] private GameObject MoveGameObject { get; set; }
+    [field: SerializeField] public bool ReachedEnd { get; private set; }
+    [field: SerializeField] public bool ReachedStart { get; private set; }
+    public Vector3 CurrentPoint { get { return Path[_currentIndex]; } }
+    [field: SerializeField] public List<Vector3> Path { get; set; }
 
-    private int currentIndex = 0;
+    [Header("Events")]
+    public UnityEvent onPlay;
+    public UnityEvent onComplete;
+    public UnityEvent onPause;
+    public UnityEvent onResume;
 
+    private int _currentIndex = 0;
+    private List<Vector3> _paths;
+    private bool _isPlaying = false;
+    private bool _isPaused = false;
 
-    private void Start()
+    #region Unity Methods
+    private void Awake()
     {
-      if (spawnAtStart)
+      if (MoveGameObject == null)
       {
-        transform.position = GetCurrentTransform().position;
-        currentIndex++;
+        LogExt.Warn<MovementPath>("Please set MoveGameObject in Movement Path");
       }
     }
 
-    public Transform GetCurrentTransform()
+    private void Update()
     {
-      return paths[currentIndex];
-    }
-
-    public void CheckPath(Transform other)
-    {
-      Transform currentTransform = GetCurrentTransform();
-      int range = (int)Vector2.Distance(currentTransform.position, other.position);
-      if (range == 0f)
+      if (_isPlaying && !_isPaused)
       {
-        NextPath();
+        if (LocalSpace)
+        {
+          MoveGameObject.transform.localPosition = Vector3.MoveTowards(MoveGameObject.transform.localPosition, CurrentPoint, Speed * Time.deltaTime);
+        }
+        else
+        {
+          MoveGameObject.transform.localPosition = Vector3.MoveTowards(MoveGameObject.transform.localPosition, CurrentPoint, Speed * Time.deltaTime);
+        }
       }
     }
 
-    public void Reset()
+    private void LateUpdate()
     {
+      if (_isPlaying && !_isPaused)
+      {
+        float range;
+        if (LocalSpace)
+        {
+          range = Vector3.Distance(MoveGameObject.transform.localPosition, CurrentPoint);
+        }
+        else
+        {
+          range = Vector3.Distance(MoveGameObject.transform.position, CurrentPoint);
+        }
+        if (range <= DistanceThreshold)
+        {
+          NextPath();
+        }
+      }
+    }
+    #endregion
+
+    public void Play()
+    {
+      _paths = new List<Vector3>(Path);
+      _currentIndex = 0;
+      _isPlaying = true;
+      _isPaused = false;
+      if (LocalSpace)
+      {
+        MoveGameObject.transform.localPosition = CurrentPoint;
+      }
+      else
+      {
+        MoveGameObject.transform.position = CurrentPoint;
+      }
       ReachedEnd = false;
       ReachedStart = false;
+      onPlay?.Invoke();
     }
 
-    public void Reverse()
+    public void PlayReverse()
     {
-      System.Array.Reverse(paths);
+      _paths = new List<Vector3>(Path);
+      _paths.Reverse();
+      Play();
+    }
+
+    public void Cancel()
+    {
+      _isPlaying = false;
+    }
+
+    public void TogglePause()
+    {
+      if (_isPaused)
+      {
+        _isPaused = false;
+        onResume?.Invoke();
+      }
+      else
+      {
+        _isPaused = true;
+        onPause?.Invoke();
+      }
+    }
+
+    public void Resume()
+    {
+      _isPaused = false;
+      onResume?.Invoke();
+    }
+
+    public void Pause()
+    {
+      _isPaused = true;
+      onPause?.Invoke();
     }
 
     private void NextPath()
     {
-      int nextIndex = direction == Direction.Forwards ? currentIndex + 1 : currentIndex - 1;
-      ReachedEnd = nextIndex >= paths.Length;
+      int nextIndex = MovementPathDirection == MovementPathDirection.Forwards ? _currentIndex + 1 : _currentIndex - 1;
+      ReachedEnd = nextIndex >= _paths.Count;
       ReachedStart = nextIndex < 0;
 
-      if (state == State.PingPong && (ReachedEnd || ReachedStart))
+      if (MovementPathType == MovementPathType.PingPong && (ReachedEnd || ReachedStart))
       {
-        switch (direction)
+        switch (MovementPathDirection)
         {
-          case Direction.Forwards:
-            direction = Direction.Backwards;
+          case MovementPathDirection.Forwards:
+            MovementPathDirection = MovementPathDirection.Backwards;
             nextIndex--;
             break;
-          case Direction.Backwards:
-            direction = Direction.Forwards;
+          case MovementPathDirection.Backwards:
+            MovementPathDirection = MovementPathDirection.Forwards;
             nextIndex++;
             break;
           default:
             break;
         }
       }
-      else if (state == State.Loop && ReachedEnd)
+      else if (MovementPathType == MovementPathType.Loop && ReachedEnd)
       {
         nextIndex = 0;
       }
-      else if (state == State.Loop && ReachedStart)
+      else if (MovementPathType == MovementPathType.Loop && ReachedStart)
       {
-        nextIndex = paths.Length - 1;
+        nextIndex = _paths.Count - 1;
       }
       else if (ReachedEnd)
       {
-        nextIndex = paths.Length - 1;
+        onComplete?.Invoke();
+        _isPlaying = false;
+        return;
       }
-      else if (ReachedStart)
-      {
-        nextIndex = 0;
-      }
-      currentIndex = nextIndex;
-
+      _currentIndex = nextIndex;
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+      if (Path == null || Path.Count < 2)
+      {
+        return;
+      }
+      var pathsList = Path.Where(t => t != null).ToList();
+
+      for (var i = 1; i < pathsList.Count; i++)
+      {
+        Gizmos.DrawLine(Path[i - 1], Path[i]);
+      }
+    }
+#endif
 
   }
 }

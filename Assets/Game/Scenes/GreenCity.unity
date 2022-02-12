@@ -167,15 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
-    Loop: 3
+  - SecondsUntilBegin: 0
+    Loop: 2
     TagGroups:
     - Tag: smallheli
-      Count: 5
-      Interval: 1
-      SecondsUntilBegin: 0
-    - Tag: smallhelireversed
-      Count: 5
+      Count: 10
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
@@ -553,12 +549,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
-    Loop: 0
+  - SecondsUntilBegin: 0
+    Loop: 2
     TagGroups:
     - Tag: AlienShip
-      Count: 3
-      Interval: 3
+      Count: 10
+      Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
@@ -1126,7 +1122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 777765245}
   - component: {fileID: 777765246}
-  - component: {fileID: 777765247}
   m_Layer: 0
   m_Name: WaveSpawnerLevel6
   m_TagString: Untagged
@@ -1161,111 +1156,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
-    Loop: 0
+  - SecondsUntilBegin: 0
+    Loop: 2
     TagGroups:
     - Tag: AlienShip
-      Count: 3
-      Interval: 3
-      SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
-    - Tag: Jet
-      Count: 1
-      Interval: 0
-      SecondsUntilBegin: 0
-    - Tag: smallheli
-      Count: 3
+      Count: 10
       Interval: 1
-      SecondsUntilBegin: 0
-    - Tag: smallhelireversed
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
-    - Tag: AlienShip
-      Count: 1
-      Interval: 0
-      SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
-    - Tag: MediumAlienShip
-      Count: 1
-      Interval: 0
-      SecondsUntilBegin: 0
-    Parent: 1
-  <SpawnPoint>k__BackingField: {fileID: 879172138}
-  <OnWaveStart>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnWaveEnd>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnFinish>k__BackingField:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7123798071250177914}
-        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: EnemiesDefeated
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &777765247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777765244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
-    Loop: 0
-    TagGroups:
-    - Tag: AlienShip
-      Count: 3
-      Interval: 3
-      SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
-    - Tag: Jet
-      Count: 1
-      Interval: 0
-      SecondsUntilBegin: 0
-    - Tag: smallheli
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 0
-    - Tag: smallhelireversed
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
-    - Tag: AlienShip
-      Count: 1
-      Interval: 0
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
@@ -2552,10 +2448,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 364905430}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
       objectReference: {fileID: 0}
@@ -2563,10 +2455,6 @@ PrefabInstance:
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1363934101}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -2576,20 +2464,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1363934101}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -2600,20 +2480,12 @@ PrefabInstance:
       value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.Behaviour, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: UnityEngine.Behaviour, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4162842312356658526, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2634,6 +2506,10 @@ PrefabInstance:
     - target: {fileID: 4375575246701598499, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794285527598294254, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: m_Volume
+      value: 0.207
       objectReference: {fileID: 0}
     - target: {fileID: 8884055576111153889, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: Bounds.m_Center.y
@@ -3295,39 +3171,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
-    Loop: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
     TagGroups:
     - Tag: Jet
-      Count: 1
-      Interval: 1
+      Count: 5
+      Interval: 3
       SecondsUntilBegin: 0
     Parent: 1
-  - SecondsUntilBegin: 3
-    Loop: 1
+  - SecondsUntilBegin: 0
+    Loop: 2
     TagGroups:
     - Tag: smallheli
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 0
-    - Tag: smallhelireversed
-      Count: 3
+      Count: 10
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
-  - SecondsUntilBegin: 3
+  - SecondsUntilBegin: 0
     Loop: 1
     TagGroups:
     - Tag: mediumheli
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
-    - Tag: Jet
+    Parent: 1
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: Bomber
       Count: 1
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
-  - SecondsUntilBegin: 3
+  - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
     - Tag: BigCargoShip
@@ -4055,15 +3931,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - SecondsUntilBegin: 3
-    Loop: 3
+  - SecondsUntilBegin: 0
+    Loop: 2
     TagGroups:
     - Tag: smallheli
-      Count: 5
-      Interval: 1
-      SecondsUntilBegin: 0
-    - Tag: smallhelireversed
-      Count: 5
+      Count: 10
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
@@ -4219,11 +4091,7 @@ MonoBehaviour:
       Interval: 0
       SecondsUntilBegin: 0
     - Tag: smallheli
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 0
-    - Tag: smallhelireversed
-      Count: 3
+      Count: 10
       Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
@@ -4428,7 +4296,7 @@ MonoBehaviour:
   - SecondsUntilBegin: 0
     Loop: 2
     TagGroups:
-    - Tag: smallheli
+    - Tag: AlienShip
       Count: 10
       Interval: 1
       SecondsUntilBegin: 0
@@ -4593,6 +4461,18 @@ PrefabInstance:
     - target: {fileID: 1132323385793738066, guid: 086dc5d2790dc8a4b95688bf9c4f1af3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132323385793738067, guid: 086dc5d2790dc8a4b95688bf9c4f1af3, type: 3}
+      propertyPath: pools.Array.data[26].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132323385793738067, guid: 086dc5d2790dc8a4b95688bf9c4f1af3, type: 3}
+      propertyPath: pools.Array.data[27].size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132323385793738067, guid: 086dc5d2790dc8a4b95688bf9c4f1af3, type: 3}
+      propertyPath: pools.Array.data[30].size
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086dc5d2790dc8a4b95688bf9c4f1af3, type: 3}

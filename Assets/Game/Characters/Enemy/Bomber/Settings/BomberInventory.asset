@@ -21,7 +21,7 @@ MonoBehaviour:
   Legs: {fileID: 0}
   Boots: {fileID: 0}
   Gloves: {fileID: 0}
-  LeftHand: {fileID: 0}
+  LeftHand: {fileID: 11400000, guid: 04232aa7f4a6e2e43b3aacaf7efd268a, type: 2}
   RightHand: {fileID: 0}
   LeftRing: {fileID: 0}
   RightRing: {fileID: 0}

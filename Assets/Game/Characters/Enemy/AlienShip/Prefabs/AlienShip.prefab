@@ -51,11 +51,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 4, y: 2, z: 10}
-  - {x: 1, y: -1, z: 10}
-  - {x: -2, y: 2, z: 10}
-  - {x: -4, y: -1, z: 10}
+  - {x: 4, y: 2, z: 0}
+  - {x: 1, y: -1, z: 0}
+  - {x: -2, y: 2, z: 0}
+  - {x: -4, y: -1, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -68,6 +70,83 @@ MonoBehaviour:
   onResume:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2764775931316569695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5312857770833465302}
+  - component: {fileID: 4198365750187179371}
+  - component: {fileID: 2061023619825585214}
+  m_Layer: 10
+  m_Name: Donut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5312857770833465302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764775931316569695}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 11028211299191868}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4198365750187179371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764775931316569695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileWeaponEquipable: {fileID: 0}
+  <PlayerInventory>k__BackingField: {fileID: 2951256447293803664}
+  <ProjectileWeaponPosition>k__BackingField: 0
+  FirePoint: {fileID: 0}
+  <UseStatePackFromEquipable>k__BackingField: 1
+  WeaponState:
+    StatePack: {fileID: 11400000, guid: c70b7b5374a0113488932d3ea5c06cd2, type: 2}
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: 0}
+--- !u!114 &2061023619825585214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764775931316569695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14a9981b6d68645b6062d7d8f1fc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmitterType: 3
+  <Angle>k__BackingField: 45
+  <Radius>k__BackingField: 5
+  <ConeDirection>k__BackingField: 0
+  <Vector>k__BackingField: {x: 1, y: 0, z: 0}
+  <Target>k__BackingField: {fileID: 0}
+  <TargetTag>k__BackingField: Player
+  <ProjectileTag>k__BackingField: 
+  <EmitOnSpawn>k__BackingField: 0
+  <Count>k__BackingField: 1
+  <Interval>k__BackingField: 1
+  <FirePoint>k__BackingField: {fileID: 5312857770833465302}
 --- !u!1 &2814134734445659475
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,11 +198,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 7, y: -1, z: 10}
-  - {x: 6, y: 0, z: 10}
-  - {x: 5, y: 1, z: 10}
-  - {x: 4, y: 2, z: 10}
+  - {x: 7, y: -1, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 5, y: 1, z: 0}
+  - {x: 4, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -187,11 +268,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 4, y: -1, z: 10}
-  - {x: 2, y: 2, z: 10}
-  - {x: -1, y: -1, z: 10}
-  - {x: -4, y: 2, z: 10}
+  - {x: 4, y: -1, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: -1, y: -1, z: 0}
+  - {x: -4, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -255,11 +338,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -4, y: 2, z: 10}
-  - {x: -1, y: -1, z: 10}
-  - {x: 2, y: 2, z: 10}
-  - {x: 4, y: -1, z: 10}
+  - {x: -4, y: 2, z: 0}
+  - {x: -1, y: -1, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 4, y: -1, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -411,11 +496,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -7, y: 2, z: 10}
-  - {x: -6, y: 1, z: 10}
-  - {x: -5, y: 0, z: 10}
-  - {x: -4, y: -1, z: 10}
+  - {x: -7, y: 2, z: 0}
+  - {x: -6, y: 1, z: 0}
+  - {x: -5, y: 0, z: 0}
+  - {x: -4, y: -1, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -465,7 +552,7 @@ Transform:
   - {fileID: 8201174036055386485}
   - {fileID: 2514005450952539176}
   m_Father: {fileID: 11028211299191868}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8003119119454550538
 GameObject:
@@ -518,11 +605,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -7, y: -1, z: 10}
-  - {x: -6, y: 0, z: 10}
-  - {x: -5, y: 1, z: 10}
-  - {x: -4, y: 2, z: 10}
+  - {x: -7, y: -1, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -5, y: 1, z: 0}
+  - {x: -4, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -586,11 +675,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -4, y: -1, z: 10}
-  - {x: -2, y: 2, z: 10}
-  - {x: 1, y: -1, z: 10}
-  - {x: 4, y: 2, z: 10}
+  - {x: -4, y: -1, z: 0}
+  - {x: -2, y: 2, z: 0}
+  - {x: 1, y: -1, z: 0}
+  - {x: 4, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -646,6 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9038296238484161751}
+  - {fileID: 5312857770833465302}
   - {fileID: 5421720224048286291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -979,8 +1071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cac299574fe6a4eb3439ac9fee8b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Inventory>k__BackingField: {fileID: 0}
-  <Clone>k__BackingField: 0
+  <Inventory>k__BackingField: {fileID: 11400000, guid: 05e9e7a53c2cca649b8c30e7c8051463, type: 2}
+  <Clone>k__BackingField: 1
 --- !u!114 &95097393958874855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,11 +1292,13 @@ MonoBehaviour:
   <MoveGameObject>k__BackingField: {fileID: 8667692701809365845}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 7, y: 2, z: 10}
-  - {x: 6, y: 1, z: 10}
-  - {x: 5, y: 0, z: 10}
-  - {x: 4, y: -1, z: 10}
+  - {x: 7, y: 2, z: 0}
+  - {x: 6, y: 1, z: 0}
+  - {x: 5, y: 0, z: 0}
+  - {x: 4, y: -1, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []

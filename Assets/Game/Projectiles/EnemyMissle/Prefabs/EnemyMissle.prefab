@@ -4818,7 +4818,7 @@ GameObject:
   - component: {fileID: 990584129960150002}
   - component: {fileID: 86894087404135518}
   - component: {fileID: 4260099175131711650}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemyMissle
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -4848,7 +4848,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5793802038532824141}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4906,7 +4906,7 @@ MonoBehaviour:
   <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 9472
   <SpawnEffects>k__BackingField:
   - Missle Shot
   - Missle Shot Sustained

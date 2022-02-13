@@ -48,7 +48,10 @@ namespace RFG.BehaviourTree
       Debug.Log(settings);
 
       var styleSheet = settings.behaviourTreeStyle;
-      styleSheets.Add(styleSheet);
+      if (styleSheet != null)
+      {
+        styleSheets.Add(styleSheet);
+      }
 
       Undo.undoRedoPerformed += OnUndoRedo;
     }

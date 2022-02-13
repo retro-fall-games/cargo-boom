@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2064055020678015032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7720120874666193914}
+  m_Layer: 10
+  m_Name: FirePointBomb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7720120874666193914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064055020678015032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1885718640079923153}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2423666028597822524
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,10 +82,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: 7, y: 2, z: 10}
-  - {x: -7, y: 2, z: 10}
-  - {x: 7, y: 2, z: 10}
-  - {x: -7, y: 2, z: 10}
+  - {x: 7, y: 2, z: 0}
+  - {x: -7, y: 2, z: 0}
+  - {x: 7, y: 2, z: 0}
+  - {x: -7, y: 2, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 8763734921395324018}
@@ -101,7 +131,7 @@ Transform:
   - {fileID: 2176170499193361684}
   - {fileID: 660304238621062795}
   m_Father: {fileID: 1885718640079923153}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4654041174276602019
 GameObject:
@@ -174,14 +204,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5538761170602016238}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.95, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1885718640079923153}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5902017540933225601
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &5656294690486572414
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,7 +219,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5837012274229394284}
+  - component: {fileID: 3850190958720979477}
+  - component: {fileID: 3180847820301127266}
+  - component: {fileID: 2104079388833543175}
   m_Layer: 10
   m_Name: Bomb
   m_TagString: Untagged
@@ -197,20 +229,142 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5837012274229394284
+--- !u!4 &3850190958720979477
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5902017540933225601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 5656294690486572414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.60000014, y: 0.1400001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1885718640079923153}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3180847820301127266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656294690486572414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileWeaponEquipable: {fileID: 0}
+  <PlayerInventory>k__BackingField: {fileID: 3215834246714909575}
+  <ProjectileWeaponPosition>k__BackingField: 1
+  FirePoint: {fileID: 7720120874666193914}
+  <UseStatePackFromEquipable>k__BackingField: 1
+  WeaponState:
+    StatePack: {fileID: 11400000, guid: bed58fe9bf9e4aa4f88b71cf8ca05a32, type: 2}
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: 0}
+--- !u!114 &2104079388833543175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656294690486572414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14a9981b6d68645b6062d7d8f1fc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmitterType: 2
+  <Angle>k__BackingField: 45
+  <Radius>k__BackingField: 5
+  <ConeDirection>k__BackingField: 0
+  <Vector>k__BackingField: {x: 1, y: 0, z: 0}
+  <Target>k__BackingField: {fileID: 0}
+  <TargetTag>k__BackingField: 
+  <ProjectileTag>k__BackingField: 
+  <EmitOnSpawn>k__BackingField: 0
+  <Count>k__BackingField: 1
+  <Interval>k__BackingField: 0
+  <FirePoint>k__BackingField: {fileID: 7720120874666193914}
+--- !u!1 &7387519712447333606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3180331388017541432}
+  - component: {fileID: 5868473569748129506}
+  - component: {fileID: 4069000697257361124}
+  m_Layer: 0
+  m_Name: MachineGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3180331388017541432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387519712447333606}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.69, y: -1.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1885718640079923153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5868473569748129506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387519712447333606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileWeaponEquipable: {fileID: 0}
+  <PlayerInventory>k__BackingField: {fileID: 3215834246714909575}
+  <ProjectileWeaponPosition>k__BackingField: 0
+  FirePoint: {fileID: 1699751987379873932}
+  <UseStatePackFromEquipable>k__BackingField: 1
+  WeaponState:
+    StatePack: {fileID: 11400000, guid: 153e8633b1fe32a48ba4469c6248266b, type: 2}
+    PreviousState: {fileID: 0}
+    CurrentState: {fileID: 0}
+--- !u!114 &4069000697257361124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387519712447333606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14a9981b6d68645b6062d7d8f1fc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmitterType: 2
+  <Angle>k__BackingField: 45
+  <Radius>k__BackingField: 5
+  <ConeDirection>k__BackingField: 0
+  <Vector>k__BackingField: {x: 1, y: 0, z: 0}
+  <Target>k__BackingField: {fileID: 0}
+  <TargetTag>k__BackingField: 
+  <ProjectileTag>k__BackingField: 
+  <EmitOnSpawn>k__BackingField: 0
+  <Count>k__BackingField: 1
+  <Interval>k__BackingField: 0
+  <FirePoint>k__BackingField: {fileID: 1699751987379873932}
 --- !u!1 &8763734921395324018
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +406,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1699751987379873932}
-  - {fileID: 5837012274229394284}
+  - {fileID: 3180331388017541432}
+  - {fileID: 7720120874666193914}
+  - {fileID: 3850190958720979477}
   - {fileID: 3730091076593856865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -550,8 +706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cac299574fe6a4eb3439ac9fee8b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Inventory>k__BackingField: {fileID: 0}
-  <Clone>k__BackingField: 0
+  <Inventory>k__BackingField: {fileID: 11400000, guid: 272094fb20bf90d44b54e1aefff906dd, type: 2}
+  <Clone>k__BackingField: 1
 --- !u!114 &5462132558381630822
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -143,3 +143,6 @@ MonoBehaviour:
   - tag: Rover
     prefab: {fileID: 8094220404277126807, guid: 90e910174324135418d52e48a396d80c, type: 3}
     size: 1
+  - tag: EnemyBomb
+    prefab: {fileID: 428572665236486688, guid: b12c81d7274775548a0d1ea85bcb578c, type: 3}
+    size: 10

@@ -81,15 +81,18 @@ MonoBehaviour:
   MovementPathType: 2
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
+  <LocalSpace>k__BackingField: 0
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -7, y: 2, z: 10}
-  - {x: -6, y: 2, z: 10}
-  - {x: -5, y: 2, z: 10}
-  - {x: -3, y: 2, z: 10}
+  - {x: -7, y: 2, z: 0}
+  - {x: -6, y: 2, z: 0}
+  - {x: -5, y: 2, z: 0}
+  - {x: -3, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -148,15 +151,18 @@ MonoBehaviour:
   MovementPathType: 2
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
+  <LocalSpace>k__BackingField: 0
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 7, y: 2, z: 10}
-  - {x: 6, y: 2, z: 10}
-  - {x: 5, y: 2, z: 10}
-  - {x: 3, y: 2, z: 10}
+  - {x: 7, y: 2, z: 0}
+  - {x: 6, y: 2, z: 0}
+  - {x: 5, y: 2, z: 0}
+  - {x: 3, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -215,15 +221,18 @@ MonoBehaviour:
   MovementPathType: 1
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
+  <LocalSpace>k__BackingField: 0
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -3, y: 2, z: 10}
-  - {x: -1, y: 2, z: 10}
-  - {x: 2, y: 2, z: 10}
-  - {x: 3, y: 2, z: 10}
+  - {x: -3, y: 2, z: 0}
+  - {x: -1, y: 2, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 3, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -711,15 +720,18 @@ MonoBehaviour:
   MovementPathType: 1
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
+  <LocalSpace>k__BackingField: 0
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
   <ReachedStart>k__BackingField: 0
+  <IsPlaying>k__BackingField: 0
+  <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 3, y: 2, z: 10}
-  - {x: 1, y: 2, z: 10}
-  - {x: -2, y: 2, z: 10}
-  - {x: -3, y: 2, z: 10}
+  - {x: 3, y: 2, z: 0}
+  - {x: 1, y: 2, z: 0}
+  - {x: -2, y: 2, z: 0}
+  - {x: -3, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []

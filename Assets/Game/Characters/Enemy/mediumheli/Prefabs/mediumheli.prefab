@@ -129,10 +129,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: -4, y: -1, z: 10}
-  - {x: 4, y: -1, z: 10}
-  - {x: -4, y: 2, z: 10}
-  - {x: 4, y: 2, z: 10}
+  - {x: -4, y: -1, z: 0}
+  - {x: 4, y: -1, z: 0}
+  - {x: -4, y: 2, z: 0}
+  - {x: 4, y: 2, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -200,10 +200,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: 7, y: 2, z: 10}
-  - {x: 6, y: 2, z: 10}
-  - {x: 5, y: 2, z: 10}
-  - {x: 4, y: 2, z: 10}
+  - {x: 7, y: 2, z: 0}
+  - {x: 6, y: 2, z: 0}
+  - {x: 5, y: 2, z: 0}
+  - {x: 4, y: 2, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -743,10 +743,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: 4, y: 2, z: 10}
-  - {x: -4, y: 2, z: 10}
-  - {x: 4, y: -1, z: 10}
-  - {x: -4, y: -1, z: 10}
+  - {x: 4, y: 2, z: 0}
+  - {x: -4, y: 2, z: 0}
+  - {x: 4, y: -1, z: 0}
+  - {x: -4, y: -1, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -844,10 +844,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: 7, y: -1, z: 10}
-  - {x: 6, y: -1, z: 10}
-  - {x: 5, y: -1, z: 10}
-  - {x: 4, y: -1, z: 10}
+  - {x: 7, y: -1, z: 0}
+  - {x: 6, y: -1, z: 0}
+  - {x: 5, y: -1, z: 0}
+  - {x: 4, y: -1, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -915,10 +915,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: 4, y: -1, z: 10}
-  - {x: -4, y: -1, z: 10}
-  - {x: 4, y: 2, z: 10}
-  - {x: -4, y: 2, z: 10}
+  - {x: 4, y: -1, z: 0}
+  - {x: -4, y: -1, z: 0}
+  - {x: 4, y: 2, z: 0}
+  - {x: -4, y: 2, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -986,10 +986,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: -4, y: 2, z: 10}
-  - {x: 4, y: 2, z: 10}
-  - {x: -4, y: -1, z: 10}
-  - {x: 4, y: -1, z: 10}
+  - {x: -4, y: 2, z: 0}
+  - {x: 4, y: 2, z: 0}
+  - {x: -4, y: -1, z: 0}
+  - {x: 4, y: -1, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -1096,10 +1096,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: -7, y: 2, z: 10}
-  - {x: -6, y: 2, z: 10}
-  - {x: -5, y: 2, z: 10}
-  - {x: -4, y: 2, z: 10}
+  - {x: -7, y: 2, z: 0}
+  - {x: -6, y: 2, z: 0}
+  - {x: -5, y: 2, z: 0}
+  - {x: -4, y: 2, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}
@@ -1167,10 +1167,10 @@ MonoBehaviour:
   <SetOrientToPath>k__BackingField: 0
   <TweenPathType>k__BackingField: 2
   <Path>k__BackingField:
-  - {x: -7, y: -1, z: 10}
-  - {x: -6, y: -1, z: 10}
-  - {x: -5, y: -1, z: 10}
-  - {x: -4, y: -1, z: 10}
+  - {x: -7, y: -1, z: 0}
+  - {x: -6, y: -1, z: 0}
+  - {x: -5, y: -1, z: 0}
+  - {x: -4, y: -1, z: 0}
   <Local>k__BackingField: 1
   <ReversePath>k__BackingField: 0
   <TweenGameObject>k__BackingField: {fileID: 2555374009427921504}

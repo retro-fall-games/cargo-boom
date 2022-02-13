@@ -29,6 +29,7 @@ namespace RFG
 
     public void Play()
     {
+      Cancel();
       switch (MovementPathListProcessType)
       {
         case MovementPathListProcessType.Linear:
@@ -42,6 +43,7 @@ namespace RFG
 
     public void Play(int index)
     {
+      Cancel();
       _currentMovementPathListInfoIndex = index;
       _currentMovementPathListInfo = MovementPathListInfo[_currentMovementPathListInfoIndex];
       _currentMovementPathIndex = 0;

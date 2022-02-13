@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5605039622195178078}
   - component: {fileID: 6483345500112256149}
   - component: {fileID: 6328622494410892318}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 21504
   <SpawnEffects>k__BackingField:
   - MachineGunSoundEffect
   <CollisionEffects>k__BackingField:

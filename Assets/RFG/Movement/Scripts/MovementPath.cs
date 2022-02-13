@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using MyBox;
 
 namespace RFG
 {
@@ -17,8 +18,10 @@ namespace RFG
     [field: SerializeField] private bool LocalSpace { get; set; } = false;
     [field: SerializeField] private float DistanceThreshold { get; set; } = .1f;
     [field: SerializeField] private GameObject MoveGameObject { get; set; }
-    [field: SerializeField] public bool ReachedEnd { get; private set; }
-    [field: SerializeField] public bool ReachedStart { get; private set; }
+    [field: SerializeField, ReadOnly] public bool ReachedEnd { get; private set; } = false;
+    [field: SerializeField, ReadOnly] public bool ReachedStart { get; private set; } = false;
+    [field: SerializeField, ReadOnly] public bool IsPlaying { get; private set; } = false;
+    [field: SerializeField, ReadOnly] public bool IsPaused { get; private set; } = false;
     public Vector3 CurrentPoint { get { return Path[_currentIndex]; } }
     [field: SerializeField] public List<Vector3> Path { get; set; }
 
@@ -30,8 +33,6 @@ namespace RFG
 
     private int _currentIndex = 0;
     private List<Vector3> _paths;
-    private bool _isPlaying = false;
-    private bool _isPaused = false;
 
     #region Unity Methods
     private void Awake()
@@ -44,7 +45,7 @@ namespace RFG
 
     private void Update()
     {
-      if (_isPlaying && !_isPaused)
+      if (IsPlaying && !IsPaused)
       {
         if (LocalSpace)
         {
@@ -52,14 +53,14 @@ namespace RFG
         }
         else
         {
-          MoveGameObject.transform.localPosition = Vector3.MoveTowards(MoveGameObject.transform.localPosition, CurrentPoint, Speed * Time.deltaTime);
+          MoveGameObject.transform.position = Vector3.MoveTowards(MoveGameObject.transform.position, CurrentPoint, Speed * Time.deltaTime);
         }
       }
     }
 
     private void LateUpdate()
     {
-      if (_isPlaying && !_isPaused)
+      if (IsPlaying && !IsPaused)
       {
         float range;
         if (LocalSpace)
@@ -82,8 +83,8 @@ namespace RFG
     {
       _paths = new List<Vector3>(Path);
       _currentIndex = 0;
-      _isPlaying = true;
-      _isPaused = false;
+      IsPlaying = true;
+      IsPaused = false;
       if (LocalSpace)
       {
         MoveGameObject.transform.localPosition = CurrentPoint;
@@ -106,32 +107,32 @@ namespace RFG
 
     public void Cancel()
     {
-      _isPlaying = false;
+      IsPlaying = false;
     }
 
     public void TogglePause()
     {
-      if (_isPaused)
+      if (IsPaused)
       {
-        _isPaused = false;
+        IsPaused = false;
         onResume?.Invoke();
       }
       else
       {
-        _isPaused = true;
+        IsPaused = true;
         onPause?.Invoke();
       }
     }
 
     public void Resume()
     {
-      _isPaused = false;
+      IsPaused = false;
       onResume?.Invoke();
     }
 
     public void Pause()
     {
-      _isPaused = true;
+      IsPaused = true;
       onPause?.Invoke();
     }
 
@@ -168,7 +169,7 @@ namespace RFG
       else if (ReachedEnd)
       {
         onComplete?.Invoke();
-        _isPlaying = false;
+        IsPlaying = false;
         return;
       }
       _currentIndex = nextIndex;

@@ -10,14 +10,13 @@ namespace RFG
     [field: SerializeField] private float Damage { get; set; } = 10f;
     [field: SerializeField] private LineRenderer LineRenderer { get; set; }
     [field: SerializeField] private Transform FirePoint { get; set; }
+    [field: SerializeField] private Vector3 Direction { get; set; }
     [field: SerializeField] private GameObject StartFx { get; set; }
     [field: SerializeField] private GameObject EndFx { get; set; }
     [field: SerializeField] private List<string> CollisionEffects { get; set; }
     [field: SerializeField] private AudioSource LaserSound1 { get; set; }
     [field: SerializeField] private AudioSource LaserSound2 { get; set; }
     [field: SerializeField] private LayerMask LayerMask { get; set; }
-
-
 
     private Camera _cam;
     private Quaternion _rotation;
@@ -27,7 +26,7 @@ namespace RFG
     {
       _cam = Camera.main;
       AddParticles();
-      Cancel();
+      // Cancel();
     }
 
     private void Update()
@@ -37,18 +36,28 @@ namespace RFG
         return;
       }
 
-      var mousePos = (Vector2)_cam.ScreenToWorldPoint(Input.mousePosition);
-      LineRenderer.SetPosition(0, (Vector2)FirePoint.position);
-      LineRenderer.SetPosition(1, mousePos);
-      StartFx.transform.position = (Vector2)FirePoint.position;
+      LineRenderer.SetPosition(0, (Vector2)FirePoint.localPosition);
 
-      Vector2 direction = mousePos - (Vector2)FirePoint.position;
-      RaycastHit2D hit = RFG.Physics2D.RayCast((Vector2)FirePoint.position, direction.normalized, direction.magnitude, LayerMask, Color.red);
+      if (StartFx != null)
+      {
+        StartFx.transform.position = (Vector2)FirePoint.localPosition;
+      }
+
+      RaycastHit2D hit = RFG.Physics2D.RayCast((Vector2)FirePoint.position, Direction.normalized, Direction.magnitude, LayerMask, Color.red, true);
       if (hit)
       {
-        LineRenderer.SetPosition(1, hit.point);
+        OnCollision(hit);
+        LineRenderer.SetPosition(1, FirePoint.InverseTransformPoint(hit.point));
       }
-      EndFx.transform.position = LineRenderer.GetPosition(1);
+      else
+      {
+        LineRenderer.SetPosition(1, FirePoint.localPosition + Direction);
+      }
+
+      if (EndFx != null)
+      {
+        EndFx.transform.position = LineRenderer.GetPosition(1);
+      }
     }
 
     public void Play()
@@ -58,8 +67,14 @@ namespace RFG
       {
         _particles[i].Play();
       }
-      LaserSound1.Play();
-      LaserSound2.Play();
+      if (LaserSound1 != null)
+      {
+        LaserSound1.Play();
+      }
+      if (LaserSound2 != null)
+      {
+        LaserSound2.Play();
+      }
     }
 
     public void Cancel()
@@ -69,26 +84,38 @@ namespace RFG
       {
         _particles[i].Stop();
       }
-      LaserSound1.Stop();
-      LaserSound2.Stop();
+      if (LaserSound1 != null)
+      {
+        LaserSound1.Stop();
+      }
+      if (LaserSound2 != null)
+      {
+        LaserSound2.Stop();
+      }
     }
 
     private void AddParticles()
     {
-      for (int i = 0; i < StartFx.transform.childCount; i++)
+      if (StartFx != null)
       {
-        var ps = StartFx.transform.GetChild(i).GetComponent<ParticleSystem>();
-        if (ps != null)
+        for (int i = 0; i < StartFx.transform.childCount; i++)
         {
-          _particles.Add(ps);
+          var ps = StartFx.transform.GetChild(i).GetComponent<ParticleSystem>();
+          if (ps != null)
+          {
+            _particles.Add(ps);
+          }
         }
       }
-      for (int i = 0; i < EndFx.transform.childCount; i++)
+      if (EndFx != null)
       {
-        var ps = EndFx.transform.GetChild(i).GetComponent<ParticleSystem>();
-        if (ps != null)
+        for (int i = 0; i < EndFx.transform.childCount; i++)
         {
-          _particles.Add(ps);
+          var ps = EndFx.transform.GetChild(i).GetComponent<ParticleSystem>();
+          if (ps != null)
+          {
+            _particles.Add(ps);
+          }
         }
       }
     }
@@ -101,7 +128,7 @@ namespace RFG
     #endregion
 
     #region Events
-    private void OnCollisionEnter2D(RaycastHit2D hit)
+    private void OnCollision(RaycastHit2D hit)
     {
       if (LayerMask.Contains(hit.collider.gameObject.layer))
       {
@@ -114,5 +141,24 @@ namespace RFG
       }
     }
     #endregion
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+      if (FirePoint == null)
+      {
+        LogExt.Warn<ProjectileEmitter>("Fire Point is not defined, setting default");
+        FirePoint = transform;
+        return;
+      }
+      Gizmos.color = Color.red;
+      Gizmos.DrawWireSphere(FirePoint.position, 0.1f);
+
+      Gizmos.color = Color.blue;
+
+      Vector3 vector = new Vector3(Direction.x * FirePoint.right.x, Direction.y, Direction.z);
+      Gizmos.DrawLine(FirePoint.position, FirePoint.position + vector);
+    }
+#endif
   }
 }

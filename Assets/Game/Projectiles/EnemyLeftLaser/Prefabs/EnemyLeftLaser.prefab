@@ -72,16 +72,16 @@ LineRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_Positions:
-  - {x: 10, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 20, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
+        time: 0.0058651026
         value: 1
         inSlope: 0
         outSlope: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5823721420000791672}
   - component: {fileID: 6445788314335034392}
   m_Layer: 0
-  m_Name: EnemyDownLaser
+  m_Name: EnemyLeftLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 1
   <LineRenderer>k__BackingField: {fileID: 5042297692358688992}
   <FirePoint>k__BackingField: {fileID: 5823721420000791672}
-  <Direction>k__BackingField: {x: 0, y: -10, z: 0}
+  <Direction>k__BackingField: {x: 20, y: 0, z: 0}
   <StartFx>k__BackingField: {fileID: 0}
   <EndFx>k__BackingField: {fileID: 0}
   <TimeToLive>k__BackingField: 5

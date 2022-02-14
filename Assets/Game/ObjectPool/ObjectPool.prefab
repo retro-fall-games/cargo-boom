@@ -146,3 +146,9 @@ MonoBehaviour:
   - tag: EnemyBomb
     prefab: {fileID: 428572665236486688, guid: b12c81d7274775548a0d1ea85bcb578c, type: 3}
     size: 10
+  - tag: EnemyDonut
+    prefab: {fileID: 3524419176203134384, guid: aeb4ea5e390adac41882c2dca658b21a, type: 3}
+    size: 10
+  - tag: EnemyLeftLaser
+    prefab: {fileID: 5448335136628519092, guid: 6fd5b1e4db6b7534ba446c9e94844f58, type: 3}
+    size: 1

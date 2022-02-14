@@ -139,7 +139,7 @@ MonoBehaviour:
   NextState: {fileID: 0}
   NextStateAfterTime: 0
   GoToNextStateAfterCompletion: 0
-  ProjectileTag: EnemyDownLaser
+  ProjectileTag: EnemyLeftLaser
   ProjectileParent: 1
   ProjectileGrandParent: 0
   ProjectileWorldPositionStays: 1

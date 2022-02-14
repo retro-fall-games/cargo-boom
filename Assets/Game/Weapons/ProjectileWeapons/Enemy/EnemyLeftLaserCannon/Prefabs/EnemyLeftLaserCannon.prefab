@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4068982567006214422}
   - component: {fileID: 1056786526443968771}
   m_Layer: 0
-  m_Name: EnemyDownLaserCannon
+  m_Name: EnemyLeftLaserCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaae75c993698b43a778f18af71e897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileWeaponEquipable: {fileID: 11400000, guid: a9226eb932bb0e945a1787d872e19b6b, type: 2}
+  ProjectileWeaponEquipable: {fileID: 0}
   <PlayerInventory>k__BackingField: {fileID: 0}
   <ProjectileWeaponPosition>k__BackingField: 0
   FirePoint: {fileID: 0}
-  <UseStatePackFromEquipable>k__BackingField: 0
+  <UseStatePackFromEquipable>k__BackingField: 1
   WeaponState:
-    StatePack: {fileID: 11400000, guid: efe2e31d1b745d2489dbc543b9b9d0d4, type: 2}
+    StatePack: {fileID: 11400000, guid: a73d60b5c09fd54488ec8e4cdbf3bd3f, type: 2}
     PreviousState: {fileID: 0}
     CurrentState: {fileID: 0}
 --- !u!212 &4068982567006214422

@@ -39,7 +39,7 @@ namespace RFG.Weapons
 
     public override void Started()
     {
-      if (!IsEquipped || !CanUse || IsInCooldown || Ammo <= 0)
+      if (!IsEquipped || !CanUse || IsInCooldown || (Ammo <= 0 && !UnlimitedAmmo) || IsFiring)
       {
         return;
       }

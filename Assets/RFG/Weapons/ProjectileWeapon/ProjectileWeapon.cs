@@ -66,6 +66,7 @@ namespace RFG.Weapons
       {
         PlayerInventory.Inventory.OnEquip += OnEquip;
       }
+      WeaponState.OnStateTypeChange += OnStateTypeChange;
     }
 
     private void OnDisable()
@@ -75,6 +76,7 @@ namespace RFG.Weapons
       {
         PlayerInventory.Inventory.OnEquip -= OnEquip;
       }
+      WeaponState.OnStateTypeChange -= OnStateTypeChange;
     }
     #endregion
 
@@ -82,6 +84,7 @@ namespace RFG.Weapons
     {
       _projectileWeaponContext = new StateProjectileWeaponContext();
       _projectileWeaponContext.transform = transform;
+      _projectileWeaponContext.animator = GetComponent<Animator>();
       _projectileWeaponContext.ProjectileWeapon = this;
       _projectileWeaponContext.ProjectileEmitter = GetComponent<ProjectileEmitter>();
 
@@ -128,6 +131,14 @@ namespace RFG.Weapons
     private void OnStateChange(Type newStateType)
     {
       WeaponState.ChangeState(newStateType);
+    }
+
+    private void OnStateTypeChange(Type prevState, Type newState)
+    {
+      if (newState == typeof(ProjectileWeaponIdleState))
+      {
+        ProjectileWeaponEquipable.IsFiring = false;
+      }
     }
 
     private void EquipFromInventory()

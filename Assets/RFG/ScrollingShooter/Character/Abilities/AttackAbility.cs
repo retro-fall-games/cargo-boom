@@ -144,6 +144,16 @@ namespace RFG.ScrollingShooter
     {
       _secondaryWeaponEquipable.Perform();
     }
+
+    public void ChargePrimary()
+    {
+      _primaryWeaponEquipable.Started();
+    }
+
+    public void ChargeSecondary()
+    {
+      _secondaryWeaponEquipable.Started();
+    }
     #endregion
 
     #region Events

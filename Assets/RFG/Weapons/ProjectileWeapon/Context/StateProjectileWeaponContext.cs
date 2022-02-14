@@ -4,5 +4,6 @@ namespace RFG.Weapons
   {
     public ProjectileWeapon ProjectileWeapon;
     public ProjectileEmitter ProjectileEmitter;
+    public ProjectileLaser ProjectileLaser;
   }
 }

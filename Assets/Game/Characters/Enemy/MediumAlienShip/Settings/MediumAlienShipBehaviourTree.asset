@@ -34,11 +34,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d097c7af27c181645baff23738a4405e
-  position: {x: 0, y: 274}
+  position: {x: 0, y: 260}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 7805257242411520226}
+  - {fileID: 3158903792563357575}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,8 +59,27 @@ MonoBehaviour:
   - {fileID: 6703233032789155857}
   - {fileID: -84271153198372553}
   - {fileID: 7805257242411520226}
+  - {fileID: 3158903792563357575}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+--- !u!114 &3158903792563357575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cea883dadc720543b55a60119479a73, type: 3}
+  m_Name: PrimaryAttackChargeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a24b67124a05a2e4993300b2548aaf8a
+  position: {x: 121, y: 409}
+  description: 
+  drawGizmos: 0
 --- !u!114 &6703233032789155857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +114,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2b00acaea06bea54ea1f6a9eeadfbebb
-  position: {x: 0, y: 412}
+  position: {x: -102, y: 409}
   description: 
   drawGizmos: 0
-  Duration: 1
+  Duration: 10

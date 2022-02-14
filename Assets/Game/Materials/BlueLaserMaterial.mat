@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BlueLaserMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 201234fc3a945c04390b16a10e513980, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a6e7898b5efbab443b26a0f06d310dc0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -47,6 +47,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainText:
+        m_Texture: {fileID: 2800000, guid: 7e4744c4e4ef514429e58e555e56fcb7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -76,9 +80,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_037fe76bedeb4ecb940f28349d5a128a: 6.45
-    - Vector1_67cff6eb1afb4ffd9bced5a98d052818: 10
-    - Vector1_9f4311a3ff024df4818a8220d2770df5: 3.27
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -106,14 +107,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_1b80fdb201a14c9fa77d629e8800484c: {r: 0, g: 32.336693, b: 83.46362, a: 1}
-    - Vector2_5ff5734fa22b4eb0ab89981c01fee823: {r: 2, g: 0, b: 0, a: 0}
+    - Color_d46dc2c3eaf442a1a2c5e56db59bbf36: {r: 1.3790047, g: 2.7342336, b: 3.6139436, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1342222106242468866
+--- !u!114 &3579591511765664762
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

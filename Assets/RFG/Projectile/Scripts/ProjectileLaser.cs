@@ -1,18 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RFG.Character;
+using System;
 
 namespace RFG
 {
-  public class ProjectileLaser : MonoBehaviour
+  [AddComponentMenu("RFG/Projectiles/Projectile Laser")]
+  public class ProjectileLaser : MonoBehaviour, IPooledObject
   {
     [field: SerializeField] private float Damage { get; set; } = 10f;
     [field: SerializeField] private LineRenderer LineRenderer { get; set; }
-    [field: SerializeField] private Transform FirePoint { get; set; }
+    [field: SerializeField] public Transform FirePoint { get; set; }
     [field: SerializeField] private Vector3 Direction { get; set; }
     [field: SerializeField] private GameObject StartFx { get; set; }
     [field: SerializeField] private GameObject EndFx { get; set; }
+    [field: SerializeField] private float TimeToLive { get; set; } = 1f;
+    [field: SerializeField] private bool PlayOnSpawn { get; set; } = false;
     [field: SerializeField] private List<string> CollisionEffects { get; set; }
     [field: SerializeField] private AudioSource LaserSound1 { get; set; }
     [field: SerializeField] private AudioSource LaserSound2 { get; set; }
@@ -21,47 +24,58 @@ namespace RFG
     private Camera _cam;
     private Quaternion _rotation;
     private List<ParticleSystem> _particles = new List<ParticleSystem>();
+    private float _timeElapsed = 0f;
 
+    #region Unity Methods
     private void Start()
     {
       _cam = Camera.main;
       AddParticles();
-      // Cancel();
     }
 
     private void Update()
     {
-      if (LineRenderer.enabled == false)
+      if (!LineRenderer.enabled)
       {
         return;
       }
 
-      LineRenderer.SetPosition(0, (Vector2)FirePoint.localPosition);
+      HandleFireLaser();
+    }
 
-      if (StartFx != null)
+    private void LateUpdate()
+    {
+      if (!LineRenderer.enabled)
       {
-        StartFx.transform.position = (Vector2)FirePoint.localPosition;
+        return;
       }
 
-      RaycastHit2D hit = RFG.Physics2D.RayCast((Vector2)FirePoint.position, Direction.normalized, Direction.magnitude, LayerMask, Color.red, true);
-      if (hit)
+      if (_timeElapsed >= TimeToLive)
       {
-        OnCollision(hit);
-        LineRenderer.SetPosition(1, FirePoint.InverseTransformPoint(hit.point));
+        Cancel();
+        _timeElapsed = 0f;
+      }
+      _timeElapsed += Time.deltaTime;
+    }
+    #endregion
+
+    #region Object Pool
+    public void OnObjectSpawn(params object[] objects)
+    {
+      if (PlayOnSpawn)
+      {
+        Play();
       }
       else
       {
-        LineRenderer.SetPosition(1, FirePoint.localPosition + Direction);
-      }
-
-      if (EndFx != null)
-      {
-        EndFx.transform.position = LineRenderer.GetPosition(1);
+        Cancel();
       }
     }
+    #endregion
 
     public void Play()
     {
+      _timeElapsed = 0f;
       LineRenderer.enabled = true;
       for (int i = 0; i < _particles.Count; i++)
       {
@@ -121,6 +135,32 @@ namespace RFG
     }
 
     #region Handlers
+    private void HandleFireLaser()
+    {
+      LineRenderer.SetPosition(0, (Vector2)FirePoint.localPosition);
+
+      if (StartFx != null)
+      {
+        StartFx.transform.position = (Vector2)FirePoint.localPosition;
+      }
+
+      RaycastHit2D hit = RFG.Physics2D.RayCast((Vector2)FirePoint.localPosition, Direction.normalized, Direction.magnitude, LayerMask, Color.red, true);
+      if (hit)
+      {
+        OnCollision(hit);
+        LineRenderer.SetPosition(1, FirePoint.InverseTransformPoint(hit.point));
+      }
+      else
+      {
+        LineRenderer.SetPosition(1, FirePoint.localPosition + Direction);
+      }
+
+      if (EndFx != null)
+      {
+        EndFx.transform.position = LineRenderer.GetPosition(1);
+      }
+    }
+
     private void HandleCollision(Vector3 position, Vector3 rotation)
     {
       position.SpawnFromPool(rotation, CollisionEffects.ToArray(), Quaternion.identity);

@@ -9,11 +9,29 @@ namespace RFG.SceneGraph
   [AddComponentMenu("RFG/Scene Graph/Scene Bounds")]
   public class SceneBounds : MonoBehaviour
   {
+    public Bounds Bounds;
+
 #if UNITY_EDITOR
+    [ButtonMethod]
+    private void CopyFromSceneGraph()
+    {
+      Scene _scene = SceneGraphManager.Instance.CurrentScene;
+      if (_scene == null)
+      {
+        return;
+      }
+      Bounds = _scene.bounds;
+      EditorUtility.SetDirty(gameObject);
+    }
+
     [ButtonMethod]
     private void CopyFromSelection()
     {
       Scene _scene = SceneGraphManager.Instance.CurrentScene;
+      if (_scene == null)
+      {
+        return;
+      }
       PolygonCollider2D collider = Selection.activeGameObject.GetComponent<PolygonCollider2D>();
       if (collider != null)
       {
@@ -26,14 +44,13 @@ namespace RFG.SceneGraph
     [ButtonMethod]
     private void GeneratePolygonCollider2DToSelection()
     {
-      Scene _scene = SceneGraphManager.Instance.CurrentScene;
       PolygonCollider2D collider = Selection.activeGameObject.AddComponent<PolygonCollider2D>();
       Vector2[] points = new Vector2[]
       {
-        new Vector2(_scene.bounds.min.x, _scene.bounds.min.y),
-        new Vector2(_scene.bounds.min.x, _scene.bounds.max.y),
-        new Vector2(_scene.bounds.max.x, _scene.bounds.max.y),
-        new Vector2(_scene.bounds.max.x, _scene.bounds.min.y),
+        new Vector2(Bounds.min.x, Bounds.min.y),
+        new Vector2(Bounds.min.x, Bounds.max.y),
+        new Vector2(Bounds.max.x, Bounds.max.y),
+        new Vector2(Bounds.max.x, Bounds.min.y),
       };
       collider.SetPath(0, points);
       EditorUtility.SetDirty(Selection.activeGameObject);
@@ -41,10 +58,7 @@ namespace RFG.SceneGraph
 
     private void OnDrawGizmos()
     {
-      Scene _scene = SceneGraphManager.Instance.CurrentScene;
-      if (_scene == null)
-        return;
-      var b = _scene.bounds;
+      var b = Bounds;
       var p1 = new Vector3(b.min.x, b.min.y, b.min.z);
       var p2 = new Vector3(b.max.x, b.min.y, b.min.z);
       var p3 = new Vector3(b.max.x, b.min.y, b.max.z);

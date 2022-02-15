@@ -16,11 +16,17 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
   StatesCanUnfreeze: []
   NextState: {fileID: 11400000, guid: 3a737196e4bdc04418a452669f5bbb21, type: 2}
-  NextStateAfterTime: 30
+  NextStateAfterTime: 10
   GoToNextStateAfterCompletion: 0

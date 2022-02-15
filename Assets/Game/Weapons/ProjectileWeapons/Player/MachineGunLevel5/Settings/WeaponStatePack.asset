@@ -16,7 +16,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -40,7 +46,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -64,7 +76,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -88,7 +106,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -96,7 +120,10 @@ MonoBehaviour:
   NextState: {fileID: 0}
   NextStateAfterTime: 0
   GoToNextStateAfterCompletion: 0
-  ProjectileTag: PlayerBullet5
+  ProjectileTag: PlayerBullet4
+  ProjectileParent: 0
+  ProjectileGrandParent: 0
+  ProjectileWorldPositionStays: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +159,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0

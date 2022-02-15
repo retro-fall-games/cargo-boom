@@ -81,7 +81,7 @@ MonoBehaviour:
   MovementPathType: 2
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
-  <LocalSpace>k__BackingField: 0
+  <LocalSpace>k__BackingField: 1
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   MovementPathType: 2
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
-  <LocalSpace>k__BackingField: 0
+  <LocalSpace>k__BackingField: 1
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   MovementPathType: 1
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
-  <LocalSpace>k__BackingField: 0
+  <LocalSpace>k__BackingField: 1
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4253637908056319165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.46000004, z: 0}
+  m_LocalPosition: {x: 0, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8486528499060166603}
@@ -721,7 +721,7 @@ MonoBehaviour:
   MovementPathType: 1
   MovementPathDirection: 0
   <Speed>k__BackingField: 1
-  <LocalSpace>k__BackingField: 0
+  <LocalSpace>k__BackingField: 1
   <DistanceThreshold>k__BackingField: 0.1
   <MoveGameObject>k__BackingField: {fileID: 5076318624545604900}
   <ReachedEnd>k__BackingField: 0
@@ -834,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139158746385738015, guid: 5e349a0714251c441b70fa4cc586fa32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.032
       objectReference: {fileID: 0}
     - target: {fileID: 9139158746385738015, guid: 5e349a0714251c441b70fa4cc586fa32, type: 3}
       propertyPath: m_LocalPosition.y

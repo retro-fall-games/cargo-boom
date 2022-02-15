@@ -16,6 +16,10 @@ namespace RFG
     [field: SerializeField] private GameObject EndFx { get; set; }
     [field: SerializeField] private float TimeToLive { get; set; } = 1f;
     [field: SerializeField] private bool PlayOnSpawn { get; set; } = false;
+    [field: SerializeField] private bool HitPointStopOnCollision { get; set; } = false;
+    [field: SerializeField] private bool HitPointLockX { get; set; } = false;
+    [field: SerializeField] private bool HitPointLockY { get; set; } = false;
+    [field: SerializeField] private bool HitPointLockZ { get; set; } = false;
     [field: SerializeField] private List<string> CollisionEffects { get; set; }
     [field: SerializeField] private AudioSource LaserSound1 { get; set; }
     [field: SerializeField] private AudioSource LaserSound2 { get; set; }
@@ -144,16 +148,40 @@ namespace RFG
         StartFx.transform.position = (Vector2)FirePoint.localPosition;
       }
 
-      RaycastHit2D hit = RFG.Physics2D.RayCast((Vector2)FirePoint.localPosition, Direction.normalized, Direction.magnitude, LayerMask, Color.red, true);
+      // Default hit position to direction
+      Vector3 hitPosition = FirePoint.localPosition + Direction;
+
+
+      Vector3 direction = Direction;
+      direction.x *= FirePoint.right.x;
+      // direction.y *= FirePoint.right.y;
+      // direction.z *= FirePoint.right.z;
+      RaycastHit2D hit = RFG.Physics2D.RayCast((Vector2)FirePoint.position, direction.normalized, direction.magnitude, LayerMask, Color.red, true);
       if (hit)
       {
+        // Run collision events
         OnCollision(hit);
-        LineRenderer.SetPosition(1, FirePoint.InverseTransformPoint(hit.point));
+
+        if (HitPointStopOnCollision)
+        {
+          hitPosition = FirePoint.InverseTransformPoint(hit.point);
+        }
       }
-      else
+
+      if (HitPointLockX)
       {
-        LineRenderer.SetPosition(1, FirePoint.localPosition + Direction);
+        hitPosition.x = 0;
       }
+      if (HitPointLockY)
+      {
+        hitPosition.y = 0;
+      }
+      if (HitPointLockZ)
+      {
+        hitPosition.z = 0;
+      }
+
+      LineRenderer.SetPosition(1, hitPosition);
 
       if (EndFx != null)
       {

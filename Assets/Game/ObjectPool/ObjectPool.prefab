@@ -152,3 +152,6 @@ MonoBehaviour:
   - tag: EnemyLeftLaser
     prefab: {fileID: 5448335136628519092, guid: 6fd5b1e4db6b7534ba446c9e94844f58, type: 3}
     size: 1
+  - tag: EnemyDownLaser
+    prefab: {fileID: 5448335136628519092, guid: 22cffe57d273c2a42b9154af2c733a77, type: 3}
+    size: 1

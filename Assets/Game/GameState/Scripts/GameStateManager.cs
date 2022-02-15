@@ -5,6 +5,8 @@ using RFG.Items;
 using RFG.Character;
 using RFG.ScrollingShooter;
 using RFG.Weapons;
+using RFG.SceneGraph;
+using Cinemachine;
 
 public class GameStateManager : MonoBehaviour
 {

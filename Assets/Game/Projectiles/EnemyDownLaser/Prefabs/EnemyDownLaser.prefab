@@ -181,6 +181,10 @@ MonoBehaviour:
   <EndFx>k__BackingField: {fileID: 0}
   <TimeToLive>k__BackingField: 5
   <PlayOnSpawn>k__BackingField: 1
+  <HitPointStopOnCollision>k__BackingField: 1
+  <HitPointLockX>k__BackingField: 1
+  <HitPointLockY>k__BackingField: 0
+  <HitPointLockZ>k__BackingField: 1
   <CollisionEffects>k__BackingField:
   - Small Explosion
   <LaserSound1>k__BackingField: {fileID: 0}

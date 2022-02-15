@@ -465,11 +465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Top: 1
   Bottom: 1
-  Left: 0
-  Right: 0
-  Bounds:
-    m_Center: {x: 0, y: 0.5, z: 0}
-    m_Extent: {x: 15, y: 2, z: 5}
+  Left: 1
+  Right: 1
+  SceneBounds: {fileID: 0}
 --- !u!114 &8333065331577022406
 MonoBehaviour:
   m_ObjectHideFlags: 0

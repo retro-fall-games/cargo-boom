@@ -56,7 +56,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6e6a16e165cafa1458c2a75ccc57acb5
-  position: {x: -115, y: 464.24002}
+  position: {x: -112.85843, y: 464}
   description: 
   drawGizmos: 0
   Duration: 10

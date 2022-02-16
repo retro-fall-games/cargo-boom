@@ -16,7 +16,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -40,7 +46,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -64,7 +76,13 @@ MonoBehaviour:
   EnterClip: 
   ExitClip: 
   EnterEffects: []
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -106,10 +124,14 @@ MonoBehaviour:
   EnterClip: Death
   ExitClip: 
   EnterEffects:
-  - SmokeDamage
-  - BulletDamage
-  - ExplosionSoundEffect
+  - Small Explosion
+  EnterEffectsParent: 0
+  EnterEffectsGrandParent: 1
+  EnterEffectsWorldPositionStays: 1
   ExitEffects: []
+  ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 1
   WaitToUnfreezeTime: 1

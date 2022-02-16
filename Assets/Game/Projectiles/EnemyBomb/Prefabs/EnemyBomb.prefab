@@ -95,12 +95,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 5
   <RotationSpeed>k__BackingField: 0.1
-  <Damage>k__BackingField: 10
+  <Damage>k__BackingField: 50
   <SpawnAtName>k__BackingField: 
   <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 11520
   <SpawnEffects>k__BackingField: []
   <CollisionEffects>k__BackingField:
   - Small Explosion

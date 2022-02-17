@@ -86,6 +86,10 @@ namespace RFG.ScrollingShooter
     #region Object Pool
     public override void OnObjectSpawn(params object[] objects)
     {
+      if (CharacterType == CharacterType.AI)
+      {
+        CharacterState.ChangeState(typeof(SpawnState));
+      }
       OnObjectSpawnEvent?.Invoke();
     }
     #endregion

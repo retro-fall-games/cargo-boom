@@ -184,7 +184,7 @@ MonoBehaviour:
     TagGroups:
     - Tag: smallheli
       Count: 5
-      Interval: 3
+      Interval: 1
       SecondsUntilBegin: 0
     - Tag: mediumheli
       Count: 3
@@ -192,7 +192,7 @@ MonoBehaviour:
       SecondsUntilBegin: 0
     - Tag: smallheli
       Count: 5
-      Interval: 3
+      Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
@@ -627,16 +627,12 @@ MonoBehaviour:
     Loop: 2
     TagGroups:
     - Tag: AlienShip
-      Count: 10
-      Interval: 1
+      Count: 5
+      Interval: 3
       SecondsUntilBegin: 0
-    Parent: 1
-  - SecondsUntilBegin: 0
-    Loop: 0
-    TagGroups:
-    - Tag: MediumAlienShip
-      Count: 3
-      Interval: 1
+    - Tag: AlienShip
+      Count: 5
+      Interval: 3
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
@@ -1235,8 +1231,12 @@ MonoBehaviour:
     Loop: 2
     TagGroups:
     - Tag: AlienShip
-      Count: 10
-      Interval: 2
+      Count: 5
+      Interval: 3
+      SecondsUntilBegin: 0
+    - Tag: AlienShip
+      Count: 5
+      Interval: 3
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
@@ -3243,8 +3243,8 @@ MonoBehaviour:
       Interval: 3
       SecondsUntilBegin: 0
     - Tag: smallheli
-      Count: 3
-      Interval: 3
+      Count: 5
+      Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0
@@ -4135,12 +4135,16 @@ MonoBehaviour:
     Loop: 0
     TagGroups:
     - Tag: smallheli
-      Count: 10
-      Interval: 2
+      Count: 5
+      Interval: 1
       SecondsUntilBegin: 0
     - Tag: Jet
       Count: 5
       Interval: 3
+      SecondsUntilBegin: 0
+    - Tag: smallheli
+      Count: 5
+      Interval: 1
       SecondsUntilBegin: 0
     Parent: 1
   - SecondsUntilBegin: 0

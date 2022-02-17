@@ -611,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356428914687481162, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8571718015386506703, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -1072,6 +1072,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7250002462845727085, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: <Interval>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530717654662852194, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530717654662852194, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8794285527598294254, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}

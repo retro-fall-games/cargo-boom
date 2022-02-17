@@ -42,9 +42,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3524419176203134384}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 14592
+    m_Bits: 2304
   <SpawnEffects>k__BackingField: []
   <CollisionEffects>k__BackingField:
   - Small Explosion

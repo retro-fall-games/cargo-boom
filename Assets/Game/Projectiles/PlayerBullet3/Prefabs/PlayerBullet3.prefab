@@ -45,7 +45,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 5109261471553399367}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   <SpawnOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 21504
+    m_Bits: 1024
   <SpawnEffects>k__BackingField:
   - MachineGunSoundEffect
   <CollisionEffects>k__BackingField:

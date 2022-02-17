@@ -229,10 +229,10 @@ MonoBehaviour:
   <IsPlaying>k__BackingField: 0
   <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: -3, y: 2, z: 0}
+  - {x: -5, y: 2, z: 0}
   - {x: -1, y: 2, z: 0}
   - {x: 2, y: 2, z: 0}
-  - {x: 3, y: 2, z: 0}
+  - {x: 5, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -458,9 +458,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5076318624545604900}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -729,10 +729,10 @@ MonoBehaviour:
   <IsPlaying>k__BackingField: 0
   <IsPaused>k__BackingField: 0
   <Path>k__BackingField:
-  - {x: 3, y: 2, z: 0}
+  - {x: 5, y: 2, z: 0}
   - {x: 1, y: 2, z: 0}
   - {x: -2, y: 2, z: 0}
-  - {x: -3, y: 2, z: 0}
+  - {x: -5, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []

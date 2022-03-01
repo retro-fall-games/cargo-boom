@@ -39,7 +39,7 @@ namespace RFG
     {
       if (MoveGameObject == null)
       {
-        LogExt.Warn<MovementPath>("Please set MoveGameObject in Movement Path");
+        LogExt.Warn<MovementPath>("Please set MoveGameObject in Movement Path in: " + gameObject.GetFullName());
       }
     }
 

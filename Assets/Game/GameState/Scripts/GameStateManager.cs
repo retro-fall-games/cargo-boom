@@ -7,6 +7,7 @@ using RFG.ScrollingShooter;
 using RFG.Weapons;
 using RFG.SceneGraph;
 using Cinemachine;
+using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class GameStateManager : MonoBehaviour
   [field: SerializeField] private ProjectileWeaponEquipable DefaultProjectileWeaponEquipable { get; set; }
   [field: SerializeField] private List<GameObject> PowerUps { get; set; }
   [field: SerializeField] private List<ObjectPoolWaveSpawner> WaveSpawners { get; set; }
-
+  [field: SerializeField] private TMP_Text WaveNumber { get; set; }
   private PlayerInventory _playerInventory;
   private GameStateContext _gameStateContext;
   private ObjectPoolWaveSpawner _currentWaveSpawner;
@@ -32,6 +33,7 @@ public class GameStateManager : MonoBehaviour
     _gameStateContext.transform = transform;
     GameState.Init();
     GameState.Bind(_gameStateContext);
+    SetWaveNumber();
   }
 
   private void Start()
@@ -109,6 +111,7 @@ public class GameStateManager : MonoBehaviour
     if (_level < WaveSpawners.Count)
     {
       _level++;
+      SetWaveNumber();
     }
   }
 
@@ -156,5 +159,10 @@ public class GameStateManager : MonoBehaviour
     }
   }
   #endregion
+
+  private void SetWaveNumber()
+  {
+    WaveNumber.SetText($"Wave {_level + 1}");
+  }
 
 }

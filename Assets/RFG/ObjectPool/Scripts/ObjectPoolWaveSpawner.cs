@@ -13,6 +13,7 @@ namespace RFG
     public int Count = 1;
     public float Interval = 1f;
     public float SecondsUntilBegin;
+    public MovementPath MovementPath;
   }
 
 
@@ -25,6 +26,7 @@ namespace RFG
     public bool Parent = false;
   }
 
+  [AddComponentMenu("RFG/Object Pool/Object Pool Wave Spawner")]
   public class ObjectPoolWaveSpawner : MonoBehaviour
   {
     [field: SerializeField] private List<ObjectPoolWave> Waves { get; set; }

@@ -174,10 +174,12 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -186,14 +188,17 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: mediumheli
       Count: 3
       Interval: 5
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -202,6 +207,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -225,6 +231,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &31946432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31946433}
+  m_Layer: 0
+  m_Name: SpawnPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &31946433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31946432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 913320582}
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38692848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4323508755033745542, guid: de0331d005f163945af3a117317d4dab, type: 3}
@@ -630,10 +667,12 @@ MonoBehaviour:
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: AlienShip
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -642,6 +681,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -1093,7 +1133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000047683716, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: 0, y: 0.00000023841858, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1182740331}
@@ -1108,6 +1148,7 @@ Transform:
   - {fileID: 1925560578}
   - {fileID: 2074467055}
   - {fileID: 256398720}
+  - {fileID: 31946433}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1234,10 +1275,12 @@ MonoBehaviour:
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: AlienShip
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -1246,6 +1289,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -1512,6 +1556,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &913320581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 913320582}
+  m_Layer: 0
+  m_Name: SpawnPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &913320582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913320581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 31946433}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948337085
 GameObject:
@@ -2546,10 +2620,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8794285527598294254, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
-      propertyPath: m_Volume
-      value: 0.207
-      objectReference: {fileID: 0}
     - target: {fileID: 8884055576111153889, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: SceneBounds
       value: 
@@ -3238,14 +3308,17 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: Jet
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3254,6 +3327,7 @@ MonoBehaviour:
       Count: 1
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3982,10 +4056,12 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3994,6 +4070,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4138,14 +4215,17 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: Jet
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4154,10 +4234,12 @@ MonoBehaviour:
       Count: 3
       Interval: 5
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: Jet
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4166,10 +4248,12 @@ MonoBehaviour:
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: Jet
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4178,6 +4262,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4352,10 +4437,12 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4757,6 +4844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menus
       objectReference: {fileID: 0}
+    - target: {fileID: 4589282324510863902, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4589282324547847978, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_Type
       value: 2
@@ -4996,6 +5087,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3230075034220498497, guid: 052d5e49a2b325a4ca4d357e4b17f8f9, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3230075034220498499, guid: 052d5e49a2b325a4ca4d357e4b17f8f9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5101,6 +5196,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4408669848831264307, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_text
+      value: Wave 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408669848831264307, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5897813052020290762, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: <Character>k__BackingField
       value: 
@@ -5112,6 +5215,10 @@ PrefabInstance:
     - target: {fileID: 6469351127519347210, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469351127519347210, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6469351127519347214, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_Pivot.x
@@ -5245,6 +5352,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -2.455017
       objectReference: {fileID: 0}
+    - target: {fileID: 6469351128729093552, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.5010071
+      objectReference: {fileID: 0}
     - target: {fileID: 6469351129217033240, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5273,6 +5384,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.4989929
       objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -83.986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 41.993
+      objectReference: {fileID: 0}
     - target: {fileID: 7693667803483153897, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 2.5
@@ -5280,6 +5427,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6469351127649271264, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+--- !u!114 &6469351128007340363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4408669848831264307, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
+  m_PrefabInstance: {fileID: 6469351128007340362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7123798071250177913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5343,6 +5501,10 @@ PrefabInstance:
       propertyPath: <Player>k__BackingField
       value: 
       objectReference: {fileID: 1363934100}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveNumber>k__BackingField
+      value: 
+      objectReference: {fileID: 6469351128007340363}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <SceneBounds>k__BackingField
       value: 

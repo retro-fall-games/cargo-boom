@@ -4915,8 +4915,8 @@ MonoBehaviour:
   <RotateTowardsTarget>k__BackingField: 1
   <MoveTowardsTarget>k__BackingField: 1
   <FindNewTargets>k__BackingField: 1
-  <HasTimeToLive>k__BackingField: 0
-  <TimeToLive>k__BackingField: 0
+  <HasTimeToLive>k__BackingField: 1
+  <TimeToLive>k__BackingField: 5
 --- !u!212 &86894087404135518
 SpriteRenderer:
   m_ObjectHideFlags: 0

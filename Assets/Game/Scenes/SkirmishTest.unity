@@ -174,10 +174,12 @@ MonoBehaviour:
       Count: 2
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallheli
       Count: 4
       Interval: 5
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -611,7 +613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356428914687481162, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8571718015386506703, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -676,6 +678,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -684,6 +687,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -1637,6 +1641,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -1645,6 +1650,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -2250,7 +2256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667692701809365845, guid: a786b23f3cb493b4490792629149d14c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8906582950318202594, guid: a786b23f3cb493b4490792629149d14c, type: 3}
       propertyPath: m_IsActive
@@ -3103,14 +3109,17 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: smallhelireversed
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     - Tag: mediumheli
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3904,6 +3913,7 @@ MonoBehaviour:
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3912,6 +3922,7 @@ MonoBehaviour:
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3920,6 +3931,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3994,6 +4006,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4002,6 +4015,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4176,6 +4190,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4184,6 +4199,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
+      MovementPath: {fileID: 0}
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:

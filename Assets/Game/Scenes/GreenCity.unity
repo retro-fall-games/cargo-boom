@@ -2041,7 +2041,7 @@ MonoBehaviour:
   - AmmoCargo
   - ArmorCargo
   <Random>k__BackingField: 1
-  <RandomWeight>k__BackingField: 0.35
+  <RandomWeight>k__BackingField: 0.5
   <OneAtATime>k__BackingField: 1
   <OneTagAtATime>k__BackingField: 0
   <Parent>k__BackingField: 1
@@ -5354,7 +5354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469351128729093552, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5010071
+      value: -1.5009995
       objectReference: {fileID: 0}
     - target: {fileID: 6469351129217033240, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_RootOrder
@@ -5418,7 +5418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7693138683025645672, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 41.993
+      value: 41.992996
       objectReference: {fileID: 0}
     - target: {fileID: 7693667803483153897, guid: 74909edd7ded0a14aaa48a0608c3c06d, type: 3}
       propertyPath: m_AnchoredPosition.x

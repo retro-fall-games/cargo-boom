@@ -42,10 +42,16 @@ namespace RFG.ScrollingShooter
     private PlayerInput _playerInput;
     private List<Component> _abilities;
     private Dictionary<Type, IAbility> _abilityMap;
+    private Camera _cam;
+    private Renderer _renderer;
+    private BoxCollider2D _collider;
 
     #region Unity Methods
     private void Awake()
     {
+      _cam = Camera.main;
+      _renderer = GetComponent<Renderer>();
+      _collider = GetComponent<BoxCollider2D>();
       InitContext();
       InitAbilities();
     }
@@ -167,6 +173,16 @@ namespace RFG.ScrollingShooter
       }
     }
 
+    public void EnableAllAbilities(bool enabled)
+    {
+      if (_abilities != null)
+      {
+        foreach (Behaviour ability in _abilities)
+        {
+          ability.enabled = enabled;
+        }
+      }
+    }
     public void EnableAllAbilities(bool enabled, Behaviour except = null)
     {
       if (_abilities != null)
@@ -335,5 +351,15 @@ namespace RFG.ScrollingShooter
     public bool IsAnySecondaryAttack => MovementState.IsInState(typeof(SecondaryAttackStartedState), typeof(SecondaryAttackCanceledState), typeof(SecondaryAttackPerformedState));
     #endregion
 
+    #region Helpers
+    public bool IsOnScreen()
+    {
+      if (_collider == null)
+      {
+        return false;
+      }
+      return _collider.bounds.IsVisibleFrom(_cam);
+    }
+    #endregion
   }
 }

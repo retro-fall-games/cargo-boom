@@ -64,7 +64,8 @@ public class GameStateManager : MonoBehaviour
   #region States
   public void Liftoff()
   {
-
+    _level = 0;
+    SetWaveNumber();
     Player.Respawn();
     HealthBehaviour.ResetHealth();
     HealthBehaviour.ResetArmor();

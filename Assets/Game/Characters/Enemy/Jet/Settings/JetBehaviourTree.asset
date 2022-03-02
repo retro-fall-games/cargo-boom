@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c36b562f245bd0c47ae04e03260b93c7
-  position: {x: 110.43616, y: 437}
+  position: {x: 330.1417, y: 561.93066}
   description: 
   drawGizmos: 0
 --- !u!114 &-8607497722580945092
@@ -33,12 +33,53 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: eb8fac4e30222294393ef55a66e2847c
-  position: {x: 0, y: 275}
+  position: {x: 219.74171, y: 421.13068}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -2386164016235032527}
+  - {fileID: -9005305585952817933}
+--- !u!114 &-3449849661427979368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb7f27e7ccd8e7418b9197564df4f6c, type: 3}
+  m_Name: IsOnScreenNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1443717c5314f9d4caaa1444250e03d3
+  position: {x: -0.000004827976, y: 263.06143}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 8565370434978963376}
-  - {fileID: -9005305585952817933}
+  - {fileID: -8607497722580945092}
+--- !u!114 &-2386164016235032527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ba30a51d9eebf4bb9ac35eb041913a, type: 3}
+  m_Name: RangeWaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 35f6242aa2214194481daf0fc0357d13
+  position: {x: 102.39996, y: 560.7999}
+  description: 
+  drawGizmos: 0
+  MinDuration: 5
+  MaxDuration: 10
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +100,8 @@ MonoBehaviour:
   - {fileID: -8607497722580945092}
   - {fileID: 8565370434978963376}
   - {fileID: -9005305585952817933}
+  - {fileID: -3449849661427979368}
+  - {fileID: -2386164016235032527}
   blackboard:
     moveToPosition: {x: 0, y: 0}
 --- !u!114 &2209235064761544634
@@ -98,7 +141,7 @@ MonoBehaviour:
   position: {x: 0, y: 135}
   description: 
   drawGizmos: 0
-  child: {fileID: -8607497722580945092}
+  child: {fileID: -3449849661427979368}
 --- !u!114 &8565370434978963376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +157,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1a297e8bdc8b2924c88cfe63b9d02f4d
-  position: {x: -110, y: 437}
+  position: {x: -124.60163, y: 409.53867}
   description: 
   drawGizmos: 0
   Duration: 5

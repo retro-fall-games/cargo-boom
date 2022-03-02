@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8316765931191079751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb7f27e7ccd8e7418b9197564df4f6c, type: 3}
+  m_Name: IsOnScreenNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8f6d5cc013d5ad74ba463c9039a3562c
+  position: {x: -0.000015258789, y: 264.88187}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -7796422605498245544}
+  - {fileID: -6760818804311504604}
 --- !u!114 &-7796422605498245544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +36,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a9f7ff8f71944414eab471afdd2ede39
-  position: {x: -132, y: 447.76}
+  position: {x: -141.24727, y: 487.9999}
   description: 
   drawGizmos: 0
-  Duration: 1
+  Duration: 5
 --- !u!114 &-6760818804311504604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,11 +55,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 16b26267fbd4f374f81da010d2a99e49
-  position: {x: 0, y: 253}
+  position: {x: 176.69289, y: 430.5323}
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -7796422605498245544}
+  - {fileID: -3841206499988283415}
   - {fileID: -4474353668502821904}
 --- !u!114 &-5177435058784610593
 MonoBehaviour:
@@ -74,9 +95,29 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 97eca2f2c7dc596449ed0fea00e20db1
-  position: {x: 98, y: 448}
+  position: {x: 275.0929, y: 625.73224}
   description: 
   drawGizmos: 0
+--- !u!114 &-3841206499988283415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ba30a51d9eebf4bb9ac35eb041913a, type: 3}
+  m_Name: RangeWaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b08003123db854f40912b683caa12738
+  position: {x: 75.20003, y: 625.5999}
+  description: 
+  drawGizmos: 0
+  MinDuration: 2
+  MaxDuration: 5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +138,8 @@ MonoBehaviour:
   - {fileID: -6760818804311504604}
   - {fileID: -7796422605498245544}
   - {fileID: -4474353668502821904}
+  - {fileID: -8316765931191079751}
+  - {fileID: -3841206499988283415}
   blackboard:
     moveToPosition: {x: 0, y: 0}
 --- !u!114 &6460474566272600369
@@ -114,7 +157,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 74d2a34a29838074ab4f643c1b19d1f1
-  position: {x: 0, y: 128}
+  position: {x: -0.000021461427, y: 127.99997}
   description: 
   drawGizmos: 0
-  child: {fileID: -6760818804311504604}
+  child: {fileID: -8316765931191079751}

@@ -29,7 +29,7 @@ namespace RFG
       if (Random)
       {
         float weight = UnityEngine.Random.Range(0f, 1f);
-        if (weight < RandomWeight)
+        if (weight > RandomWeight)
         {
           return;
         }

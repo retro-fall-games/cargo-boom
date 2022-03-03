@@ -389,9 +389,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthReference: {fileID: 0}
   MaxHealthReference: {fileID: 0}
-  Health: 50
-  MaxHealth: 50
-  DefaultMaxHealth: 50
+  Health: 100
+  MaxHealth: 100
+  DefaultMaxHealth: 100
   ArmorReference: {fileID: 0}
   MaxArmorReference: {fileID: 0}
   Armor: 50

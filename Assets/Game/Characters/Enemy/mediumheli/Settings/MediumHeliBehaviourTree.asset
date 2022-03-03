@@ -34,31 +34,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f9e83d58f75f24042a94f3d823782387
-  position: {x: 0, y: 259}
+  position: {x: -0.000003534151, y: 267.43307}
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -1947018700363495155}
+  - {fileID: 1808123596351065411}
   - {fileID: 6505350544669913077}
---- !u!114 &-1947018700363495155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d70d6e16c6940a4dad95159b8d6b498, type: 3}
-  m_Name: WaitNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 8dd8c7247d5c67843a55233ba29eabaf
-  position: {x: -113.6994, y: 493.25854}
-  description: 
-  drawGizmos: 0
-  Duration: 5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,11 +57,31 @@ MonoBehaviour:
   nodes:
   - {fileID: 3212174832065154355}
   - {fileID: -7348487018406159676}
-  - {fileID: -1947018700363495155}
   - {fileID: -4212298933187564402}
   - {fileID: 6505350544669913077}
+  - {fileID: 1808123596351065411}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+--- !u!114 &1808123596351065411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ba30a51d9eebf4bb9ac35eb041913a, type: 3}
+  m_Name: RangeWaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 20ec42658126b6e46a3f9480118912b5
+  position: {x: -113.600006, y: 400.80002}
+  description: 
+  drawGizmos: 0
+  MinDuration: 2
+  MaxDuration: 5
 --- !u!114 &3212174832065154355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1086eeab61ccc0347bc53dbb361b1212
-  position: {x: 85.7603, y: 493}
+  position: {x: 102.53698, y: 400.80002}
   description: 
   drawGizmos: 0
-  PressTime: 0.5
+  PressTime: 2

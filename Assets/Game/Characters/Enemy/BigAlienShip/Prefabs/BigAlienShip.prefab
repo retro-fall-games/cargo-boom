@@ -536,13 +536,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target1: {fileID: 0}
   target2: {fileID: 0}
-  target2IsPlayer: 0
-  minDistance: 5
+  target2IsPlayer: 1
+  minDistance: 20
   WarmUpTime: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  tags: []
+    m_Bits: 256
+  tags:
+  - Player
 --- !u!1 &6390435300362152509
 GameObject:
   m_ObjectHideFlags: 0

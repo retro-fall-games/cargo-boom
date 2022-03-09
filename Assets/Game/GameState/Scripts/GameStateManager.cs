@@ -3,10 +3,7 @@ using UnityEngine;
 using RFG;
 using RFG.Items;
 using RFG.Character;
-using RFG.ScrollingShooter;
 using RFG.Weapons;
-using RFG.SceneGraph;
-using Cinemachine;
 using TMPro;
 
 public class GameStateManager : MonoBehaviour
@@ -23,7 +20,7 @@ public class GameStateManager : MonoBehaviour
   private PlayerInventory _playerInventory;
   private GameStateContext _gameStateContext;
   private ObjectPoolWaveSpawner _currentWaveSpawner;
-  private int _level = 0;
+  [SerializeField] private int _level = 0;
 
   #region Unity Methods
   private void Awake()
@@ -64,7 +61,6 @@ public class GameStateManager : MonoBehaviour
   #region States
   public void Liftoff()
   {
-    _level = 0;
     SetWaveNumber();
     Player.Respawn();
     HealthBehaviour.ResetHealth();
@@ -99,6 +95,7 @@ public class GameStateManager : MonoBehaviour
   public void GameOver()
   {
     GameState.ChangeState(typeof(GameOverState));
+    _level = 0;
   }
 
   public void StartSkirmish()

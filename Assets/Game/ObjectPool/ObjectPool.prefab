@@ -118,16 +118,16 @@ MonoBehaviour:
     size: 1
   - tag: smallheli
     prefab: {fileID: 5303186719066698441, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
-    size: 10
+    size: 20
   - tag: mediumheli
     prefab: {fileID: 2555374009427921504, guid: e93637c542ce8744999306dd3c342e66, type: 3}
-    size: 10
+    size: 1
   - tag: AlienShip
     prefab: {fileID: 8667692701809365845, guid: a786b23f3cb493b4490792629149d14c, type: 3}
-    size: 5
+    size: 10
   - tag: BigAlienShip
     prefab: {fileID: 6356428914687481162, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
-    size: 5
+    size: 1
   - tag: BigCargoShip
     prefab: {fileID: 8763734921395324018, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
     size: 1
@@ -136,7 +136,7 @@ MonoBehaviour:
     size: 1
   - tag: Jet
     prefab: {fileID: 7809796487736408322, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
-    size: 3
+    size: 10
   - tag: MediumAlienShip
     prefab: {fileID: 5076318624545604900, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
     size: 3

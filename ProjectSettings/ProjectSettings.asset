@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Retro Fall Games
   productName: Cargo Boom
-  defaultCursor: {fileID: 2800000, guid: 1a9790491786ee14eae51dfaafb512e4, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 7b34c1cd028c1404e8571329303921a8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -271,49 +271,49 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: f1a78e8ebb5d4b24188aedbf67951c41, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
   - m_BuildTarget: Standalone
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: f1a78e8ebb5d4b24188aedbf67951c41, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: 616e92a9f70c6d744952431098bb988b, type: 3}
       m_Width: 512
       m_Height: 512
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: 8847af39988bc56489af46686038c93b, type: 3}
       m_Width: 256
       m_Height: 256
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: 7c0c61c647be883429b76d97c2d1c42e, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: 9b372e86176f0ff45a54ecc596e85b6d, type: 3}
       m_Width: 64
       m_Height: 64
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: d58cb9549c6d12d4f9d719775a94ff9e, type: 3}
       m_Width: 48
       m_Height: 48
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: 50df323c07ced9043a5e55d82c00f849, type: 3}
       m_Width: 32
       m_Height: 32
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5df961b0f432a2047bdd84c76ea59d06, type: 3}
+      m_Icon: {fileID: 2800000, guid: 1fe7cb414a11bb44089cb160c04f0f42, type: 3}
       m_Width: 16
       m_Height: 16
       m_Kind: 0

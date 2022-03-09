@@ -26,8 +26,6 @@ GameObject:
   - component: {fileID: 8884055576111153889}
   - component: {fileID: 8333065331577022406}
   - component: {fileID: 2330936963177849511}
-  - component: {fileID: 8762032188920250951}
-  - component: {fileID: 8794285527598294254}
   m_Layer: 8
   m_Name: chopper
   m_TagString: Player
@@ -136,7 +134,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 8762032188920250951}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: RFG.Audio, Assembly-CSharp
           m_MethodName: Stop
           m_Mode: 1
@@ -166,7 +164,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 8762032188920250951}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: RFG.Audio, Assembly-CSharp
           m_MethodName: Play
           m_Mode: 1
@@ -279,7 +277,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -890460603
   m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: -287770586994130015, guid: 9887c33406cb821499180963e874ba0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -494,115 +492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f448c1f734ecebb428d195cb0f358628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8762032188920250951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325209439425228140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef4cbcf93a01e845b18e3b91ec4a6aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <AudioData>k__BackingField: {fileID: 11400000, guid: b54aff9516a5cbf4caddf21738f4fe54, type: 2}
---- !u!82 &8794285527598294254
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325209439425228140}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b794087077b20a04c88c11819be152af, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b29c1baacc9d86c47b55c05ac8a28744, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 100
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &2727254287814679141
 GameObject:
   m_ObjectHideFlags: 0

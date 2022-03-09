@@ -27,9 +27,14 @@ namespace RFG
     private int _currentTweenIndex;
     private int _currentTweenListInfoIndex = 0;
     private int _prevTweenIndex = 0;
+    private int _times = 0;
 
     public void Play()
     {
+      if (TweenListInfo.Count == 0)
+      {
+        return;
+      }
       switch (TweenListProcessType)
       {
         case TweenListProcessType.Linear:
@@ -37,11 +42,13 @@ namespace RFG
           break;
         case TweenListProcessType.Random:
           int index = UnityEngine.Random.Range(0, TweenListInfo.Count);
-          if (_prevTweenIndex == index)
+          if (_prevTweenIndex == index && _times < 5)
           {
+            _times++;
             Play();
             return;
           }
+          _times = 0;
           Play(index);
           break;
       }

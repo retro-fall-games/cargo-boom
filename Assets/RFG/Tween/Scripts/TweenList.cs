@@ -28,6 +28,15 @@ namespace RFG
     private int _currentTweenListInfoIndex = 0;
     private int _prevTweenIndex = 0;
     private int _times = 0;
+    private bool _playOnAwake = false;
+
+    private void Awake()
+    {
+      if (_playOnAwake)
+      {
+        Play();
+      }
+    }
 
     public void Play()
     {
@@ -61,6 +70,13 @@ namespace RFG
       _currentTweenListInfo = TweenListInfo[_currentTweenListInfoIndex];
       _currentTweenIndex = 0;
       PlayNextTween();
+    }
+
+    public int PlayRandom()
+    {
+      int index = UnityEngine.Random.Range(0, TweenListInfo.Count);
+      Play(index);
+      return index;
     }
 
     public void TogglePause()

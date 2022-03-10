@@ -174,17 +174,17 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 4
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 4
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -654,12 +654,12 @@ MonoBehaviour:
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: AlienShip
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -1338,12 +1338,12 @@ MonoBehaviour:
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: AlienShip
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -1352,7 +1352,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3459,12 +3459,12 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 2
@@ -3473,12 +3473,12 @@ MonoBehaviour:
       Count: 1
       Interval: 30
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3487,7 +3487,7 @@ MonoBehaviour:
       Count: 1
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4216,7 +4216,7 @@ MonoBehaviour:
       Count: 10
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4225,12 +4225,12 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4375,17 +4375,17 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 1
@@ -4394,12 +4394,12 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4408,7 +4408,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4557,6 +4557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGunLevel3Cargo
       objectReference: {fileID: 0}
+    - target: {fileID: 1812730456502818852, guid: d40743a09f249964c8433c48f9b8f12e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1812730456502818856, guid: d40743a09f249964c8433c48f9b8f12e, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -4634,13 +4638,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 0
-    Loop: 1
+    Loop: 3
     TagGroups:
     - Tag: smallheli
-      Count: 10
-      Interval: 2
+      Count: 4
+      Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 1
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -5697,7 +5701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: _level
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <Cam1>k__BackingField

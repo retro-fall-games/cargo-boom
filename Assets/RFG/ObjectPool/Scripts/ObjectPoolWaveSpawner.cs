@@ -13,7 +13,7 @@ namespace RFG
     public int Count = 1;
     public float Interval = 1f;
     public float SecondsUntilBegin;
-    public MovementPath MovementPath;
+    public bool RandomPath = false;
   }
 
 
@@ -46,8 +46,12 @@ namespace RFG
     private int _waveLoopCount = 0;
     private bool _waveInProgress = false;
     private bool _spawnedAllTagGroups = false;
+    private List<int> _lastIndexes = new List<int>();
+    private int _pathFindIndex = 0;
+    private int _samePathIndex = -1;
     private Coroutine _co;
 
+    #region Unity Methods
     private void Awake()
     {
       _currentSpawnedObjects = new Dictionary<string, List<GameObject>>();
@@ -61,6 +65,7 @@ namespace RFG
         HandleCurrentWave();
       }
     }
+    #endregion
 
     public void Play()
     {
@@ -130,27 +135,73 @@ namespace RFG
       foreach (ObjectPoolTagGroup TagGroup in _currentWave.TagGroups)
       {
         yield return new WaitForSeconds(TagGroup.SecondsUntilBegin);
+        _samePathIndex = -1;
         for (int i = 0; i < TagGroup.Count; i++)
         {
           yield return new WaitForSeconds(TagGroup.Interval);
-          SpawnObject(TagGroup.Tag);
+          SpawnObject(TagGroup);
         }
       }
       _spawnedAllTagGroups = true;
     }
 
-    private void SpawnObject(string tag)
+    private void SpawnObject(ObjectPoolTagGroup tagGroup)
     {
+      string tag = tagGroup.Tag;
       GameObject spawn = ObjectPool.Instance.SpawnFromPool(tag, SpawnPoint.position, Quaternion.identity);
       if (_currentWave.Parent)
       {
         spawn.transform.SetParent(transform);
       }
+
       if (!_currentSpawnedObjects.ContainsKey(tag))
       {
         _currentSpawnedObjects.Add(tag, new List<GameObject>());
       }
       _currentSpawnedObjects[tag].Add(spawn);
+
+      if (tagGroup.RandomPath)
+      {
+        _pathFindIndex = 0;
+        SelectRandomPath(spawn);
+      }
+      else
+      {
+
+        SelectSamePath(spawn);
+      }
+    }
+
+    private void SelectRandomPath(GameObject spawn)
+    {
+      _pathFindIndex++;
+      TweenList tl = spawn.GetComponentInChildren<TweenList>();
+      if (tl != null)
+      {
+        int index = tl.PlayRandom();
+        if (_lastIndexes.Contains(index) && _pathFindIndex < 5)
+        {
+          SelectRandomPath(spawn);
+          return;
+        }
+        _lastIndexes.Add(index);
+      }
+    }
+
+    private void SelectSamePath(GameObject spawn)
+    {
+      TweenList tl = spawn.GetComponentInChildren<TweenList>();
+      if (tl != null)
+      {
+        if (_samePathIndex == -1)
+        {
+          _samePathIndex = tl.PlayRandom();
+        }
+        else
+        {
+          tl.Play(_samePathIndex);
+        }
+      }
     }
 
     private void HandleCurrentWave()

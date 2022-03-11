@@ -178,13 +178,8 @@ MonoBehaviour:
     - Tag: smallheli
       Count: 4
       Interval: 0
-      SecondsUntilBegin: 0
-      RandomPath: 0
-    - Tag: smallheli
-      Count: 4
-      Interval: 0
-      SecondsUntilBegin: 0
-      RandomPath: 0
+      SecondsUntilBegin: 5
+      RandomPath: 1
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -192,6 +187,11 @@ MonoBehaviour:
     - Tag: Bomber
       Count: 1
       Interval: 0
+      SecondsUntilBegin: 0
+      RandomPath: 0
+    - Tag: smallheli
+      Count: 10
+      Interval: 3
       SecondsUntilBegin: 0
       RandomPath: 0
     Parent: 1
@@ -1023,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3678477382713837866, guid: c9714de2b348ef047a5aeb2d9323224c, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3678477382713837866, guid: c9714de2b348ef047a5aeb2d9323224c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3453,32 +3453,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 0
-    Loop: 1
+    Loop: 2
     TagGroups:
-    - Tag: smallheli
-      Count: 5
-      Interval: 1
-      SecondsUntilBegin: 0
-      RandomPath: 0
-    - Tag: smallheli
-      Count: 5
-      Interval: 1
+    - Tag: Jet
+      Count: 1
+      Interval: 0
       SecondsUntilBegin: 0
       RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 2
     TagGroups:
-    - Tag: Jet
+    - Tag: mediumheli
       Count: 1
-      Interval: 30
+      Interval: 0
       SecondsUntilBegin: 0
       RandomPath: 0
     - Tag: smallheli
-      Count: 5
-      Interval: 1
-      SecondsUntilBegin: 0
-      RandomPath: 0
+      Count: 4
+      Interval: 0
+      SecondsUntilBegin: 5
+      RandomPath: 1
+    - Tag: smallheli
+      Count: 4
+      Interval: 0
+      SecondsUntilBegin: 5
+      RandomPath: 1
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3625,6 +3625,63 @@ MonoBehaviour:
   <InfiniteVertical>k__BackingField: 0
   <XDivisions>k__BackingField: 1
   <YDivisions>k__BackingField: 1
+--- !u!1001 &1676072490
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 643229752433107555, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_Name
+      value: MachineGunLevel4Cargo
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
 --- !u!1 &1692427610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,10 +4270,10 @@ MonoBehaviour:
     Loop: 1
     TagGroups:
     - Tag: smallheli
-      Count: 10
-      Interval: 1
+      Count: 5
+      Interval: 1.5
       SecondsUntilBegin: 0
-      RandomPath: 0
+      RandomPath: 1
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4230,7 +4287,7 @@ MonoBehaviour:
       Count: 5
       Interval: 3
       SecondsUntilBegin: 0
-      RandomPath: 0
+      RandomPath: 1
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4638,13 +4695,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 0
-    Loop: 3
+    Loop: 2
     TagGroups:
     - Tag: smallheli
-      Count: 4
-      Interval: 1
+      Count: 5
+      Interval: 1.5
       SecondsUntilBegin: 0
-      RandomPath: 1
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -5701,7 +5758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: _level
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <Cam1>k__BackingField

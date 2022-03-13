@@ -354,11 +354,11 @@ namespace RFG.ScrollingShooter
     #region Helpers
     public bool IsOnScreen()
     {
-      if (_collider == null)
+      if (_renderer == null)
       {
         return false;
       }
-      return _collider.bounds.IsVisibleFrom(_cam);
+      return _renderer.bounds.IsVisibleFrom(_cam);
     }
     #endregion
   }

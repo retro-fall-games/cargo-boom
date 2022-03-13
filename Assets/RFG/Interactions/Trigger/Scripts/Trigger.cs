@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace RFG
 {
-  [AddComponentMenu("RFG/Interactions/Trigger")]
+  [AddComponentMenu("RFG/Interactions/Trigger"), RequireComponent(typeof(BoxCollider2D))]
   public class Trigger : MonoBehaviour
   {
     public bool OnlyOnce = false;

@@ -167,7 +167,6 @@ namespace RFG
       }
       else
       {
-
         SelectSamePath(spawn);
       }
     }
@@ -179,7 +178,7 @@ namespace RFG
       if (tl != null)
       {
         int index = tl.PlayRandom();
-        if (_lastIndexes.Contains(index) && _pathFindIndex < 5)
+        if (_lastIndexes.Contains(index) && _pathFindIndex < 100)
         {
           SelectRandomPath(spawn);
           return;

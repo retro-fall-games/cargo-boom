@@ -174,12 +174,12 @@ MonoBehaviour:
       Count: 2
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallheli
       Count: 4
       Interval: 5
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -678,7 +678,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -1153,7 +1153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303186719066698441, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6454377236029562983, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
       propertyPath: OnStartEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1680,7 +1680,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -1689,7 +1689,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3148,17 +3148,17 @@ MonoBehaviour:
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: smallhelireversed
       Count: 5
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     - Tag: mediumheli
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3408,7 +3408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8094220404277126807, guid: 90e910174324135418d52e48a396d80c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90e910174324135418d52e48a396d80c, type: 3}
@@ -3952,7 +3952,7 @@ MonoBehaviour:
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3961,7 +3961,7 @@ MonoBehaviour:
       Count: 3
       Interval: 1
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -3970,7 +3970,7 @@ MonoBehaviour:
       Count: 1
       Interval: 0
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4045,7 +4045,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4054,7 +4054,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -4229,7 +4229,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 0
@@ -4238,7 +4238,7 @@ MonoBehaviour:
       Count: 3
       Interval: 3
       SecondsUntilBegin: 0
-      MovementPath: {fileID: 0}
+      RandomPath: 0
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:

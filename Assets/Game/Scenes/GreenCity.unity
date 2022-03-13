@@ -1019,7 +1019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3678477382713837862, guid: c9714de2b348ef047a5aeb2d9323224c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3678477382713837866, guid: c9714de2b348ef047a5aeb2d9323224c, type: 3}
       propertyPath: m_RootOrder
@@ -1182,7 +1182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000047683716, y: -0.20000005, z: -10}
+  m_LocalPosition: {x: 0, y: -0.20000005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2038705323}
@@ -1197,6 +1197,8 @@ Transform:
   - {fileID: 2074467055}
   - {fileID: 256398720}
   - {fileID: 31946433}
+  - {fileID: 1992261672}
+  - {fileID: 1655722472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3488,6 +3490,16 @@ MonoBehaviour:
       Interval: 1
       SecondsUntilBegin: 0
       RandomPath: 0
+    - Tag: smallheli
+      Count: 4
+      Interval: 0
+      SecondsUntilBegin: 10
+      RandomPath: 1
+    - Tag: smallheli
+      Count: 20
+      Interval: 2.5
+      SecondsUntilBegin: 15
+      RandomPath: 1
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
   <OnWaveStart>k__BackingField:
@@ -3625,6 +3637,78 @@ MonoBehaviour:
   <InfiniteVertical>k__BackingField: 0
   <XDivisions>k__BackingField: 1
   <YDivisions>k__BackingField: 1
+--- !u!1 &1655722471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655722472}
+  - component: {fileID: 1655722474}
+  - component: {fileID: 1655722473}
+  m_Layer: 0
+  m_Name: ProjectileBounds (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655722472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655722471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.45, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655722473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655722471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c096747ca4fe14caf516f506d11fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Projectile
+--- !u!61 &1655722474
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655722471}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.4529811}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.7587805}
+  m_EdgeRadius: 0
 --- !u!1001 &1676072490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3635,6 +3719,10 @@ PrefabInstance:
     - target: {fileID: 643229752433107555, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
       propertyPath: m_Name
       value: MachineGunLevel4Cargo
+      objectReference: {fileID: 0}
+    - target: {fileID: 643229752433107555, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 643229752433107567, guid: d51421770403e9a44a40aed0dc3e97c3, type: 3}
       propertyPath: m_RootOrder
@@ -4426,23 +4514,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 0
-    Loop: 2
+    Loop: 0
     TagGroups:
     - Tag: mediumheli
-      Count: 1
+      Count: 2
+      Interval: 1
+      SecondsUntilBegin: 0
+      RandomPath: 1
+    - Tag: smallheli
+      Count: 4
       Interval: 0
-      SecondsUntilBegin: 0
-      RandomPath: 0
+      SecondsUntilBegin: 5
+      RandomPath: 1
     - Tag: smallheli
-      Count: 5
-      Interval: 1
-      SecondsUntilBegin: 0
-      RandomPath: 0
-    - Tag: smallheli
-      Count: 5
-      Interval: 1
-      SecondsUntilBegin: 0
-      RandomPath: 0
+      Count: 4
+      Interval: 0
+      SecondsUntilBegin: 5
+      RandomPath: 1
     Parent: 1
   - SecondsUntilBegin: 0
     Loop: 1
@@ -4453,7 +4541,12 @@ MonoBehaviour:
       SecondsUntilBegin: 0
       RandomPath: 0
     - Tag: smallheli
-      Count: 5
+      Count: 4
+      Interval: 1
+      SecondsUntilBegin: 0
+      RandomPath: 0
+    - Tag: smallheli
+      Count: 4
       Interval: 1
       SecondsUntilBegin: 0
       RandomPath: 0
@@ -4489,6 +4582,78 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1992261671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992261672}
+  - component: {fileID: 1992261674}
+  - component: {fileID: 1992261673}
+  m_Layer: 0
+  m_Name: ProjectileBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992261672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992261671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.45, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1992261673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992261671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c096747ca4fe14caf516f506d11fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Projectile
+--- !u!61 &1992261674
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992261671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.4529811}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.7587805}
+  m_EdgeRadius: 0
 --- !u!1 &2021981504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,7 +5923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: _level
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <Cam1>k__BackingField

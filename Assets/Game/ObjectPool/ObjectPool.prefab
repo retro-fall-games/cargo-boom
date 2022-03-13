@@ -121,7 +121,7 @@ MonoBehaviour:
     size: 20
   - tag: mediumheli
     prefab: {fileID: 2555374009427921504, guid: e93637c542ce8744999306dd3c342e66, type: 3}
-    size: 1
+    size: 3
   - tag: AlienShip
     prefab: {fileID: 8667692701809365845, guid: a786b23f3cb493b4490792629149d14c, type: 3}
     size: 10

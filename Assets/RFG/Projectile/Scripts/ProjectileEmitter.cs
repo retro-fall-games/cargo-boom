@@ -106,7 +106,7 @@ namespace RFG
         {
           Vector3 newPos = (topPos + (i * precent) * (bottomPos - topPos));
           projectile.SetPosition(FirePoint.position);
-          projectile.SetRotation(FirePoint.position + FirePoint.right);
+          projectile.SetRotation(newPos + FirePoint.right);
           projectile.SetVelocity(newPos);
         }
         if (Interval > 0)

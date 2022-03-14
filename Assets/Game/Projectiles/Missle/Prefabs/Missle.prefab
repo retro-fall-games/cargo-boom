@@ -4899,7 +4899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc927ed6b7c2d1a48a1894172990d00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 5
+  <Speed>k__BackingField: 10
   <RotationSpeed>k__BackingField: 5
   <Damage>k__BackingField: 10
   <SpawnAtName>k__BackingField: 

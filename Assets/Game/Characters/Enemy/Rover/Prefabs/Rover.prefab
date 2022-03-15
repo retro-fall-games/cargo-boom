@@ -882,14 +882,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthReference: {fileID: 0}
   MaxHealthReference: {fileID: 0}
-  Health: 200
-  MaxHealth: 200
-  DefaultMaxHealth: 200
+  Health: 400
+  MaxHealth: 400
+  DefaultMaxHealth: 400
   ArmorReference: {fileID: 0}
   MaxArmorReference: {fileID: 0}
-  Armor: 100
-  MaxArmor: 100
-  DefaultMaxArmor: 100
+  Armor: 200
+  MaxArmor: 200
+  DefaultMaxArmor: 200
   KillEvent: {fileID: 0}
 --- !u!114 &4689260557105457642
 MonoBehaviour:

@@ -173,8 +173,6 @@ GameObject:
   - component: {fileID: 1160220992149160359}
   - component: {fileID: 1131818808788798842}
   - component: {fileID: 6973291251729544052}
-  - component: {fileID: 2415759241761948908}
-  - component: {fileID: 186038366439810482}
   m_Layer: 10
   m_Name: BigAlienShip
   m_TagString: Enemy
@@ -509,41 +507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96dcd825c03e1e344bf4df042f938cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2415759241761948908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6356428914687481162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ae1075ddb710a44976d5a8d14fcc66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <RotateTowardsDirection>k__BackingField: 0
---- !u!114 &186038366439810482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6356428914687481162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfc0518640b8d5448f02887719e060d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target1: {fileID: 0}
-  target2: {fileID: 0}
-  target2IsPlayer: 1
-  minDistance: 20
-  WarmUpTime: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  tags:
-  - Player
 --- !u!1 &6390435300362152509
 GameObject:
   m_ObjectHideFlags: 0

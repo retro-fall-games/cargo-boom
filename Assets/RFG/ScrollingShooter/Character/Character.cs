@@ -92,6 +92,10 @@ namespace RFG.ScrollingShooter
     #region Object Pool
     public override void OnObjectSpawn(params object[] objects)
     {
+      if (_controller.facingOnStart.Equals("Face Left"))
+      {
+        _controller.Flip();
+      }
       if (CharacterType == CharacterType.AI)
       {
         CharacterState.ChangeState(typeof(SpawnState));

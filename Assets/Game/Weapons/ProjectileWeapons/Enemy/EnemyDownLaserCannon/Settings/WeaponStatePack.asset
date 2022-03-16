@@ -124,7 +124,8 @@ MonoBehaviour:
   Layer: Base Layer
   EnterClip: 
   ExitClip: 
-  EnterEffects: []
+  EnterEffects:
+  - ScreenShake
   EnterEffectsParent: 0
   EnterEffectsGrandParent: 0
   EnterEffectsWorldPositionStays: 0

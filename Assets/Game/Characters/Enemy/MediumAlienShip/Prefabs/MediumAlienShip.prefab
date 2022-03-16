@@ -92,7 +92,7 @@ MonoBehaviour:
   - {x: -7, y: 2, z: 0}
   - {x: -6, y: 2, z: 0}
   - {x: -5, y: 2, z: 0}
-  - {x: -3, y: 2, z: 0}
+  - {x: -5, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -162,7 +162,7 @@ MonoBehaviour:
   - {x: 7, y: 2, z: 0}
   - {x: 6, y: 2, z: 0}
   - {x: 5, y: 2, z: 0}
-  - {x: 3, y: 2, z: 0}
+  - {x: 5, y: 2, z: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []

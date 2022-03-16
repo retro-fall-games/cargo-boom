@@ -143,10 +143,10 @@ namespace RFG
     {
       LineRenderer.SetPosition(0, (Vector2)FirePoint.localPosition);
 
-      if (StartFx != null)
-      {
-        StartFx.transform.position = (Vector2)FirePoint.localPosition;
-      }
+      // if (StartFx != null)
+      // {
+      //   StartFx.transform.position = (Vector2)FirePoint.localPosition;
+      // }
 
       // Default hit position to direction
       Vector3 hitPosition = FirePoint.localPosition + Direction;

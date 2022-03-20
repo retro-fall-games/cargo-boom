@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a14a9981b6d68645b6062d7d8f1fc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EmitterType: 2
+  EmitterType: 3
   <Angle>k__BackingField: 16
   <Radius>k__BackingField: 5
   <ConeDirection>k__BackingField: 0

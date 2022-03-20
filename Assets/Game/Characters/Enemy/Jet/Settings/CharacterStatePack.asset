@@ -56,7 +56,7 @@ MonoBehaviour:
   ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 1
-  WaitToUnfreezeTime: 1
+  WaitToUnfreezeTime: 0.1
   StatesCanUnfreeze: []
   NextState: {fileID: 0}
   NextStateAfterTime: 0

@@ -116,8 +116,8 @@ MonoBehaviour:
   position: {x: 75.20003, y: 625.5999}
   description: 
   drawGizmos: 0
-  MinDuration: 2
-  MaxDuration: 5
+  MinDuration: 0.5
+  MaxDuration: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

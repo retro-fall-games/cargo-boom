@@ -4899,7 +4899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc927ed6b7c2d1a48a1894172990d00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 10
+  <Speed>k__BackingField: 5
   <RotationSpeed>k__BackingField: 5
   <Damage>k__BackingField: 10
   <SpawnAtName>k__BackingField: 
@@ -4916,7 +4916,7 @@ MonoBehaviour:
   <MoveTowardsTarget>k__BackingField: 1
   <FindNewTargets>k__BackingField: 1
   <HasTimeToLive>k__BackingField: 1
-  <TimeToLive>k__BackingField: 5
+  <TimeToLive>k__BackingField: 1
 --- !u!212 &86894087404135518
 SpriteRenderer:
   m_ObjectHideFlags: 0

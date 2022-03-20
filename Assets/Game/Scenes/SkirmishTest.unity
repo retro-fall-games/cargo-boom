@@ -546,6 +546,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6318587302639885926, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318587302639885926, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318587302639885926, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318587302639885926, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318587302639885926, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318587302639885926, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a88f376a5da9d47b3e1d1b4b6aa7e0, type: 3}
 --- !u!1001 &209183807
@@ -555,6 +579,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1102346719270776833, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102346719270776833, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102346719270776833, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102346719270776833, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102346719270776833, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102346719270776833, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1575633583397183046, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: facingOnStart
       value: Face Left
@@ -569,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673625734447210744, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5673625734447210744, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -617,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356428914687481162, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8571718015386506703, guid: 712f2eb1745a19b4fadd03ef99442ef9, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -965,6 +1013,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159799727607273857, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159799727607273857, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159799727607273857, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159799727607273857, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159799727607273857, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159799727607273857, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7465468937943624351, guid: 09e477c93d0869b48bf711eed882d8b3, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1026,6 +1098,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: ArmorReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: HealthReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: MaxArmorReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 959435994541984061, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
+      propertyPath: MaxHealthReference
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1325209439425228140, guid: b882698c1f4ff874e956b2848cd3a799, type: 3}
       propertyPath: m_Name
       value: chopper
@@ -1113,11 +1225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3288670248968376839, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 3288670248968376839, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 3288670248968376839, guid: 62133ea8c7d270440b2c0dec961101ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1498,6 +1610,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2196579619739949706, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196579619739949706, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196579619739949706, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196579619739949706, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196579619739949706, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196579619739949706, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4145253912611156718, guid: 31815e8750153f042aa014a128f6ed9b, type: 3}
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
@@ -1549,11 +1685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1977639777450270372, guid: e93637c542ce8744999306dd3c342e66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 1977639777450270372, guid: e93637c542ce8744999306dd3c342e66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 1977639777450270372, guid: e93637c542ce8744999306dd3c342e66, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1595,6 +1731,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4135545709208951957, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135545709208951957, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135545709208951957, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135545709208951957, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135545709208951957, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135545709208951957, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5431818308152017529, guid: e93637c542ce8744999306dd3c342e66, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1633,6 +1793,91 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93637c542ce8744999306dd3c342e66, type: 3}
+--- !u!1001 &754709197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076318624545604900, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_Name
+      value: MediumAlienShip (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076318624545604900, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
 --- !u!1 &777765244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2466,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5831283775038520864, guid: a786b23f3cb493b4490792629149d14c, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831283775038520864, guid: a786b23f3cb493b4490792629149d14c, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831283775038520864, guid: a786b23f3cb493b4490792629149d14c, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831283775038520864, guid: a786b23f3cb493b4490792629149d14c, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831283775038520864, guid: a786b23f3cb493b4490792629149d14c, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831283775038520864, guid: a786b23f3cb493b4490792629149d14c, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6696108763896657190, guid: a786b23f3cb493b4490792629149d14c, type: 3}
       propertyPath: <EaseType>k__BackingField
       value: 1
@@ -2808,13 +3077,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239421899053685593, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5076318624545604900, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
       propertyPath: m_Name
       value: MediumAlienShip
       objectReference: {fileID: 0}
     - target: {fileID: 5076318624545604900, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8486528499060166603, guid: fcf08a23aa0c53d4ba54229a6a189b6b, type: 3}
       propertyPath: m_RootOrder
@@ -3406,6 +3699,30 @@ PrefabInstance:
       propertyPath: StateChangeUnityEvents.Array.data[1].OnChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6726487820479841664, guid: 90e910174324135418d52e48a396d80c, type: 3}
+      propertyPath: Armor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726487820479841664, guid: 90e910174324135418d52e48a396d80c, type: 3}
+      propertyPath: Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726487820479841664, guid: 90e910174324135418d52e48a396d80c, type: 3}
+      propertyPath: MaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726487820479841664, guid: 90e910174324135418d52e48a396d80c, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726487820479841664, guid: 90e910174324135418d52e48a396d80c, type: 3}
+      propertyPath: DefaultMaxArmor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726487820479841664, guid: 90e910174324135418d52e48a396d80c, type: 3}
+      propertyPath: DefaultMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094220404277126807, guid: 90e910174324135418d52e48a396d80c, type: 3}
       propertyPath: m_Name
       value: Rover
@@ -3850,7 +4167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8360159339090347534, guid: aca5f8384e982944184f40330381c4f1, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8360159339090347534, guid: aca5f8384e982944184f40330381c4f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4289,7 +4606,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1186566100689175246, guid: 37cec02c75eefd94c91865d9db64e7de, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1186566100689175246, guid: 37cec02c75eefd94c91865d9db64e7de, type: 3}
       propertyPath: m_LocalPosition.x

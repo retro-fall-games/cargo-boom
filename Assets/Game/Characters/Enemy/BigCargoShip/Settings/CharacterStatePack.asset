@@ -35,8 +35,12 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects: []
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -61,8 +65,12 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects: []
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -87,8 +95,12 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects: []
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 0
   WaitToUnfreezeTime: 0
@@ -111,13 +123,18 @@ MonoBehaviour:
   Layer: Base Layer
   EnterClip: Death
   ExitClip: 
-  EnterEffects: []
+  EnterEffects:
+  - MediumExplosion
   EnterEffectsParent: 0
+  EnterEffectsGrandParent: 0
+  EnterEffectsWorldPositionStays: 0
   ExitEffects: []
   ExitEffectsParent: 0
+  ExitEffectsGrandParent: 0
+  ExitEffectsWorldPositionStays: 0
   StopEnterEffectsOnExit: 0
   FreezeState: 1
-  WaitToUnfreezeTime: 1
+  WaitToUnfreezeTime: 0.1
   StatesCanUnfreeze: []
   NextState: {fileID: 0}
   NextStateAfterTime: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5e1a6c1a19abf0746a4a8006b62f0908
-  position: {x: -150, y: 417}
+  position: {x: -161.46777, y: 460.00003}
   description: 
   drawGizmos: 0
   Duration: 1
@@ -34,11 +34,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 758ea11e75386124992760c82caa15c3
-  position: {x: 0, y: 289.8625}
+  position: {x: 223.99997, y: 460.1024}
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -5523611027130846235}
+  - {fileID: -1398153606370350625}
   - {fileID: 4498088303610860068}
 --- !u!114 &-3567220307771267783
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 751e6b5ede2329248bb90eed6df19f17
-  position: {x: 251, y: 601}
+  position: {x: 475.2, y: 771.3023}
   description: 
   drawGizmos: 0
 --- !u!114 &-2352845640081075407
@@ -73,10 +73,30 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 183993b53c3233f4e9526a3c09bc682a
-  position: {x: 22, y: 601}
+  position: {x: 246.39992, y: 771.3023}
   description: 
   drawGizmos: 0
   PressTime: 1
+--- !u!114 &-1398153606370350625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ba30a51d9eebf4bb9ac35eb041913a, type: 3}
+  m_Name: RangeWaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 934a5c802ef626e4c890e3771eccf2a7
+  position: {x: 107.48062, y: 636.03876}
+  description: 
+  drawGizmos: 0
+  MinDuration: 0.5
+  MaxDuration: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,8 +119,31 @@ MonoBehaviour:
   - {fileID: -3567220307771267783}
   - {fileID: -3929168915875997597}
   - {fileID: 4498088303610860068}
+  - {fileID: 2397754966777709361}
+  - {fileID: -1398153606370350625}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+--- !u!114 &2397754966777709361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb7f27e7ccd8e7418b9197564df4f6c, type: 3}
+  m_Name: IsOnScreenNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e2746d379ad1fbd46ad3fac6a8a3e922
+  position: {x: -0.000030517578, y: 261.37482}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -5523611027130846235}
+  - {fileID: -3929168915875997597}
 --- !u!114 &2643803184407128750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +181,7 @@ MonoBehaviour:
   position: {x: 0, y: 123}
   description: 
   drawGizmos: 0
-  child: {fileID: -3929168915875997597}
+  child: {fileID: 2397754966777709361}
 --- !u!114 &4498088303610860068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +197,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 75b5cfea0895c094d842c4730470f9b1
-  position: {x: 121.95871, y: 439.00003}
+  position: {x: 345.59998, y: 608.90234}
   description: 
   drawGizmos: 0
   children:

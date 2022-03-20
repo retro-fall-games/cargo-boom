@@ -103,7 +103,7 @@ MonoBehaviour:
     m_Bits: 2304
   <SpawnEffects>k__BackingField: []
   <CollisionEffects>k__BackingField:
-  - Small Explosion
+  - SmallLongExplosion
   <RotateTowardsTarget>k__BackingField: 0
   <MoveTowardsTarget>k__BackingField: 0
   <FindNewTargets>k__BackingField: 0

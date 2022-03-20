@@ -155,3 +155,15 @@ MonoBehaviour:
   - tag: EnemyDownLaser
     prefab: {fileID: 5448335136628519092, guid: 22cffe57d273c2a42b9154af2c733a77, type: 3}
     size: 1
+  - tag: MediumExplosion
+    prefab: {fileID: 5455639365744478110, guid: 6563d272af001f044beca307f8d37a2f, type: 3}
+    size: 5
+  - tag: SmallLongExplosion
+    prefab: {fileID: 5455639365744478110, guid: 3cd307609908aef4e923003ce859edec, type: 3}
+    size: 1
+  - tag: RoverExplosion
+    prefab: {fileID: 5455639365744478110, guid: f42f684466a097640b5d7d0b02ca60d9, type: 3}
+    size: 1
+  - tag: BigAlienExplosion
+    prefab: {fileID: 5455639365744478110, guid: e87ac260b948cd547a29e95b0d2eef9b, type: 3}
+    size: 1

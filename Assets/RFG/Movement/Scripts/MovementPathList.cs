@@ -50,6 +50,14 @@ namespace RFG
       PlayNextMovementPath();
     }
 
+    public int PlayRandom()
+    {
+      int index = UnityEngine.Random.Range(0, MovementPathListInfo.Count);
+      Play(index);
+      return index;
+    }
+
+
     public void TogglePause()
     {
       _currentMovementPath?.TogglePause();

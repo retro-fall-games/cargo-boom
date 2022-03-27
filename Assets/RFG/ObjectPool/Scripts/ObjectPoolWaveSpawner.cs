@@ -185,6 +185,17 @@ namespace RFG
         }
         _lastIndexes.Add(index);
       }
+      MovementPathList movementPathList = spawn.GetComponentInChildren<MovementPathList>();
+      if (movementPathList != null)
+      {
+        int index = movementPathList.PlayRandom();
+        if (_lastIndexes.Contains(index) && _pathFindIndex < 100)
+        {
+          SelectRandomPath(spawn);
+          return;
+        }
+        _lastIndexes.Add(index);
+      }
     }
 
     private void SelectSamePath(GameObject spawn)
@@ -199,6 +210,18 @@ namespace RFG
         else
         {
           tl.Play(_samePathIndex);
+        }
+      }
+      MovementPathList movementPathList = spawn.GetComponentInChildren<MovementPathList>();
+      if (movementPathList != null)
+      {
+        if (_samePathIndex == -1)
+        {
+          _samePathIndex = movementPathList.PlayRandom();
+        }
+        else
+        {
+          movementPathList.Play(_samePathIndex);
         }
       }
     }

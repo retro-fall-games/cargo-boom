@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 46c3a570c511aa54799c1ce2c54189ce, type: 3}
   outputAudioMixerGroup: {fileID: 24300002, guid: b794087077b20a04c88c11819be152af, type: 2}
-  volume: 1
+  volume: 0.5
   pitch: 1
   randomPitch: 0
-  minPitch: 0.802
-  maxPitch: 0.95
+  minPitch: 0
+  maxPitch: 0
   playOnAwake: 0
   loop: 0
   fadeTime: 0

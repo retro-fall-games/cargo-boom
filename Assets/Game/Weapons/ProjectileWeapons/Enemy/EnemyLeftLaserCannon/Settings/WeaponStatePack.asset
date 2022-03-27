@@ -64,7 +64,8 @@ MonoBehaviour:
   Layer: Base Layer
   EnterClip: Charge
   ExitClip: 
-  EnterEffects: []
+  EnterEffects:
+  - LaserCharge
   EnterEffectsParent: 0
   EnterEffectsGrandParent: 0
   EnterEffectsWorldPositionStays: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   ExitClip: 
   EnterEffects:
   - ScreenShake
+  - Small Explosion
   EnterEffectsParent: 0
   EnterEffectsGrandParent: 0
   EnterEffectsWorldPositionStays: 0

@@ -167,3 +167,6 @@ MonoBehaviour:
   - tag: BigAlienExplosion
     prefab: {fileID: 5455639365744478110, guid: e87ac260b948cd547a29e95b0d2eef9b, type: 3}
     size: 1
+  - tag: LaserCharge
+    prefab: {fileID: 2001836210059860649, guid: e8410f67afac3bd468cbac1d8a44a35b, type: 3}
+    size: 1

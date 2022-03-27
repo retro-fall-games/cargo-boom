@@ -13,7 +13,6 @@ public class GameStateManager : MonoBehaviour
 
   [field: SerializeField] private RFG.ScrollingShooter.Character Player { get; set; }
   [field: SerializeField] private HealthBehaviour HealthBehaviour { get; set; }
-  [field: SerializeField] private ProjectileWeaponEquipable DefaultProjectileWeaponEquipable { get; set; }
   [field: SerializeField] private List<GameObject> PowerUps { get; set; }
   [field: SerializeField] private List<ObjectPoolWaveSpawner> WaveSpawners { get; set; }
   [field: SerializeField] private TMP_Text WaveNumber { get; set; }
@@ -21,6 +20,7 @@ public class GameStateManager : MonoBehaviour
   private GameStateContext _gameStateContext;
   private ObjectPoolWaveSpawner _currentWaveSpawner;
   [SerializeField] private int _level = 0;
+  [SerializeField] private int _wave = 0;
 
   #region Unity Methods
   private void Awake()
@@ -65,7 +65,6 @@ public class GameStateManager : MonoBehaviour
     Player.Respawn();
     HealthBehaviour.ResetHealth();
     HealthBehaviour.ResetArmor();
-    _playerInventory.Inventory.Equip(EquipmentSlot.LeftHand, DefaultProjectileWeaponEquipable);
 
     if (_currentWaveSpawner != null)
     {
@@ -95,22 +94,31 @@ public class GameStateManager : MonoBehaviour
   public void GameOver()
   {
     GameState.ChangeState(typeof(GameOverState));
-    _level = 0;
   }
 
   public void StartSkirmish()
   {
-    _currentWaveSpawner = WaveSpawners[_level];
+    _currentWaveSpawner = WaveSpawners[_wave];
     _currentWaveSpawner.Play();
   }
 
   private void NextLevel()
   {
-    if (_level < WaveSpawners.Count)
+    if (_wave + 1 == WaveSpawners.Count)
     {
-      _level++;
-      SetWaveNumber();
+      _wave = 0;
     }
+    else
+    {
+      _wave++;
+    }
+    _level++;
+    SetWaveNumber();
+  }
+
+  private void SetWaveNumber()
+  {
+    WaveNumber.SetText($"Wave {_level + 1}");
   }
 
   private void SpawnPowerUp()
@@ -158,9 +166,6 @@ public class GameStateManager : MonoBehaviour
   }
   #endregion
 
-  private void SetWaveNumber()
-  {
-    WaveNumber.SetText($"Wave {_level + 1}");
-  }
+
 
 }

@@ -246,7 +246,7 @@ Transform:
   m_Children:
   - {fileID: 913320582}
   m_Father: {fileID: 519420032}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38692848 stripped
 GameObject:
@@ -564,7 +564,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1186566100689175246, guid: 37cec02c75eefd94c91865d9db64e7de, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1186566100689175246, guid: 37cec02c75eefd94c91865d9db64e7de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -648,15 +648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - SecondsUntilBegin: 0
-    Loop: 2
-    TagGroups:
-    - Tag: AlienShip
-      Count: 3
-      Interval: 0
-      SecondsUntilBegin: 0
-      RandomPath: 1
-    Parent: 1
-  - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
     - Tag: BigAlienShip
@@ -665,19 +656,9 @@ MonoBehaviour:
       SecondsUntilBegin: 0
       RandomPath: 0
     - Tag: AlienShip
-      Count: 3
-      Interval: 1
+      Count: 50
+      Interval: 3
       SecondsUntilBegin: 10
-      RandomPath: 1
-    - Tag: AlienShip
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 20
-      RandomPath: 1
-    - Tag: AlienShip
-      Count: 3
-      Interval: 1
-      SecondsUntilBegin: 30
       RandomPath: 1
     Parent: 1
   <SpawnPoint>k__BackingField: {fileID: 879172138}
@@ -794,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341715325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.32, z: 0}
+  m_LocalPosition: {x: 0, y: -0.108, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 190015101}
@@ -1212,7 +1193,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1253,7 +1234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000047683716, y: -0.20000005, z: -10}
+  m_LocalPosition: {x: 0, y: -0.20000005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2038705323}
@@ -1263,6 +1244,7 @@ Transform:
   - {fileID: 1986664182}
   - {fileID: 777765245}
   - {fileID: 263592661}
+  - {fileID: 935667996}
   - {fileID: 879172138}
   - {fileID: 1925560578}
   - {fileID: 2074467055}
@@ -1771,7 +1753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &913320581
 GameObject:
@@ -1802,6 +1784,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31946433}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &935667994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935667996}
+  - component: {fileID: 935667995}
+  m_Layer: 0
+  m_Name: WaveSpawnerLevelTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &935667995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935667994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7869640c933f964487e68179d72b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - SecondsUntilBegin: 0
+    Loop: 0
+    TagGroups:
+    - Tag: BigAlienShip
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+      RandomPath: 1
+    Parent: 1
+  <SpawnPoint>k__BackingField: {fileID: 879172138}
+  <OnWaveStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnWaveEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFinish>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7123798071250177914}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: EnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &935667996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935667994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948337085
 GameObject:
@@ -2382,7 +2439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029801821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0.366, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 190015101}
@@ -3396,7 +3453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591487196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0.178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 190015101}
@@ -3618,6 +3675,15 @@ MonoBehaviour:
       RandomPath: 1
     Parent: 1
   - SecondsUntilBegin: 0
+    Loop: 2
+    TagGroups:
+    - Tag: Jet
+      Count: 1
+      Interval: 0
+      SecondsUntilBegin: 0
+      RandomPath: 0
+    Parent: 1
+  - SecondsUntilBegin: 0
     Loop: 0
     TagGroups:
     - Tag: BigCargoShip
@@ -3736,7 +3802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635297654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 190015101}
@@ -3802,7 +3868,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1655722473
 MonoBehaviour:
@@ -4097,7 +4163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716221144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 190015101}
@@ -4404,7 +4470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856473865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0.192, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 190015101}
@@ -4543,7 +4609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8882398517755341284, guid: d79584cc667a42c48ac1be0205801aff, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8882398517755341284, guid: d79584cc667a42c48ac1be0205801aff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4762,7 +4828,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1992261673
 MonoBehaviour:
@@ -5063,7 +5129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3707211485230347684, guid: bb839af6ee0d6b4479988b8a66db811f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3707211485230347684, guid: bb839af6ee0d6b4479988b8a66db811f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5941,19 +6007,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8293484280978777121, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.6000366
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8293484280978777121, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.600006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8390145764224058209, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.7000122
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8390145764224058209, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.3999939
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0331d005f163945af3a117317d4dab, type: 3}
@@ -6481,6 +6547,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: _wave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: _level
       value: 0
       objectReference: {fileID: 0}
@@ -6533,6 +6603,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <CinemachineVirtualCamera>k__BackingField
       value: 
       objectReference: {fileID: 800776142}
@@ -6562,6 +6636,10 @@ PrefabInstance:
       objectReference: {fileID: 777765246}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
       propertyPath: <WaveSpawners>k__BackingField.Array.data[6]
+      value: 
+      objectReference: {fileID: 263592660}
+    - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}
+      propertyPath: <WaveSpawners>k__BackingField.Array.data[7]
       value: 
       objectReference: {fileID: 263592660}
     - target: {fileID: 7123798071755595857, guid: e9444944c137b9445967233918efe273, type: 3}

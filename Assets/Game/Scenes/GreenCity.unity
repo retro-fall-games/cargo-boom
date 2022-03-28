@@ -4670,6 +4670,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8882398517755341284, guid: d79584cc667a42c48ac1be0205801aff, type: 3}
   m_PrefabInstance: {fileID: 1925560577}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1982553687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6388524945533561140, guid: 79364595d61133f46a97df949a46f5f5, type: 3}
+  m_PrefabInstance: {fileID: 2193451123325343745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1986664181
 GameObject:
   m_ObjectHideFlags: 0
@@ -5997,6 +6002,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7135194053761404462, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_RebindOverlay
+      value: 
+      objectReference: {fileID: 1982553687}
+    - target: {fileID: 7135194054426984704, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_RebindOverlay
+      value: 
+      objectReference: {fileID: 1982553687}
+    - target: {fileID: 7135194054681533281, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_RebindOverlay
+      value: 
+      objectReference: {fileID: 1982553687}
+    - target: {fileID: 7135194054771918179, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_Text
+      value: Machine Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135194055132300006, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_RebindOverlay
+      value: 
+      objectReference: {fileID: 1982553687}
+    - target: {fileID: 7135194055160274148, guid: de0331d005f163945af3a117317d4dab, type: 3}
+      propertyPath: m_Text
+      value: Missle
+      objectReference: {fileID: 0}
     - target: {fileID: 7598287075836559756, guid: de0331d005f163945af3a117317d4dab, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6039,6 +6068,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 209626913576100268, guid: 79364595d61133f46a97df949a46f5f5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 209626913576100269, guid: 79364595d61133f46a97df949a46f5f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0

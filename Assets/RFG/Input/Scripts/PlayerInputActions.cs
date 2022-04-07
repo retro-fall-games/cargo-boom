@@ -298,7 +298,7 @@ namespace RFG
                 {
                     ""name"": """",
                     ""id"": ""d3807bd5-d3ad-4ef7-9d56-3edab2a242ae"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",

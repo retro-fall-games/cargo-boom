@@ -14,7 +14,7 @@ namespace RFG.ScrollingShooter
     private PlayerInventory _playerInventory;
     private InputAction _primaryAttackInput;
     private InputAction _secondaryAttackInput;
-    private bool _pointerOverUi = false;
+    // private bool _pointerOverUi = false;
     private bool _primaryAttackPressed = false;
     private bool _secondaryAttackPressed = false;
     private ProjectileWeaponEquipable _primaryWeaponEquipable;
@@ -96,12 +96,12 @@ namespace RFG.ScrollingShooter
     {
       if (_character.CharacterType == CharacterType.Player)
       {
-        _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
-        if (!_pointerOverUi)
-        {
-          _primaryAttackPressed = _primaryAttackInput.IsPressed();
-          _secondaryAttackPressed = _secondaryAttackInput.IsPressed();
-        }
+        // _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
+        // if (!_pointerOverUi)
+        // {
+        _primaryAttackPressed = _primaryAttackInput.IsPressed();
+        _secondaryAttackPressed = _secondaryAttackInput.IsPressed();
+        // }
       }
     }
 
@@ -159,22 +159,22 @@ namespace RFG.ScrollingShooter
     #region Events
     public void OnPrimaryAttackStarted(InputAction.CallbackContext ctx)
     {
-      _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
-      if (!_pointerOverUi)
+      // _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
+      // if (!_pointerOverUi)
+      // {
+      if (_character.IsAnyPrimaryAttack)
       {
-        if (_character.IsAnyPrimaryAttack)
+        return;
+      }
+      bool changedState = _character.MovementState.ChangeState(typeof(PrimaryAttackStartedState));
+      if (changedState && _playerInventory != null && _playerInventory.Inventory.LeftHand != null)
+      {
+        if (_playerInventory.Inventory.LeftHand is ProjectileWeaponEquipable projectileWeaponEquipable)
         {
-          return;
-        }
-        bool changedState = _character.MovementState.ChangeState(typeof(PrimaryAttackStartedState));
-        if (changedState && _playerInventory != null && _playerInventory.Inventory.LeftHand != null)
-        {
-          if (_playerInventory.Inventory.LeftHand is ProjectileWeaponEquipable projectileWeaponEquipable)
-          {
-            projectileWeaponEquipable.Started();
-          }
+          projectileWeaponEquipable.Started();
         }
       }
+      // }
     }
 
     public void OnPrimaryAttackCanceled(InputAction.CallbackContext ctx)
@@ -211,22 +211,22 @@ namespace RFG.ScrollingShooter
 
     public void OnSecondaryAttackStarted(InputAction.CallbackContext ctx)
     {
-      _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
-      if (!_pointerOverUi)
+      // _pointerOverUi = MouseOverUILayerObject.IsPointerOverUIObject();
+      // if (!_pointerOverUi)
+      // {
+      if (_character.IsAnySecondaryAttack)
       {
-        if (_character.IsAnySecondaryAttack)
+        return;
+      }
+      bool changedState = _character.MovementState.ChangeState(typeof(SecondaryAttackStartedState));
+      if (changedState && _playerInventory != null && _playerInventory.Inventory.RightHand != null)
+      {
+        if (_playerInventory.Inventory.RightHand is ProjectileWeaponEquipable projectileWeaponEquipable)
         {
-          return;
-        }
-        bool changedState = _character.MovementState.ChangeState(typeof(SecondaryAttackStartedState));
-        if (changedState && _playerInventory != null && _playerInventory.Inventory.RightHand != null)
-        {
-          if (_playerInventory.Inventory.RightHand is ProjectileWeaponEquipable projectileWeaponEquipable)
-          {
-            projectileWeaponEquipable.Started();
-          }
+          projectileWeaponEquipable.Started();
         }
       }
+      // }
     }
 
     public void OnSecondaryAttackCanceled(InputAction.CallbackContext ctx)

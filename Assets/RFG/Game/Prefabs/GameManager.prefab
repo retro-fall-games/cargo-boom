@@ -48,8 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e1f7fc0ded8954aa54cf3904e5847d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GameSettings>k__BackingField: {fileID: 11400000, guid: aa4f986206d8eae4288bd620079ee082, type: 2}
+  <GameSettings>k__BackingField: {fileID: 11400000, guid: 75d4c453642b90341a519368cf0250f3, type: 2}
   <IsPaused>k__BackingField: 0
+  <CursorTexture>k__BackingField: {fileID: 2800000, guid: 1a9790491786ee14eae51dfaafb512e4, type: 3}
+  <CursorMode>k__BackingField: 0
+  <HotSpot>k__BackingField: {x: 0, y: 0}
 --- !u!114 &5560533554010819327
 MonoBehaviour:
   m_ObjectHideFlags: 0

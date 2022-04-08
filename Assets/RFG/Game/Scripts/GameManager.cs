@@ -16,7 +16,7 @@ namespace RFG
 
     private void Start()
     {
-      // Application.targetFrameRate = GameSettings.targetFrameRate;
+      Application.targetFrameRate = GameSettings.targetFrameRate;
       // Application.logMessageReceived += HandleException;
       IsPaused = false;
       if (CursorTexture != null)

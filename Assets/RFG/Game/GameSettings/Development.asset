@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c226f97af40c04dad21c25bfa45d99, type: 3}
   m_Name: Development
   m_EditorClassIdentifier: 
-  targetFrameRate: 300
+  targetFrameRate: 30
   waitForSecondsToQuit: 3
   drawRaycasts: 1
